@@ -18,7 +18,7 @@ package com.mipadi.io.terminal
 
 
 package object colors {
-  implicit class ColorizedString(val s: String) {
+  implicit class ColorizedString(s: String) {
     def black: String = s"${Console.BLACK}$s${Console.RESET}"
 
     def blue: String = s"${Console.BLUE}$s${Console.RESET}"
