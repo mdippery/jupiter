@@ -18,6 +18,7 @@ package com.mipadi.core
 
 import java.io.File
 import scala.io.Source
+import com.mipadi.core.pipes._
 import com.mipadi.text.strings._
 
 
@@ -25,17 +26,19 @@ trait BundleSource {
   def name: String
 
   def version: String
+
+  def cls: Class[_]
 }
 
 
-private class ManifestSource extends BundleSource {
-  def name: String = getClass.getPackage.getImplementationTitle
+private class ManifestSource(val cls: Class[_]) extends BundleSource {
+  def name: String = cls.getPackage.getImplementationTitle
 
-  def version: String = getClass.getPackage.getImplementationVersion
+  def version: String = cls.getPackage.getImplementationVersion
 }
 
 
-private class BuildSBTSource(file: File) extends BundleSource {
+private class BuildSBTSource(val cls: Class[_], val file: File) extends BundleSource {
   def name: String = findLine("name")
 
   def version: String = findLine("version")
@@ -60,16 +63,17 @@ private class BuildSBTSource(file: File) extends BundleSource {
 
 
 object Bundle {
-  private def versionFromManifest: Option[String] =
-    Option(new ManifestSource().version)
+  private def versionFromManifest(cls: Class[_]): Option[String] =
+    Option(new ManifestSource(cls).version)
 
-  private def bundleSource: BundleSource = versionFromManifest map { v =>
-    new ManifestSource()
+  private def bundleSource(cls: Class[_]): BundleSource = versionFromManifest(cls) map { v =>
+    new ManifestSource(cls)
   } getOrElse {
-    new BuildSBTSource(new File("build.sbt"))
+    new BuildSBTSource(cls, new File("build.sbt"))
   }
 
-  def mainBundle: Bundle = new Bundle(bundleSource)
+  def forClass(cls: Class[_]): Bundle =
+    cls |> bundleSource |> (s => new Bundle(s))
 }
 
 class Bundle(source: BundleSource) {

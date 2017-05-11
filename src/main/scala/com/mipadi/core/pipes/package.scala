@@ -19,6 +19,6 @@ package com.mipadi.core
 
 package object pipes {
   implicit class Pipe[A](val item: A) {
-    def |>[B](f: A => B): B = f(item)
+    def |>[B] (f: A => B): B = f(item)
   }
 }
