@@ -20,12 +20,12 @@ import org.scalatest._
 
 
 class IOSpec extends FlatSpec with Matchers {
-  "An IO action" should "return a value when run is called" in {
+  "An IO action" should "return a value when it is applied" in {
     val io = IO { 5 }
     io() should be (5)
   }
 
-  it should "not evaluate its function until run is called" in {
+  it should "not evaluate its function until it is applied" in {
     var i = 0
     val io = IO { i += 1; i }
     i should be (0)
