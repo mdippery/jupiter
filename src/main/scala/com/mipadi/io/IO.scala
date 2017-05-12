@@ -17,10 +17,57 @@
 package com.mipadi.io
 
 
+/** Represents an I/O operation.
+ *
+ *  @param run
+ *    A function that should be run when this `[[com.mipadi.io.IO IO]]`
+ *    operation is applied.
+ */
 class IO[A](run: => A) {
+
+  /** Run the function wrapped by this object.
+   *
+   *  @return
+   *    The result of applying the operation wrapped by this object.
+   */
   def apply(): A = run
 }
 
+/** Wraps a function or sequence of operations in an `[[com.mipadi.io.IO IO]]`
+ *  object.
+ *
+ *  An `[[com.mipadi.io.IO IO]]` object represents a function or sequence of
+ *  steps that can be performed at a later time. Creating such an object is
+ *  fairly simple:
+ *
+ *  {{{
+ *  val printIO = IO { println("This is an IO operation") }
+ *  }}}
+ *
+ *  The operation can be run by simply applying the object:
+ *
+ *  {{{
+ *  printIO()
+ *  }}}
+ */
 object IO {
+
+  /** Creates a new `[[com.mipadi.io.IO IO]]` object.
+   *
+   *  `[[com.mipadi.io.IO IO]]` objects can be created easily by simply
+   *  writing something like:
+   *
+   *  {{{
+   *  val getInt = IO {
+   *    var i = 10
+   *    10 *= 2
+   *  }
+   *  }}}
+   *
+   *  @param run
+   *    The operation to run when this object is applied.
+   *  @return
+   *    A new `[[com.mipadi.io.IO IO]]` object that wraps the `run` function.
+   */
   def apply[A](run: => A): IO[A] = new IO(run)
 }

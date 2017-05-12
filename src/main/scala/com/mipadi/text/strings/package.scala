@@ -19,8 +19,42 @@ package com.mipadi.text
 import java.util.regex.{Matcher, Pattern}
 
 
+/** Provides operations for working with string objects.
+ *
+ *  Strings can implicitly be converted to a
+ *  `[[com.mipadi.text.strings.MatcherString MatcherString]]`, which allows
+ *  them to use the `~=` operator to check if a string matches a regex:
+ *
+ *  {{{
+ *  import com.mipadi.text.strings._
+ *  val matches = "my string" =~ "string$"
+ *  }}}
+ */
 package object strings {
+
+  /** Implicitly converts Scala strings to
+   *  `[[com.mipadi.text.strings.MatcherString MatcherString]]` objects.
+   *
+   *  This implicit conversion allows Scala strings to use the `~=` operator
+   *  to check if they match a given regex:
+   *
+   *  {{{
+   *  import com.mipadi.text.strings._
+   *  val matches = "my string" =~ "string$"
+   *  }}}
+   *
+   *  @param s
+   *    The wrapped string.
+   */
   implicit class MatcherString(s: String) {
+
+    /** Matches a string against a given regex.
+     *
+     *  @param needle
+     *    The regex to match against the receiver.
+     *  @return
+     *    `true` if the receiver matches the regex.
+     */
     def =~ (needle: String): Boolean =
       matchesPartial(needle)
 

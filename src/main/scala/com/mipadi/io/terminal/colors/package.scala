@@ -17,7 +17,32 @@
 package com.mipadi.io.terminal
 
 
+/** Provides a nice way to work with colors in the terminal.
+ *
+ *  String objects can be implicitly converted to a
+ *  [[com.mipadi.io.terminal.colors.ColorizedString ColorizedString]],
+ *  which allows programs to print colored strings to a terminal, like so:
+ *
+ *  {{{
+ *  import com.mipadi.io.terminal.colors._
+ *  println(s"The word \${"red".red} is red in this line.")
+ *  }}}
+ */
 package object colors {
+
+  /** A wrapper for strings that adds methods to print them in color.
+   *
+   *  Strings can be colorized simply by calling the appropriate method on
+   *  them.
+   *
+   *  {{{
+   *  import com.mipadi.io.terminal.colors._
+   *  val magentaString = "magenta".magenta
+   *  }}}
+   *
+   *  @param s
+   *    The wrapped string.
+   */
   implicit class ColorizedString(s: String) {
     def black: String = s"${Console.BLACK}$s${Console.RESET}"
 

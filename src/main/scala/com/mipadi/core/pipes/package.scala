@@ -17,8 +17,39 @@
 package com.mipadi.core
 
 
+/** Provides a mechanism for piping or threading objects through methods
+ *  and functions.
+ *
+ *  Any object can be implicitly converted to a
+ *  `[[com.mipadi.core.pipes.Pipe Pipe]]`. This allows an object to be threaded
+ *  through a series of functions, similar to Clojure's thread operator `->`
+ *  or F#'s pipe forward operator `|>`. Instead of this:
+ *
+ *  {{{
+ *  val x = someMethod(anotherMethod(aThirdMethod(obj)))
+ *  }}}
+ *
+ *  You can do this:
+ *
+ *  {{{
+ *  val x = obj |> aThirdMethod |> anotherMethod |> someMethod
+ *  }}}
+ *
+ *  Which reads a bit better in many cases.
+ */
 package object pipes {
-  implicit class Pipe[A](val item: A) {
+
+  /** An implicit conversion that adds a `|>` operator to all classes. */
+  implicit class Pipe[A](item: A) {
+
+    /** Allows an object to be easily piped through a sequence of methods
+     *  or functions.
+     *
+     *  @param f
+     *    The function that will be applied to the receiver.
+     *  @return
+     *    The result of applying `f` to the receiver.
+     */
     def |>[B] (f: A => B): B = f(item)
   }
 }
