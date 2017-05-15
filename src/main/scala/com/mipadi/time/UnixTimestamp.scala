@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.mipadi.date
+package com.mipadi.time
 
 import java.util.Date
 
@@ -25,7 +25,7 @@ import java.util.Date
  *  to a `java.util.Date` object:
  *
  *  {{{
- *  import com.mipadi.date.UnixTimestamp._
+ *  import com.mipadi.time.UnixTimestamp._
  *  val timestamp = 1490999455.0
  *  val date = timestamp.toDate
  *  }}}
@@ -45,7 +45,7 @@ object UnixTimestamp {
      *  timestamp to convert it into the associated `Date`:
      *
      *  {{{
-     *  import com.mipadi.date.UnixTimestamp._
+     *  import com.mipadi.time.UnixTimestamp._
      *  val timestamp = 1490999455.0
      *  val date = timestamp.toDate
      *  }}}

@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package com.mipadi.date
+package com.mipadi.time
 
 import java.util.{Calendar, Date, GregorianCalendar}
 import org.scalatest._
-import com.mipadi.date.UnixTimestamp._
+import com.mipadi.time.UnixTimestamp._
 
 
 class UnixTimestampSpec extends FlatSpec with Matchers {

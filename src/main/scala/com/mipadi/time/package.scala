@@ -18,4 +18,4 @@ package com.mipadi
 
 
 /** A gentler way of working with dates and times in Scala. */
-package object date
+package object time
