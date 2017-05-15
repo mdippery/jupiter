@@ -22,8 +22,13 @@ import com.mipadi.date.UnixTimestamp._
 
 
 class UnixTimestampSpec extends FlatSpec with Matchers {
-  "A Unix timestamp" should "be convertible to a date" in {
+  "A Unix timestamp represented as a double" should "be convertible to a date" in {
     val timestamp = 1490999455.0
+    timestamp.toDate should be (new GregorianCalendar(2017, Calendar.MARCH, 31, 15, 30, 55).getTime)
+  }
+
+  "A Unix timestamp represented as an integer" should "be convertible to a date" in {
+    val timestamp = 1490999455
     timestamp.toDate should be (new GregorianCalendar(2017, Calendar.MARCH, 31, 15, 30, 55).getTime)
   }
 }
