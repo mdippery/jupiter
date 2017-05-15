@@ -14,18 +14,16 @@
  * limitations under the License.
  */
 
-lazy val root = (project in file("."))
-  .settings(
-    name         := "jupiter",
-    organization := "com.mipadi",
-    version      := "0.4.0",
-    scalaVersion := "2.12.2",
+package com.mipadi.date
 
-    scalacOptions ++= Seq(
-      "-deprecation"
-    ),
+import java.util.{Calendar, Date, GregorianCalendar}
+import org.scalatest._
+import com.mipadi.date.UnixTimestamp._
 
-    libraryDependencies ++= Seq(
-      "org.scalatest" %% "scalatest" % "3.0.1" % Test
-    )
-  )
+
+class UnixTimestampSpec extends FlatSpec with Matchers {
+  "A Unix timestamp" should "be convertible to a date" in {
+    val timestamp = 1490999455.0
+    timestamp.toDate should be (new GregorianCalendar(2017, Calendar.MARCH, 31, 15, 30, 55).getTime)
+  }
+}
