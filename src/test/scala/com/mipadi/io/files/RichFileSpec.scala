@@ -26,7 +26,22 @@ class RichFileSpec extends FlatSpec with Matchers {
   val file = new File("build.sbt")
   val noFile = new File("blah")
 
-  "A RichFile" should "have a path property" in {
+  "A file or directory" should "be comparable by its pathnames" in {
+    (dir < file) should be (false)
+    (file < dir) should be (true)
+  }
+
+  it should "be equal to itself" in {
+    val dir2 = new File("src/main/scala/com/mipadi/io")
+    (dir == dir) should be (true)
+    (dir == dir2) should be (true)
+  }
+
+  it should "be unequal to anything else" in {
+    (dir == file) should be (false)
+  }
+
+  it should "have a path property" in {
     dir.path should be ("src/main/scala/com/mipadi/io")
   }
 
@@ -34,7 +49,7 @@ class RichFileSpec extends FlatSpec with Matchers {
     dir.absolutePath.endsWith("src/main/scala/com/mipadi/io") should be (true)
   }
 
-  it should "list all the files and directories in its subtree" in {
+  "A directory" should "list all the files and directories in its subtree" in {
     val expectedFilenames = Array(
       "src/main/scala/com/mipadi/io/IO.scala",
       "src/main/scala/com/mipadi/io/files",
@@ -61,15 +76,6 @@ class RichFileSpec extends FlatSpec with Matchers {
     dir.subtreeFiles should equal (expected)
   }
 
-  it should "should have an empty subtree if it is not a directory" in {
-    file.subtree shouldBe empty
-  }
-
-  it should "have an empty subtree of files if it is not a directory" in {
-    val expected = List()
-    file.subtree shouldBe empty
-  }
-
   it should "return an empty subtree if it does not exist" in {
     noFile.subtreeFiles shouldBe empty
   }
@@ -78,18 +84,12 @@ class RichFileSpec extends FlatSpec with Matchers {
     noFile.subtreeFiles shouldBe empty
   }
 
-  it should "be comparable by its pathnames" in {
-    (dir < file) should be (false)
-    (file < dir) should be (true)
+  "A file" should "should have an empty subtree" in {
+    file.subtree shouldBe empty
   }
 
-  it should "be equal to itself" in {
-    val dir2 = new File("src/main/scala/com/mipadi/io")
-    (dir == dir) should be (true)
-    (dir == dir2) should be (true)
-  }
-
-  it should "be unequal to anything else" in {
-    (dir == file) should be (false)
+  it should "have an empty subtree of files" in {
+    val expected = List()
+    file.subtree shouldBe empty
   }
 }

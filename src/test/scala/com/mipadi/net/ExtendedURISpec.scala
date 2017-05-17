@@ -83,7 +83,7 @@ class ExtendedURISpec extends FlatSpec with Matchers {
     uri.pathComponents should equal (expected)
   }
 
-  it should "return its path even sans trailing slash" in {
+  "A root URI without a trailing slash" should "return its path even sans trailing slash" in {
     val uri = new URI("http://monkey-robot.com:7777")
     uri.path should be ("")
   }
