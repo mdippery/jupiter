@@ -23,7 +23,7 @@ import com.mipadi.io.terminal.colors._
 class ColorizedStringSpec extends FlatSpec with Matchers {
   val s = "string"
 
-  "A ColorizedString" should "become black" in {
+  "A string" should "become black" in {
     (s.black + " suffix") should be ("\u001b[30mstring\u001b[0m suffix")
   }
 
