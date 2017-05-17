@@ -44,20 +44,23 @@ package object colors {
    *    The wrapped string.
    */
   implicit class ColorizedString(s: String) {
-    def black: String = s"${Console.BLACK}$s${Console.RESET}"
+    def black: String = colorize(Console.BLACK)
 
-    def blue: String = s"${Console.BLUE}$s${Console.RESET}"
+    def blue: String = colorize(Console.BLUE)
 
-    def cyan: String = s"${Console.CYAN}$s${Console.RESET}"
+    def cyan: String = colorize(Console.CYAN)
 
-    def green: String = s"${Console.GREEN}$s${Console.RESET}"
+    def green: String = colorize(Console.GREEN)
 
-    def magenta: String = s"${Console.MAGENTA}$s${Console.RESET}"
+    def magenta: String = colorize(Console.MAGENTA)
 
-    def red: String = s"${Console.RED}$s${Console.RESET}"
+    def red: String = colorize(Console.RED)
 
-    def white: String = s"${Console.WHITE}$s${Console.RESET}"
+    def white: String = colorize(Console.WHITE)
 
-    def yellow: String = s"${Console.YELLOW}$s${Console.RESET}"
+    def yellow: String = colorize(Console.YELLOW)
+
+    private def colorize(color: String): String =
+      s"$color$s${Console.RESET}"
   }
 }
