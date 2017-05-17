@@ -14,18 +14,8 @@
  * limitations under the License.
  */
 
-lazy val root = (project in file("."))
-  .settings(
-    name         := "jupiter",
-    organization := "com.mipadi",
-    version      := "0.5.0",
-    scalaVersion := "2.12.2",
+package com.mipadi
 
-    scalacOptions ++= Seq(
-      "-deprecation"
-    ),
 
-    libraryDependencies ++= Seq(
-      "org.scalatest" %% "scalatest" % "3.0.1" % Test
-    )
-  )
+/** Utilities for working with networked communications. */
+package object net
