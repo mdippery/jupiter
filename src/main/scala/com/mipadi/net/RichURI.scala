@@ -34,21 +34,27 @@ import java.net.URI
  */
 object RichURI {
 
-  /** Converts an instance of `java.net.URI` and adds additional methods.
+  /** Extends `java.net.URI` with useful methods and a more Scala-like API.
    *
-   *  For example:
+   *  `ConvertibleURI` is especially useful for implicit conversions to
+   *  more specific types of URIs. For example, it could be used to create
+   *  a specialized `ConvertibleMongoURI` implicit:
    *
    *  {{{
-   *  import java.net.URI
-   *  import com.mipadi.net.RichURI._
-   *  val uri = new URI("http://monkey-robot.com/archives")
-   *  val parts = uri.pathComponents
+   *  import com.mipadi.net.RichURI.ConvertibleURI
+   *  implicit class ConvertibleMongoURI(val uri: URI) extends ConvertibleURI {
+   *    lazy val database: Option[String] = uri.pathComponents.lift(1)
+   *    lazy val collection: Option[String] = uri.pathComponents.lift(2)
+   *  }
    *  }}}
    *
-   *  @param uri
-   *    The wrapped URI
+   *  Classes that extend `ConvertibleURI` need only provide a `uri` method,
+   *  and `ConvertibleURI` will do the rest of the work automagically.
    */
-  implicit class ExtendedURI(uri: URI) {
+  trait ConvertibleURI {
+
+    /** The wrapped URI. */
+    def uri: URI
 
     /** The URI's protocol. */
     lazy val protocol: String = uri.getScheme
@@ -74,4 +80,20 @@ object RichURI {
       case p   => Array("/") ++ p.split("/").tail
     }
   }
+
+  /** Converts an instance of `java.net.URI` and adds additional methods.
+   *
+   *  For example:
+   *
+   *  {{{
+   *  import java.net.URI
+   *  import com.mipadi.net.RichURI._
+   *  val uri = new URI("http://monkey-robot.com/archives")
+   *  val parts = uri.pathComponents
+   *  }}}
+   *
+   *  @param uri
+   *    The wrapped URI
+   */
+  implicit class ExtendedURI(val uri: URI) extends ConvertibleURI
 }
