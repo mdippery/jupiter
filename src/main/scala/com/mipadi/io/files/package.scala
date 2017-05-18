@@ -17,6 +17,8 @@
 package com.mipadi.io
 
 import java.io.File
+import java.nio.file.{FileSystems, Path}
+import scala.language.implicitConversions
 
 
 /** Useful classes for easily working with files.
@@ -132,6 +134,7 @@ package object files {
        fs.files.foldEntries(_ :+ _)).sorted
   }
 
+
   private[files] implicit class FileArray(fs: Array[File]) {
     lazy val files = fs.filterNot(_.isDirectory)
     lazy val directories = fs.filter(_.isDirectory)
@@ -139,4 +142,44 @@ package object files {
     def foldEntries(op: (Array[File], File) => Array[File]) =
       fs.foldLeft(new Array[File](0))(op)
   }
+
+
+  /** Allows paths to be built using the `/` operator.
+   *
+   *  @param path
+   *    The wrapped path
+   */
+  implicit class RichPath(path: Path) {
+
+    /** Create a new path consisting of `that` appended to `path`.
+     *
+     *  This allows callers to create new paths like this:
+     *
+     *  {{{
+     *  import com.mipadi.io.files._
+     *  val start = new File("src").toPath
+     *  val path = start / "main" / "scala" / "com" / "mipadi"
+     *  }}}
+     *
+     *  @param that
+     *    The path component to append to `path`
+     *  @return
+     *    A new path consisting of `that` appended to `path`
+     */
+    def / (that: String): Path =
+      FileSystems.getDefault().getPath(path.toString, that)
+  }
+
+
+  /** Coerces `java.io.File` objects to `[[com.mipadi.io.files.RichPath
+   *  RichPath]]` objects, allowing new paths to be built using the `/`
+   *  operator.
+   *
+   *  @param file
+   *    The wrapped file
+   *  @return
+   *    A new `[[com.mipadi.io.files.RichPath RichPath]]` object wrapping
+   *    `file`
+   */
+  implicit def fileToRichPath(file: File): RichPath = new RichPath(file.toPath)
 }

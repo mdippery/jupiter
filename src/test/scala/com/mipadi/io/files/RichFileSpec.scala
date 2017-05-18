@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.mipadi.io
+package com.mipadi.io.files
 
 import java.io.File
 import org.scalatest._
