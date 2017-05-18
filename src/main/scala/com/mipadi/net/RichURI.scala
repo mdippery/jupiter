@@ -16,10 +16,11 @@
 
 package com.mipadi.net
 
-import java.net.URI
+import java.net.{URI, URL}
+import scala.language.implicitConversions
 
 
-/** Additional operations for `java.net.URI` classes.
+/** Additional operations for `java.net.URI` and `java.net.URL` classes.
  *
  *  In particular, `RichURI` provides an implicit conversion to
  *  `[[com.mipadi.net.RichURI.ExtendedURI ExtendedURI]]`, which allows
@@ -96,4 +97,15 @@ object RichURI {
    *    The wrapped URI
    */
   implicit class ExtendedURI(val uri: URI) extends ConvertibleURI
+
+  /** Coerces `java.net.URL` to a `[[com.mipadi.net.RichURI.ConvertibleURI
+   *  ConvertibleURI]]` object, adding the extension methods to `URL`.
+   *
+   *  @param url
+   *    A URL
+   *  @return
+   *    The URL wrapped in a `ConvertibleURI`
+   */
+  implicit def urlToExtendedURI(url: URL): ConvertibleURI =
+    new ExtendedURI(url.toURI)
 }
