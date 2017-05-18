@@ -167,7 +167,7 @@ package object files {
      *    A new path consisting of `that` appended to `path`
      */
     def / (that: String): Path =
-      FileSystems.getDefault().getPath(path.toString, that)
+      FileSystems.getDefault.getPath(path.toString, that)
   }
 
 
@@ -182,4 +182,32 @@ package object files {
    *    `file`
    */
   implicit def fileToRichPath(file: File): RichPath = new RichPath(file.toPath)
+
+
+  /** Allows paths to be built from strings using the `p` prefix:
+   *
+   *  {{{
+   *  import com.mipadi.io.files._
+   *  val path = p"path/to/file.txt"
+   *  }}}
+   *
+   *  @param ctx
+   *    The wrapped string context
+   */
+  implicit class PathStringContext(ctx: StringContext) {
+
+    /** Build a path using the `p` prefix:
+     *
+     *  {{{
+     *  import com.mipadi.io.files._
+     *  val path = p"path/to/file.txt"
+     *  }}}
+     *
+     *  @param args
+     *    String context arguments
+     *  @return
+     *    A path represented by the given string context
+     */
+    def p(args: Any*): Path = FileSystems.getDefault.getPath(ctx.parts(0))
+  }
 }
