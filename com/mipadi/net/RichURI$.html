@@ -127,8 +127,8 @@
       <p class="shortcomment cmt">Utilities for working with networked communications.</p><div class="fullcomment"><div class="comment cmt"><p>Utilities for working with networked communications.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="com.mipadi">mipadi</a></dd></dl></div>
     </li><li class="current-entities indented3">
                         <span class="separator"></span>
-                        <a class="object" href="" title="Additional operations for java.net.URI classes."></a>
-                        <a href="" title="Additional operations for java.net.URI classes.">
+                        <a class="object" href="" title="Additional operations for java.net.URI and java.net.URL classes."></a>
+                        <a href="" title="Additional operations for java.net.URI and java.net.URL classes.">
                           RichURI
                         </a>
                       </li>
@@ -159,7 +159,7 @@
       </h4>
 
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Additional operations for <code>java.net.URI</code> classes.</p><p> In particular, <code>RichURI</code> provides an implicit conversion to
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Additional operations for <code>java.net.URI</code> and <code>java.net.URL</code> classes.</p><p> In particular, <code>RichURI</code> provides an implicit conversion to
  <code><a href="RichURI$$ExtendedURI.html" class="extype" name="com.mipadi.net.RichURI.ExtendedURI">ExtendedURI</a></code>, which allows
  additional methods to be called on <code>java.net.URI</code> objects:</p><pre><span class="kw">import</span> java.net.URI
 <span class="kw">import</span> com.mipadi.net.RichURI._
@@ -539,6 +539,25 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="com.mipadi.net.RichURI#urlToExtendedURI" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="urlToExtendedURI(url:java.net.URL):com.mipadi.net.RichURI.ConvertibleURI"></a><a id="urlToExtendedURI(URL):ConvertibleURI"></a>
+      <span class="permalink">
+      <a href="../../../com/mipadi/net/RichURI$.html#urlToExtendedURI(url:java.net.URL):com.mipadi.net.RichURI.ConvertibleURI" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">urlToExtendedURI</span><span class="params">(<span name="url">url: <span class="extype" name="java.net.URL">URL</span></span>)</span><span class="result">: <a href="RichURI$$ConvertibleURI.html" class="extype" name="com.mipadi.net.RichURI.ConvertibleURI">ConvertibleURI</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">Coerces <code>java.net.URL</code> to a <code><a href="RichURI$$ConvertibleURI.html" class="extype" name="com.mipadi.net.RichURI.ConvertibleURI">ConvertibleURI</a></code> object, adding the extension methods to <code>URL</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Coerces <code>java.net.URL</code> to a <code><a href="RichURI$$ConvertibleURI.html" class="extype" name="com.mipadi.net.RichURI.ConvertibleURI">ConvertibleURI</a></code> object, adding the extension methods to <code>URL</code>.
+</p></div><dl class="paramcmts block"><dt class="param">url</dt><dd class="cmt"><p>
+   A URL</p></dd><dt>returns</dt><dd class="cmt"><p>
+   The URL wrapped in a <code>ConvertibleURI</code></p></dd></dl></div>
     </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>
       <span class="permalink">
