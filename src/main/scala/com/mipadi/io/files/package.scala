@@ -37,7 +37,11 @@ package object files {
    *    The wrapped file.
    */
   implicit class RichFile(f: File) extends Ordered[File] {
-    private lazy val fs = Option(f.listFiles) getOrElse { new Array[File](0) }
+    private lazy val fs: Seq[File] = Option(f.listFiles) map { files =>
+      files.toSeq
+    } getOrElse {
+      List()
+    }
 
     /** The wrapped file's path */
     val path = f.getPath
@@ -56,7 +60,7 @@ package object files {
      *    - '''> 0''' if `this` comes after `that`
      *    - '''0''' if `this` is equal to `that`
      */
-    def compare(that: File) = f.getPath compare that.getPath
+    override def compare(that: File): Int = f.getPath compare that.getPath
 
     /** Returns a sequence of all paths rooted under this file.
      *
@@ -135,12 +139,12 @@ package object files {
   }
 
 
-  private[files] implicit class FileArray(fs: Array[File]) {
+  private[files] implicit class FileSeq(fs: Seq[File]) {
     lazy val files = fs.filterNot(_.isDirectory)
     lazy val directories = fs.filter(_.isDirectory)
 
-    def foldEntries(op: (Array[File], File) => Array[File]) =
-      fs.foldLeft(new Array[File](0))(op)
+    def foldEntries(op: (List[File], File) => List[File]): List[File] =
+      fs.foldLeft(List[File]())(op)
   }
 
 
