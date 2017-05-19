@@ -140,11 +140,11 @@ package object files {
 
 
   private[files] implicit class FileSeq(fs: Seq[File]) {
-    lazy val files = fs.filterNot(_.isDirectory)
-    lazy val directories = fs.filter(_.isDirectory)
+    lazy val files: Seq[File] = fs.filterNot(_.isDirectory)
+    lazy val directories: Seq[File] = fs.filter(_.isDirectory)
 
-    def foldEntries(op: (List[File], File) => List[File]): List[File] =
-      fs.foldLeft(List[File]())(op)
+    def foldEntries: ((List[File], File) => List[File]) => Seq[File] =
+      fs.foldLeft(List[File]())
   }
 
 
