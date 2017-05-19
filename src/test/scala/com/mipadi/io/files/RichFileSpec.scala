@@ -49,47 +49,27 @@ class RichFileSpec extends FlatSpec with Matchers {
     dir.absolutePath.endsWith("src/main/scala/com/mipadi/io") should be (true)
   }
 
-  "A directory" should "list all the files and directories in its subtree" in {
-    val expectedFilenames = Array(
-      "src/main/scala/com/mipadi/io/IO.scala",
-      "src/main/scala/com/mipadi/io/files",
-      "src/main/scala/com/mipadi/io/files/package.scala",
-      "src/main/scala/com/mipadi/io/package.scala",
-      "src/main/scala/com/mipadi/io/terminal",
-      "src/main/scala/com/mipadi/io/terminal/colors",
-      "src/main/scala/com/mipadi/io/terminal/colors/package.scala",
-      "src/main/scala/com/mipadi/io/terminal/package.scala"
-    )
-    val expected = expectedFilenames.map { new File(_) }
-    dir.subtree should equal (expected)
+  "A directory" should "return a subtree listing its files" in {
+    dir.subtree.all.length should be (9)
   }
 
-  it should "list all the files in its subtree" in {
-    val expectedFilenames = List(
-      "src/main/scala/com/mipadi/io/IO.scala",
-      "src/main/scala/com/mipadi/io/files/package.scala",
-      "src/main/scala/com/mipadi/io/package.scala",
-      "src/main/scala/com/mipadi/io/terminal/colors/package.scala",
-      "src/main/scala/com/mipadi/io/terminal/package.scala"
-    )
-    val expected = expectedFilenames.map { new File(_) }
-    dir.subtreeFiles should equal (expected)
+  it should "return a subtree listing its files only" in {
+    dir.subtree.filesOnly.length should be (6)
   }
 
   it should "return an empty subtree if it does not exist" in {
-    noFile.subtreeFiles shouldBe empty
+    noFile.subtree.all shouldBe empty
   }
 
   it should "return an empty subtree of files if it does not exist" in {
-    noFile.subtreeFiles shouldBe empty
+    noFile.subtree.all shouldBe empty
   }
 
   "A file" should "should have an empty subtree" in {
-    file.subtree shouldBe empty
+    file.subtree.all shouldBe empty
   }
 
   it should "have an empty subtree of files" in {
-    val expected = List()
-    file.subtree shouldBe empty
+    file.subtree.all shouldBe empty
   }
 }

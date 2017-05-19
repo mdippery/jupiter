@@ -21,11 +21,20 @@ import java.nio.file.{FileSystems, Path}
 import scala.language.implicitConversions
 
 
-/** Useful classes for easily working with files.
+/** Useful classes for easily working with files and paths.
  *
- *  Provides implicit conversions from `java.io.File` to
- *  `[[com.mipadi.io.files.RichFile RichFile]]` with the purpose of adding
- *  some useful methods.
+ *  Provides an implicit conversion from `java.util.File` to
+ *  `[[com.mipadi.io.files.RichFile RichFile]]`, which adds some useful
+ *  methods to `File`. It also provides an implicit conversion from
+ *  `java.nio.file.Path` to `[[com.mipadi.io.files.RichPath RichPath]]`,
+ *  which provides a more convenient way to work with paths in Scala.
+ *  Finally, it provides a `p` prefix for strings, so paths can be created
+ *  directly from a string:
+ *
+ *  {{{
+ *  import com.mipadi.io.files._
+ *  val path = p"src/main/scala"
+ *  }}}
  */
 package object files {
 
@@ -62,90 +71,13 @@ package object files {
      */
     override def compare(that: File): Int = f.getPath compare that.getPath
 
-    /** Returns a sequence of all paths rooted under this file.
-     *
-     *  For example, given this tree:
-     *  {{{
-     *  src/main/scala/com/mipadi/io
-     *  ├── files
-     *  │   └── package.scala
-     *  ├── IO.scala
-     *  ├── package.scala
-     *  └── terminal
-     *      ├── colors
-     *      │   └── package.scala
-     *      └── package.scala
-     *
-     *  3 directories, 5 files
-     *  }}}
-     *
-     *  This method would return a sequence of:
-     *
-     *  {{{
-     *  ["src/main/scala/com/mipadi/io/files",
-     *   "src/main/scala/com/mipadi/io/files/package.scala",
-     *   "src/main/scala/com/mipadi/io/IO.scala",
-     *   "src/main/scala/com/mipadi/io/package.scala",
-     *   "src/main/scala/com/mipadi/io/terminal",
-     *   "src/main/scala/com/mipadi/io/terminal/colors",
-     *   "src/main/scala/com/mipadi/io/terminal/colors/package.scala",
-     *   "src/main/scala/com/mipadi/io/terminal/package.scala"]
-     *  }}}
+    /** A listing of all files rooted under this path.
      *
      *  @return
-     *    A sequence of all paths rooted under this file, sorted by name.
-     *    If this file is not a directory, an empty sequence is returned.
+     *    A listing of all files under the path represented by the wrapped
+     *    file
      */
-    def subtree: Seq[File] =
-      (fs.directories.foldEntries((memo, e) => (memo :+ e) ++ e.subtree) ++
-       fs.files.foldEntries(_ :+ _)).sorted
-
-    /** Returns a sequence of all ''file'' paths rooted under this file.
-     *  Directories are excluded from this listing.
-     *
-     *  For example, given this tree:
-     *  {{{
-     *  src/main/scala/com/mipadi/io
-     *  ├── files
-     *  │   └── package.scala
-     *  ├── IO.scala
-     *  ├── package.scala
-     *  └── terminal
-     *      ├── colors
-     *      │   └── package.scala
-     *      └── package.scala
-     *
-     *  3 directories, 5 files
-     *  }}}
-     *
-     *  This method would return a sequence of:
-     *
-     *  {{{
-     *  ["src/main/scala/com/mipadi/io/files/package.scala",
-     *   "src/main/scala/com/mipadi/io/IO.scala",
-     *   "src/main/scala/com/mipadi/io/package.scala",
-     *   "src/main/scala/com/mipadi/io/terminal/colors/package.scala",
-     *   "src/main/scala/com/mipadi/io/terminal/package.scala"]
-     *  }}}
-     *
-     *  @return
-     *    A sequence of all non-directory entries under this file, sorted by
-     *    name. If this file is not a directory, an empty sequence is
-     *    returned.
-     */
-    def subtreeFiles: Seq[File] =
-      (fs.directories.foldEntries(_ ++ _.subtreeFiles) ++
-       fs.files.foldEntries(_ :+ _)).sorted
-  }
-
-
-  private[files] implicit class FileSeq(fs: Seq[File]) {
-    type FileOp = (List[File], File) => List[File]
-
-    lazy val files: Seq[File] = fs.filterNot(_.isDirectory)
-    lazy val directories: Seq[File] = fs.filter(_.isDirectory)
-
-    def foldEntries: FileOp => Seq[File] = fs.foldLeft(List[File]())
+    def subtree: FileTree = new FileTree(f)
   }
 
 
