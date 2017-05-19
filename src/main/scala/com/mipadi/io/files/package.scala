@@ -82,14 +82,14 @@ package object files {
      *  This method would return a sequence of:
      *
      *  {{{
-     *   ["src/main/scala/com/mipadi/io/files",
-     *    "src/main/scala/com/mipadi/io/files/package.scala",
-     *    "src/main/scala/com/mipadi/io/IO.scala",
-     *    "src/main/scala/com/mipadi/io/package.scala",
-     *    "src/main/scala/com/mipadi/io/terminal",
-     *    "src/main/scala/com/mipadi/io/terminal/colors",
-     *    "src/main/scala/com/mipadi/io/terminal/colors/package.scala",
-     *    "src/main/scala/com/mipadi/io/terminal/package.scala"]
+     *  ["src/main/scala/com/mipadi/io/files",
+     *   "src/main/scala/com/mipadi/io/files/package.scala",
+     *   "src/main/scala/com/mipadi/io/IO.scala",
+     *   "src/main/scala/com/mipadi/io/package.scala",
+     *   "src/main/scala/com/mipadi/io/terminal",
+     *   "src/main/scala/com/mipadi/io/terminal/colors",
+     *   "src/main/scala/com/mipadi/io/terminal/colors/package.scala",
+     *   "src/main/scala/com/mipadi/io/terminal/package.scala"]
      *  }}}
      *
      *  @return
@@ -121,11 +121,11 @@ package object files {
      *  This method would return a sequence of:
      *
      *  {{{
-     *   ["src/main/scala/com/mipadi/io/files/package.scala",
-     *    "src/main/scala/com/mipadi/io/IO.scala",
-     *    "src/main/scala/com/mipadi/io/package.scala",
-     *    "src/main/scala/com/mipadi/io/terminal/colors/package.scala",
-     *    "src/main/scala/com/mipadi/io/terminal/package.scala"]
+     *  ["src/main/scala/com/mipadi/io/files/package.scala",
+     *   "src/main/scala/com/mipadi/io/IO.scala",
+     *   "src/main/scala/com/mipadi/io/package.scala",
+     *   "src/main/scala/com/mipadi/io/terminal/colors/package.scala",
+     *   "src/main/scala/com/mipadi/io/terminal/package.scala"]
      *  }}}
      *
      *  @return
