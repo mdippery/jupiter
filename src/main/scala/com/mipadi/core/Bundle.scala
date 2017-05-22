@@ -54,11 +54,11 @@ private class BuildSBTSource(val cls: Class[_], val file: File) extends BundleSo
     contents.find(_ =~ s"$needle\\s+:=").fold("") { _.value }
 
   private implicit class KeyValueString(s: String) {
-    def key: String = s.splitAndGet(0).removeUnwantedChars
+    private lazy val parts = s.split(" := ")
 
-    def value: String = s.splitAndGet(1).removeUnwantedChars
+    lazy val key: String = parts(0).removeUnwantedChars
 
-    private[core] def splitAndGet(i: Int) = s.split(" := ")(i)
+    lazy val value: String = parts(1).removeUnwantedChars
 
     private[core] def removeUnwantedChars: String =
       s.replaceAll("[\",]", "").trim
