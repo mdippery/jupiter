@@ -46,11 +46,6 @@ package object files {
    *    The wrapped file.
    */
   implicit class RichFile(f: File) extends Ordered[File] {
-    private lazy val fs: Seq[File] = Option(f.listFiles) map { files =>
-      files.toSeq
-    } getOrElse {
-      List()
-    }
 
     /** The wrapped file's path */
     val path = f.getPath
