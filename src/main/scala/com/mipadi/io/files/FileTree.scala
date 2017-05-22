@@ -107,6 +107,5 @@ class FileTree(val root: File) {
    *    name. If this file is not a directory, an empty sequence is
    *    returned.
    */
-  def filesOnly: Seq[File] =
-    (files ++ directories.flatMap(_.subtree.filesOnly)).sorted
+  def filesOnly: Seq[File] = all.filterNot(_.isDirectory)
 }
