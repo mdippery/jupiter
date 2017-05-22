@@ -33,10 +33,6 @@ class FileTree(val root: File) {
     List()
   }
 
-  private lazy val files = entries.filterNot(_.isDirectory)
-
-  private lazy val directories = entries.filter(_.isDirectory)
-
   /** Returns a sequence of all paths rooted under this file.
    *
    *  For example, given this tree:
@@ -71,8 +67,7 @@ class FileTree(val root: File) {
    *    A sequence of all paths rooted under this file, sorted by name.
    *    If this file is not a directory, an empty sequence is returned.
    */
-  def all: Seq[File] =
-    (directories ++ files ++ directories.flatMap(_.subtree.all)).sorted
+  def all: Seq[File] = (entries ++ entries.flatMap(_.subtree.all)).sorted
 
   /** Returns a sequence of all ''file'' paths rooted under this file.
    *  Directories are excluded from this listing.
