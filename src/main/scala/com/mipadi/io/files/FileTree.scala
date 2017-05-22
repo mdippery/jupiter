@@ -72,8 +72,7 @@ class FileTree(val root: File) {
    *    If this file is not a directory, an empty sequence is returned.
    */
   def all: Seq[File] =
-    (directories.foldEntries((memo, e) => (memo :+ e) ++ e.subtree.all) ++
-     files.foldEntries(_ :+ _)).sorted
+    (directories ++ files ++ directories.flatMap(_.subtree.all)).sorted
 
   /** Returns a sequence of all ''file'' paths rooted under this file.
    *  Directories are excluded from this listing.
@@ -109,13 +108,5 @@ class FileTree(val root: File) {
    *    returned.
    */
   def filesOnly: Seq[File] =
-    (directories.foldEntries(_ ++ _.subtree.filesOnly) ++
-     files.foldEntries(_ :+ _)).sorted
-
-
-  private implicit class FileSeq(fs: Seq[File]) {
-    type FileOp = (List[File], File) => List[File]
-
-    def foldEntries: FileOp => Seq[File] = fs.foldLeft(List[File]())
-  }
+    (files ++ directories.flatMap(_.subtree.filesOnly)).sorted
 }
