@@ -18,7 +18,6 @@ package com.mipadi.io.files
 
 import java.io.File
 import org.scalatest._
-import com.mipadi.io.files.FileTree
 
 
 class FileTreeSpec extends FlatSpec with Matchers {
