@@ -16,7 +16,9 @@
 
 package com.mipadi.time
 
-import java.util.{Calendar, Date, GregorianCalendar, TimeZone}
+import java.time.{ZonedDateTime, ZoneId}
+import java.time.temporal.ChronoUnit
+import java.util.Date
 
 
 /** Useful methods and operations for representations of Unix timestamps.
@@ -81,17 +83,10 @@ object UnixTimestamp {
      *  @return
      *    The date at midnight.
      */
-    def atMidnight: Calendar = {
-      val c = new GregorianCalendar(TimeZone.getTimeZone("UTC"))
-      c.setTime(d)
-      c.set(Calendar.HOUR, 0)
-      c.set(Calendar.HOUR_OF_DAY, 0)
-      c.set(Calendar.AM_PM, Calendar.AM)
-      c.set(Calendar.MINUTE, 0)
-      c.set(Calendar.SECOND, 0)
-      c.set(Calendar.MILLISECOND, 0)
-      c
-    }
+    def atMidnight: ZonedDateTime =
+      ZonedDateTime.ofInstant(
+        d.toInstant, ZoneId.of("UTC")
+      ).truncatedTo(ChronoUnit.DAYS)
 
     /** Calculates the number of seconds since the Unix epoch.
      *
