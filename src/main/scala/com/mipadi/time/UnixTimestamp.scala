@@ -16,7 +16,7 @@
 
 package com.mipadi.time
 
-import java.util.Date
+import java.util.{Calendar, Date, GregorianCalendar, TimeZone}
 
 
 /** Useful methods and operations for representations of Unix timestamps.
@@ -73,6 +73,25 @@ object UnixTimestamp {
    *    The wrapped date
    */
   implicit class ConvertibleUnixDateTime(d: Date) {
+
+    /** Returns midnight for the given date.
+     *
+     *  This assumes that the wrapped date is in UTC.
+     *
+     *  @return
+     *    The date at midnight.
+     */
+    def atMidnight: Calendar = {
+      val c = new GregorianCalendar(TimeZone.getTimeZone("UTC"))
+      c.setTime(d)
+      c.set(Calendar.HOUR, 0)
+      c.set(Calendar.HOUR_OF_DAY, 0)
+      c.set(Calendar.AM_PM, Calendar.AM)
+      c.set(Calendar.MINUTE, 0)
+      c.set(Calendar.SECOND, 0)
+      c.set(Calendar.MILLISECOND, 0)
+      c
+    }
 
     /** Calculates the number of seconds since the Unix epoch.
      *
