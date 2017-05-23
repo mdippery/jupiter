@@ -107,6 +107,6 @@ object UnixTimestamp {
      *  @return
      *    The number of seconds since the Unix epoch.
      */
-    def sinceEpoch: Long = d.getTime / 1000
+    def sinceEpoch: Long = d.toInstant.getEpochSecond
   }
 }
