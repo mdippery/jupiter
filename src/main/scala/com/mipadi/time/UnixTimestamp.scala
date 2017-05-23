@@ -29,6 +29,15 @@ import java.util.Date
  *  val timestamp = 1490999455.0
  *  val date = timestamp.toDate
  *  }}}
+ *
+ *  It also provides a way to get the number of seconds since the Unix epoch
+ *  from a `java.util.Date` object:
+ *
+ *  {{{
+ *  import com.mipadi.time.UnixTimestamp._
+ *  val date = new Date()
+ *  val seconds = date.sinceEpoch
+ *  }}}
  */
 object UnixTimestamp {
 
@@ -55,5 +64,30 @@ object UnixTimestamp {
      *    respresented by the Scala `Double`.
      */
     def toDate: Date = new Date((d * 1000).toLong)
+  }
+
+
+  /** Adds extension methods to `java.util.Date`.
+   *
+   *  @param d
+   *    The wrapped date
+   */
+  implicit class ConvertibleUnixDateTime(d: Date) {
+
+    /** Calculates the number of seconds since the Unix epoch.
+     *
+     *  `sinceEpoch` can be called on a `java.util.Date` to convert it into
+     *  a Unix timestamp represented as a `Long`:
+     *
+     *  {{{
+     *  import com.mipadi.time.UnixTimestamp._
+     *  val date = new Date()
+     *  val seconds = date.sinceEpoch
+     *  }}}
+     *
+     *  @return
+     *    The number of seconds since the Unix epoch.
+     */
+    def sinceEpoch: Long = d.getTime / 1000
   }
 }

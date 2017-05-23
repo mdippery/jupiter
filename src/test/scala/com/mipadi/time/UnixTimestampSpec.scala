@@ -27,8 +27,28 @@ class UnixTimestampSpec extends FlatSpec with Matchers {
     timestamp.toDate should be (new GregorianCalendar(2017, Calendar.MARCH, 31, 15, 30, 55).getTime)
   }
 
+  it should "be convertible to a date and back to a timestamp" in {
+    val timestamp = 1490999455.0
+    timestamp.toDate.sinceEpoch should be (timestamp)
+  }
+
   "A Unix timestamp represented as an integer" should "be convertible to a date" in {
     val timestamp = 1490999455
     timestamp.toDate should be (new GregorianCalendar(2017, Calendar.MARCH, 31, 15, 30, 55).getTime)
+  }
+
+  it should "be convertible to a date and back to a timestamp" in {
+    val timestamp = 1490999455
+    timestamp.toDate.sinceEpoch should be (timestamp)
+  }
+
+  "A date" should "be convertible to a Unix timestamp" in {
+    val date = new GregorianCalendar(2017, Calendar.MAY, 23, 16, 3, 49).getTime
+    date.sinceEpoch should be (1495580629)
+  }
+
+  it should "be convertible to a Unix timestamp and back to a date" in {
+    val date = new GregorianCalendar(2017, Calendar.MAY, 23, 16, 3, 49).getTime
+    date.sinceEpoch.toDate should be (date)
   }
 }
