@@ -40,7 +40,7 @@ object DateConversions {
    */
   implicit class BridgedDate(d: Date) {
 
-    /** Converts a `java.util.Date to a `java.time.LocalDateTime`.
+    /** Converts a `java.util.Date` to a `java.time.LocalDateTime`.
      *
      *  Assumes that the `java.util.Date` is in UTC.
      *
