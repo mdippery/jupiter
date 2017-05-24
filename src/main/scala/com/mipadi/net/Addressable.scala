@@ -48,7 +48,7 @@ object Addressable {
     def getPort(uri: URI): Int = uri.getPort
   }
 
-  implicit object Addressable extends Addressable[URL] {
+  implicit object AddressableURL extends Addressable[URL] {
     def getScheme(uri: URL): String = uri.getProtocol
     def getHost(uri: URL): String = uri.getHost
     def getPath(uri: URL): String = uri.getPath
