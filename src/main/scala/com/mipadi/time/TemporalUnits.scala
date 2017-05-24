@@ -79,13 +79,6 @@ object TemporalUnits {
      */
     def days: Int = (seconds / SecondsPerDay).toInt
 
-    /** The number of calendar days, as a decimal.
-     *
-     *  @return
-     *    The number of calendar days represented by the wrapped value
-     */
-    def decimalDays: Double = seconds / SecondsPerDay.toDouble
-
     /** The number of ''sidereal days''.
      *
      *  A ''sidereal day'' is the amount of time taken by Earth to rotate
@@ -106,13 +99,6 @@ object TemporalUnits {
      */
     def weeks: Int = days / 7
 
-    /** The number of weeks, as a decimal.
-     *
-     *  @return
-     *    The number of weeks represented by the wrapped value
-     */
-    def decimalWeeks: Double = days / 7.0
-
     /** The number of years.
      *
      *  Assumes a year of 365 days.
@@ -121,15 +107,6 @@ object TemporalUnits {
      *    The number of years represented by the wrapped value
      */
     def years: Int = days / DaysPerYear
-
-    /** The number of years, as a decimal.
-     *
-     *  Assumes a year of 365 days.
-     *
-     *  @return
-     *    The number of years represented by the wrapped value
-     */
-    def decimalYears: Double = days / DaysPerYear.toDouble
 
     /** The number of ''astronomical years''.
      *

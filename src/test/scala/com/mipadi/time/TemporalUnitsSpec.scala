@@ -46,14 +46,6 @@ class TemporalUnitsSpec extends FlatSpec with Matchers {
     i.days should be (10)
   }
 
-  it should "represent days as a decimal" in {
-    val i = 108000
-    val actual = i.decimalDays
-    val expected = 1.25
-    val delta = (actual - expected).abs
-    delta should be <= 0.01
-  }
-
   it should "represent sidereal days" in {
     val actual = i.siderealDays
     val expected = 10.027
@@ -65,22 +57,8 @@ class TemporalUnitsSpec extends FlatSpec with Matchers {
     i.weeks should be (1)
   }
 
-  it should "represent decimal weeks" in {
-    val actual = i.decimalWeeks
-    val expected = 1.429
-    val delta = (actual - expected).abs
-    delta should be <= 0.01
-  }
-
   it should "represent years" in {
     iy.years should be (5)
-  }
-
-  it should "represent decimal years" in {
-    val actual = iy.decimalYears
-    val expected = 5.3
-    val delta = (actual - expected).abs
-    delta should be <= 0.01
   }
 
   it should "represent astronomical years" in {
@@ -106,14 +84,6 @@ class TemporalUnitsSpec extends FlatSpec with Matchers {
     l.days should be (10)
   }
 
-  it should "represent days as a decimal" in {
-    val l = 108000
-    val actual = l.decimalDays
-    val expected = 1.25
-    val delta = (actual - expected).abs
-    delta should be <= 0.01
-  }
-
   it should "represent sidereal days" in {
     val actual = l.siderealDays
     val expected = 10.027
@@ -125,22 +95,8 @@ class TemporalUnitsSpec extends FlatSpec with Matchers {
     l.weeks should be (1)
   }
 
-  it should "represent decimal weeks" in {
-    val actual = l.decimalWeeks
-    val expected = 1.429
-    val delta = (actual - expected).abs
-    delta should be <= 0.01
-  }
-
   it should "represent years" in {
     ly.years should be (5)
-  }
-
-  it should "represent decimal years" in {
-    val actual = ly.decimalYears
-    val expected = 5.3
-    val delta = (actual - expected).abs
-    delta should be <= 0.01
   }
 
   it should "represent astronomical years" in {
@@ -166,14 +122,6 @@ class TemporalUnitsSpec extends FlatSpec with Matchers {
     d.days should be (10)
   }
 
-  it should "represent days as a decimal" in {
-    val d = 108000
-    val actual = d.decimalDays
-    val expected = 1.25
-    val delta = (actual - expected).abs
-    delta should be <= 0.01
-  }
-
   it should "represent sidereal days" in {
     val actual = d.siderealDays
     val expected = 10.027
@@ -185,22 +133,8 @@ class TemporalUnitsSpec extends FlatSpec with Matchers {
     d.weeks should be (1)
   }
 
-  it should "represent decimal weeks" in {
-    val actual = d.decimalWeeks
-    val expected = 1.429
-    val delta = (actual - expected).abs
-    delta should be <= 0.01
-  }
-
   it should "represent years" in {
     dy.years should be (5)
-  }
-
-  it should "represent decimal years" in {
-    val actual = dy.decimalYears
-    val expected = 5.3
-    val delta = (actual - expected).abs
-    delta should be <= 0.01
   }
 
   it should "represent astronomical years" in {
