@@ -145,8 +145,17 @@
       <p class="shortcomment cmt">Useful methods and operations for representations of Unix timestamps.</p><div class="fullcomment"><div class="comment cmt"><p>Useful methods and operations for representations of Unix timestamps.</p><p> Provides a way to convert a Scala <code>Double</code> representing a Unix timestamp
  to a <code>java.util.Date</code> object:</p><pre><span class="kw">import</span> com.mipadi.time.UnixTimestamp._
 <span class="kw">val</span> timestamp = <span class="num">1490999455.0</span>
-<span class="kw">val</span> date = timestamp.toDate</pre></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="index.html" class="extype" name="com.mipadi.time">time</a></dd></dl></div>
+<span class="kw">val</span> date = timestamp.toDate</pre><p> It also provides a way to get the number of seconds since the Unix epoch
+ from a <code>java.util.Date</code> object:</p><pre><span class="kw">import</span> com.mipadi.time.UnixTimestamp._
+<span class="kw">val</span> date = <span class="kw">new</span> Date()
+<span class="kw">val</span> seconds = date.sinceEpoch</pre></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="index.html" class="extype" name="com.mipadi.time">time</a></dd></dl></div>
     </li><li class="current-entities indented4">
+                        <span class="separator"></span>
+                        <a class="class" href="UnixTimestamp$$ConvertibleUnixDateTime.html" title="Adds extension methods to java.util.Date."></a>
+                        <a href="UnixTimestamp$$ConvertibleUnixDateTime.html" title="Adds extension methods to java.util.Date.">
+                          ConvertibleUnixDateTime
+                        </a>
+                      </li><li class="current-entities indented4">
                         <span class="separator"></span>
                         <a class="class" href="" title="Adds extension methods to Scala Doubles."></a>
                         <a href="" title="Adds extension methods to Scala Doubles.">

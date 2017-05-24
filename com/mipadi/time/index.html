@@ -197,6 +197,12 @@
       <p class="shortcomment cmt">A gentler way of working with dates and times in Scala.</p><div class="fullcomment"><div class="comment cmt"><p>A gentler way of working with dates and times in Scala.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="com.mipadi">mipadi</a></dd></dl></div>
     </li><li class="current-entities indented3">
                         <span class="separator"></span>
+                        <a class="object" href="DateConversions$.html" title="Provides various conversions for java.util.Date objects."></a>
+                        <a href="DateConversions$.html" title="Provides various conversions for java.util.Date objects.">
+                          DateConversions
+                        </a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
                         <a class="object" href="UnixTimestamp$.html" title="Useful methods and operations for representations of Unix timestamps."></a>
                         <a href="UnixTimestamp$.html" title="Useful methods and operations for representations of Unix timestamps.">
                           UnixTimestamp
@@ -286,7 +292,29 @@
         <div class="values members">
               <h3>Value Members</h3>
               <ol>
-                <li name="com.mipadi.time.UnixTimestamp" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+                <li name="com.mipadi.time.DateConversions" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="DateConversions"></a><a id="DateConversions:DateConversions"></a>
+      <span class="permalink">
+      <a href="../../../com/mipadi/time/index.html#DateConversions" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a title="Provides various conversions for java.util.Date objects." href="DateConversions$.html">
+              <span class="name">DateConversions</span>
+            </a>
+      </span>
+      
+      <p class="shortcomment cmt">Provides various conversions for <code>java.util.Date</code> objects.</p><div class="fullcomment"><div class="comment cmt"><p>Provides various conversions for <code>java.util.Date</code> objects.</p><p> Namely, it allows the conversion of <code>java.util.Date</code> objects to types
+ from the new <code>java.time</code> API through the use of the
+ <code><a href="DateConversions$$BridgedDate.html" class="extype" name="com.mipadi.time.DateConversions.BridgedDate">BridgedDate</a></code> implicit
+ conversion.
+</p></div></div>
+    </li><li name="com.mipadi.time.UnixTimestamp" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="UnixTimestamp"></a><a id="UnixTimestamp:UnixTimestamp"></a>
       <span class="permalink">
       <a href="../../../com/mipadi/time/index.html#UnixTimestamp" title="Permalink">
@@ -306,7 +334,10 @@
       <p class="shortcomment cmt">Useful methods and operations for representations of Unix timestamps.</p><div class="fullcomment"><div class="comment cmt"><p>Useful methods and operations for representations of Unix timestamps.</p><p> Provides a way to convert a Scala <code>Double</code> representing a Unix timestamp
  to a <code>java.util.Date</code> object:</p><pre><span class="kw">import</span> com.mipadi.time.UnixTimestamp._
 <span class="kw">val</span> timestamp = <span class="num">1490999455.0</span>
-<span class="kw">val</span> date = timestamp.toDate</pre></div></div>
+<span class="kw">val</span> date = timestamp.toDate</pre><p> It also provides a way to get the number of seconds since the Unix epoch
+ from a <code>java.util.Date</code> object:</p><pre><span class="kw">import</span> com.mipadi.time.UnixTimestamp._
+<span class="kw">val</span> date = <span class="kw">new</span> Date()
+<span class="kw">val</span> seconds = date.sinceEpoch</pre></div></div>
     </li>
               </ol>
             </div>
