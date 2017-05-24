@@ -17,7 +17,6 @@
 package com.mipadi.net
 
 import java.net.{URI, URL}
-import scala.language.implicitConversions
 
 
 /** Additional operations for `java.net.URI` and `java.net.URL` classes.
@@ -34,6 +33,67 @@ import scala.language.implicitConversions
  *  }}}
  */
 object RichURI {
+
+  /** A type class for URI-like objects
+   *  @see
+   *    [[http://danielwestheide.com/blog/2013/02/06/the-neophytes-guide-to-scala-part-12-type-classes.html
+   *      Type classes in Scala]]
+   */
+  trait URILike[T] {
+
+    /** Returns a URI's scheme.
+     *
+     *  @param uri
+     *    The URI-like object
+     *  @return
+     *    Its scheme (or protocol)
+     */
+    def getScheme(uri: T): String
+
+    /** Returns a URI's host.
+     *
+     *  @param uri
+     *    The URI-like object
+     *  @return
+     *    Its host
+     */
+    def getHost(uri: T): String
+
+    /** Returns a URI's path
+     *
+     *  @param uri
+     *    The URI-like object
+     *  @return
+     *    Its path
+     */
+    def getPath(uri: T): String
+
+    /** Returns a URI's port
+     *
+     *  @param uri
+     *    The URI-like object
+     *  @return
+     *    Its port, or -1 if no port is specified
+     */
+    def getPort(uri: T): Int
+  }
+
+  /** Implicit URI-like converts for `java.net.URI` and `java.net.URL`. */
+  object URILike {
+    implicit object URILikeURI extends URILike[URI] {
+      def getScheme(uri: URI): String = uri.getScheme
+      def getHost(uri: URI): String = uri.getHost
+      def getPath(uri: URI): String = uri.getPath
+      def getPort(uri: URI): Int = uri.getPort
+    }
+
+    implicit object URILikeURL extends URILike[URL] {
+      def getScheme(uri: URL): String = uri.getProtocol
+      def getHost(uri: URL): String = uri.getHost
+      def getPath(uri: URL): String = uri.getPath
+      def getPort(uri: URL): Int = uri.getPort
+    }
+  }
 
   /** Extends `java.net.URI` with useful methods and a more Scala-like API.
    *
@@ -52,31 +112,34 @@ object RichURI {
    *  Classes that extend `ConvertibleURI` need only provide a `uri` method,
    *  and `ConvertibleURI` will do the rest of the work automagically.
    */
-  trait ConvertibleURI {
+  trait ConvertibleURI[T] {
+
+    /** The path-like object delegate */
+    def ev: URILike[T]
 
     /** The wrapped URI. */
-    def uri: URI
+    def uri: T
 
     /** The URI's protocol. */
-    lazy val protocol: String = uri.getScheme
+    lazy val protocol: String = ev.getScheme(uri)
 
     /** The URI's host. */
-    lazy val host: String = uri.getHost
+    lazy val host: String = ev.getHost(uri)
 
     /** The URI's path. */
-    lazy val path: String = uri.getPath
+    lazy val path: String = ev.getPath(uri)
 
     /** The URI's port.
      *
      *  If a port is not specified, `None` is returned instead.
      */
-    lazy val port: Option[Int] = uri.getPort match {
+    lazy val port: Option[Int] = ev.getPort(uri) match {
       case -1 => None
       case p  => Some(p)
     }
 
     /** Each part of the URI's path. */
-    lazy val pathComponents: Seq[String] = uri.path match {
+    lazy val pathComponents: Seq[String] = path match {
       case "/" => Array("/")
       case p   => Array("/") ++ p.split("/").tail
     }
@@ -96,16 +159,6 @@ object RichURI {
    *  @param uri
    *    The wrapped URI
    */
-  implicit class ExtendedURI(val uri: URI) extends ConvertibleURI
-
-  /** Coerces `java.net.URL` to a `[[com.mipadi.net.RichURI.ConvertibleURI
-   *  ConvertibleURI]]` object, adding the extension methods to `URL`.
-   *
-   *  @param url
-   *    A URL
-   *  @return
-   *    The URL wrapped in a `ConvertibleURI`
-   */
-  implicit def urlToExtendedURI(url: URL): ConvertibleURI =
-    new ExtendedURI(url.toURI)
+  implicit class ExtendedURI[T](val uri: T)(implicit val ev: URILike[T])
+    extends ConvertibleURI[T]
 }

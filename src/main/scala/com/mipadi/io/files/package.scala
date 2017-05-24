@@ -37,7 +37,11 @@ import java.nio.file.{FileSystems, Path}
  */
 package object files {
 
-  /** A type class for path-like objects. */
+  /** A type class for path-like objects.
+   *  @see
+   *    [[http://danielwestheide.com/blog/2013/02/06/the-neophytes-guide-to-scala-part-12-type-classes.html
+   *      Type classes in Scala]]
+   */
   trait PathLike[T] {
 
     /** Joins a path-like object and a string together to form a new path.
@@ -48,9 +52,6 @@ package object files {
      *    The child
      *  @return
      *    A new path by combining the parent and child together
-     *  @see
-     *    [[http://danielwestheide.com/blog/2013/02/06/the-neophytes-guide-to-scala-part-12-type-classes.html
-     *      Type classes in Scala]]
      */
     def join(a: T, b: String): Path
   }
