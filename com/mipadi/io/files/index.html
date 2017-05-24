@@ -155,6 +155,12 @@
                           FileTree
                         </a>
                       </li><li class="current-entities indented4">
+                        <a class="object" href="package$$PathLike$.html" title="Provides implicit vals for java.io.File and java.nio.file.Path."></a>
+                        <a class="trait" href="package$$PathLike.html" title="A type class for path-like objects."></a>
+                        <a href="package$$PathLike.html" title="A type class for path-like objects.">
+                          PathLike
+                        </a>
+                      </li><li class="current-entities indented4">
                         <span class="separator"></span>
                         <a class="class" href="package$$PathStringContext.html" title="Allows paths to be built from strings using the p prefix:"></a>
                         <a href="package$$PathStringContext.html" title="Allows paths to be built from strings using the p prefix:">
@@ -297,6 +303,25 @@
       </span>
       
       <p class="shortcomment cmt">Represents a recursive list of files at a given file system root.</p>
+    </li><li name="com.mipadi.io.files.PathLike" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="PathLike[T]extendsAnyRef"></a><a id="PathLike[T]:PathLike[T]"></a>
+      <span class="permalink">
+      <a href="../../../../com/mipadi/io/files/index.html#PathLike[T]extendsAnyRef" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="A type class for path-like objects." href="package$$PathLike.html">
+              <span class="name">PathLike</span>
+            </a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">A type class for path-like objects.</p><div class="fullcomment"><div class="comment cmt"><p>A type class for path-like objects.</p></div><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p>
+   <a href="http://danielwestheide.com/blog/2013/02/06/the-neophytes-guide-to-scala-part-12-type-classes.html" target="_blank">Type classes in Scala</a></p></span></dd></dl></div>
     </li><li name="com.mipadi.io.files.PathStringContext" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="PathStringContextextendsAnyRef"></a><a id="PathStringContext:PathStringContext"></a>
       <span class="permalink">
@@ -340,9 +365,9 @@
  paths.
 </p></div></div>
     </li><li name="com.mipadi.io.files.RichPath" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="RichPathextendsAnyRef"></a><a id="RichPath:RichPath"></a>
+      <a id="RichPath[T]extendsAnyRef"></a><a id="RichPath[T]:RichPath[T]"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/io/files/index.html#RichPathextendsAnyRef" title="Permalink">
+      <a href="../../../../com/mipadi/io/files/index.html#RichPath[T]extendsAnyRef" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -353,7 +378,7 @@
       <span class="symbol">
         <a title="Allows paths to be built using the / operator." href="package$$RichPath.html">
               <span class="name">RichPath</span>
-            </a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+            </a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       
       <p class="shortcomment cmt">Allows paths to be built using the <code>/</code> operator.</p>
@@ -365,28 +390,24 @@
         <div class="values members">
               <h3>Value Members</h3>
               <ol>
-                <li name="com.mipadi.io.files#fileToRichPath" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="fileToRichPath(file:java.io.File):com.mipadi.io.files.package.RichPath"></a><a id="fileToRichPath(File):RichPath"></a>
+                <li name="com.mipadi.io.files.PathLike" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="PathLike"></a><a id="PathLike:PathLike"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/io/files/index.html#fileToRichPath(file:java.io.File):com.mipadi.io.files.package.RichPath" title="Permalink">
+      <a href="../../../../com/mipadi/io/files/index.html#PathLike" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
       <span class="modifier_kind">
-        <span class="modifier">implicit </span>
-        <span class="kind">def</span>
+        <span class="modifier"></span>
+        <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <span class="name">fileToRichPath</span><span class="params">(<span name="file">file: <span class="extype" name="java.io.File">File</span></span>)</span><span class="result">: <a href="package$$RichPath.html" class="extype" name="com.mipadi.io.files.RichPath">RichPath</a></span>
+        <a title="Provides implicit vals for java.io.File and java.nio.file.Path." href="package$$PathLike$.html">
+              <span class="name">PathLike</span>
+            </a>
       </span>
       
-      <p class="shortcomment cmt">Coerces <code>java.io.File</code> objects to <code><a href="package$$RichPath.html" class="extype" name="com.mipadi.io.files.RichPath">RichPath</a></code> objects, allowing new paths to be built using the <code>/</code>
- operator.</p><div class="fullcomment"><div class="comment cmt"><p>Coerces <code>java.io.File</code> objects to <code><a href="package$$RichPath.html" class="extype" name="com.mipadi.io.files.RichPath">RichPath</a></code> objects, allowing new paths to be built using the <code>/</code>
- operator.
-</p></div><dl class="paramcmts block"><dt class="param">file</dt><dd class="cmt"><p>
-   The wrapped file</p></dd><dt>returns</dt><dd class="cmt"><p>
-   A new <code><a href="package$$RichPath.html" class="extype" name="com.mipadi.io.files.RichPath">RichPath</a></code> object wrapping
-   <code>file</code></p></dd></dl></div>
+      <p class="shortcomment cmt">Provides implicit vals for <code>java.io.File</code> and <code>java.nio.file.Path</code>.</p>
     </li>
               </ol>
             </div>
