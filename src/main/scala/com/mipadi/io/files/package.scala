@@ -18,7 +18,6 @@ package com.mipadi.io
 
 import java.io.File
 import java.nio.file.{FileSystems, Path}
-import scala.language.implicitConversions
 
 
 /** Useful classes for easily working with files and paths.
@@ -37,6 +36,37 @@ import scala.language.implicitConversions
  *  }}}
  */
 package object files {
+
+  /** A type class for path-like objects. */
+  trait PathLike[T] {
+
+    /** Joins a path-like object and a string together to form a new path.
+     *
+     *  @param a
+     *    The parent path
+     *  @param b
+     *    The child
+     *  @return
+     *    A new path by combining the parent and child together
+     *  @see
+     *    [[http://danielwestheide.com/blog/2013/02/06/the-neophytes-guide-to-scala-part-12-type-classes.html
+     *      Type classes in Scala]]
+     */
+    def join(a: T, b: String): Path
+  }
+
+  /** Provides implicit vals for `java.io.File` and `java.nio.file.Path`. */
+  object PathLike {
+    implicit object PathLikePath extends PathLike[Path] {
+      override def join(a: Path, b: String): Path =
+        FileSystems.getDefault.getPath(a.toString, b)
+    }
+
+    implicit object PathLikeFile extends PathLike[File] {
+      override def join(a: File, b: String): Path =
+        FileSystems.getDefault.getPath(a.toPath.toString, b)
+    }
+  }
 
   /** Implicitly converts `java.io.File` objects and adds some extension
    *  methods. Also allows `File` objects to be ordered based on their
@@ -81,7 +111,7 @@ package object files {
    *  @param path
    *    The wrapped path
    */
-  implicit class RichPath(path: Path) {
+  implicit class RichPath[T](path: T)(implicit ev: PathLike[T]) {
 
     /** Create a new path consisting of `that` appended to `path`.
      *
@@ -98,22 +128,8 @@ package object files {
      *  @return
      *    A new path consisting of `that` appended to `path`
      */
-    def / (that: String): Path =
-      FileSystems.getDefault.getPath(path.toString, that)
+    def / (that: String): Path = ev.join(path, that)
   }
-
-
-  /** Coerces `java.io.File` objects to `[[com.mipadi.io.files.RichPath
-   *  RichPath]]` objects, allowing new paths to be built using the `/`
-   *  operator.
-   *
-   *  @param file
-   *    The wrapped file
-   *  @return
-   *    A new `[[com.mipadi.io.files.RichPath RichPath]]` object wrapping
-   *    `file`
-   */
-  implicit def fileToRichPath(file: File): RichPath = new RichPath(file.toPath)
 
 
   /** Allows paths to be built from strings using the `p` prefix:
