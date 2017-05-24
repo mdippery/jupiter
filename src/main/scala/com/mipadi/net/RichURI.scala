@@ -17,6 +17,63 @@
 package com.mipadi.net
 
 
+/** Extends `java.net.URI` with useful methods and a more Scala-like API.
+ *
+ *  `RichURI` is especially useful for implicit conversions to
+ *  more specific types of URIs. For example, it could be used to create
+ *  a specialized `RichMongoURI` implicit:
+ *
+ *  {{{
+ *  import com.mipadi.net.RichURI
+ *  implicit class AugmentedMongoURI(uri: URI)(implicit ev: Addressable[URI]
+ *    extends ConvertibleURI {
+ *    lazy val database: Option[String] = uri.pathComponents.lift(1)
+ *    lazy val collection: Option[String] = uri.pathComponents.lift(2)
+ *  }
+ *  }}}
+ *
+ *  @constructor
+ *    Creates a new `RichURI`. The `uri` parameter is the wrapped URI-like
+ *    object. Also takes an implicit `Addressable[T]` parameter, to which
+ *    `RichURI` delegates many of its URI-like operations. `Addressable`
+ *    implicits for both `java.net.URI` and `java.net.URL` can be imported
+ *    from the `[[com.mipadi.net.Addressable Addressable]]` object:
+ *
+ *    {{{
+ *    import com.mipadi.net.Addressable._
+ *    }}}
+ *
+ *  @param uri
+ *    The wrapped URI-like object
+ *  @param ev
+ *    The delegate responsible for getting data from the URI-like object
+ */
+class RichURI[T](uri: T)(implicit ev: Addressable[T]) {
+  /** The URI's protocol. */
+  lazy val protocol: String = ev.getScheme(uri)
+
+  /** The URI's host. */
+  lazy val host: String = ev.getHost(uri)
+
+  /** The URI's path. */
+  lazy val path: String = ev.getPath(uri)
+
+  /** The URI's port.
+   *
+   *  If a port is not specified, `None` is returned instead.
+   */
+  lazy val port: Option[Int] = ev.getPort(uri) match {
+    case -1 => None
+    case p  => Some(p)
+  }
+
+  /** Each part of the URI's path. */
+  lazy val pathComponents: Seq[String] = path match {
+    case "/" => Array("/")
+    case p   => Array("/") ++ p.split("/").tail
+  }
+}
+
 /** Additional operations for `java.net.URI` and `java.net.URL` classes.
  *
  *  In particular, `RichURI` provides an implicit conversion to
@@ -32,57 +89,8 @@ package com.mipadi.net
  */
 object RichURI {
 
-  /** Extends `java.net.URI` with useful methods and a more Scala-like API.
-   *
-   *  `ConvertibleURI` is especially useful for implicit conversions to
-   *  more specific types of URIs. For example, it could be used to create
-   *  a specialized `ConvertibleMongoURI` implicit:
-   *
-   *  {{{
-   *  import com.mipadi.net.RichURI.ConvertibleURI
-   *  implicit class ConvertibleMongoURI(val uri: URI) extends ConvertibleURI {
-   *    lazy val database: Option[String] = uri.pathComponents.lift(1)
-   *    lazy val collection: Option[String] = uri.pathComponents.lift(2)
-   *  }
-   *  }}}
-   *
-   *  Classes that extend `ConvertibleURI` need only provide a `uri` method,
-   *  and `ConvertibleURI` will do the rest of the work automagically.
-   */
-  trait ConvertibleURI[T] {
-
-    /** The addressable object delegate */
-    def ev: Addressable[T]
-
-    /** The wrapped URI. */
-    def uri: T
-
-    /** The URI's protocol. */
-    lazy val protocol: String = ev.getScheme(uri)
-
-    /** The URI's host. */
-    lazy val host: String = ev.getHost(uri)
-
-    /** The URI's path. */
-    lazy val path: String = ev.getPath(uri)
-
-    /** The URI's port.
-     *
-     *  If a port is not specified, `None` is returned instead.
-     */
-    lazy val port: Option[Int] = ev.getPort(uri) match {
-      case -1 => None
-      case p  => Some(p)
-    }
-
-    /** Each part of the URI's path. */
-    lazy val pathComponents: Seq[String] = path match {
-      case "/" => Array("/")
-      case p   => Array("/") ++ p.split("/").tail
-    }
-  }
-
-  /** Converts an instance of `java.net.URI` and adds additional methods.
+  /** Implicit converts a instances of `java.net.URI` and `java.net.URL`,
+   *  adding additional methods.
    *
    *  For example:
    *
@@ -98,6 +106,6 @@ object RichURI {
    *  @param ev
    *    The addressable delegate
    */
-  implicit class ExtendedURI[T](val uri: T)(implicit val ev: Addressable[T])
-    extends ConvertibleURI[T]
+  implicit class ExtendedURI[T](uri: T)(implicit ev: Addressable[T])
+    extends RichURI[T](uri)
 }
