@@ -16,7 +16,7 @@
 
 package com.mipadi.time
 
-import scala.language.implicitConversions
+import com.mipadi.math.Dividable
 
 
 /** Convert longs, ints, and doubles to temporal units like seconds, minutes,
@@ -36,10 +36,14 @@ object TemporalUnits {
    *  val minutes = seconds.minutes
    *  }}}
    *
-   *  @param l
-   *    The wrapped long
+   *  @param wrapped
+   *    The wrapped value
+   *  @param ev
+   *    A divider for the given types of values. If one is not specified,
+   *    the proper divider from `[[com.mipadi.math.Dividable Dividable]]` is
+   *    used, which should be appropriate for any int, long, or double.
    */
-  implicit class TemporalLong(l: Long) {
+  implicit class Temporal[T](wrapped: T)(implicit ev: Dividable[T]) {
     private val SecondsPerDay = 86400
     private val SecondsPerSiderealDay = 86164.0916
     private val DaysPerYear = 365
@@ -50,7 +54,7 @@ object TemporalUnits {
      *  @return
      *    The number of seconds represented by the wrapped value
      */
-    def seconds: Long = l
+    def seconds: T = wrapped
 
     /** The number of minutes.
      *
@@ -59,7 +63,7 @@ object TemporalUnits {
      *  @return
      *    The number of minutes represented by the wrapped value
      */
-    def minutes: Int = (seconds / 60).toInt
+    def minutes: T = ev.divide(seconds, 60)
 
     /** The number of hours.
      *
@@ -68,7 +72,7 @@ object TemporalUnits {
      *  @return
      *    The number of hours represented by the wrapped value
      */
-    def hours: Int = (minutes / 60).toInt
+    def hours: T = ev.divide(minutes, 60)
 
     /** The number of calendar days.
      *
@@ -77,7 +81,7 @@ object TemporalUnits {
      *  @return
      *    The number of days represented by the wrapped value
      */
-    def days: Int = (seconds / SecondsPerDay).toInt
+    def days: T = ev.divide(seconds, SecondsPerDay)
 
     /** The number of ''sidereal days''.
      *
@@ -88,7 +92,7 @@ object TemporalUnits {
      *  @return
      *    The number of sidereal days represented by the wrapped value
      */
-    def siderealDays: Double = seconds / SecondsPerSiderealDay
+    def siderealDays: Double = ev.divide(seconds, SecondsPerSiderealDay)
 
     /** The number of weeks
      *
@@ -97,7 +101,7 @@ object TemporalUnits {
      *  @return
      *    The number of weeks represented by the wrapped value
      */
-    def weeks: Int = days / 7
+    def weeks: T = ev.divide(days, 7)
 
     /** The number of years.
      *
@@ -106,7 +110,7 @@ object TemporalUnits {
      *  @return
      *    The number of years represented by the wrapped value
      */
-    def years: Int = days / DaysPerYear
+    def years: T = ev.divide(days, DaysPerYear)
 
     /** The number of ''astronomical years''.
      *
@@ -117,14 +121,7 @@ object TemporalUnits {
      *  @return
      *    The number of astronomical years represented by the wrapped value
      */
-    def astronomicalYears: Double = seconds / SecondsPerAstronomicalYear.toDouble
+    def astronomicalYears: Double =
+      ev.divide(seconds, SecondsPerAstronomicalYear.toDouble)
   }
-
-  /** Implicitly converts a double to temporal units like seconds, minutes,
-   *  hours, etc.
-   *
-   *  @param d
-   *    The wrapped double
-   */
-  implicit def doubleToTemporalLong(d: Double) = new TemporalLong(d.toLong)
 }

@@ -31,19 +31,19 @@ class TemporalUnitsSpec extends FlatSpec with Matchers {
   val dy = 167140800.0
 
   "An int" should "represent seconds" in {
-    i.seconds should be (864000)
+    i.seconds should === (864000)
   }
 
   it should "represent minutes" in {
-    i.minutes should be (14400)
+    i.minutes should === (14400)
   }
 
   it should "represent hours" in {
-    i.hours should be (240)
+    i.hours should === (240)
   }
 
   it should "represent days" in {
-    i.days should be (10)
+    i.days should === (10)
   }
 
   it should "represent sidereal days" in {
@@ -54,11 +54,11 @@ class TemporalUnitsSpec extends FlatSpec with Matchers {
   }
 
   it should "represent weeks" in {
-    i.weeks should be (1)
+    i.weeks should === (1)
   }
 
   it should "represent years" in {
-    iy.years should be (5)
+    iy.years should === (5)
   }
 
   it should "represent astronomical years" in {
@@ -69,19 +69,19 @@ class TemporalUnitsSpec extends FlatSpec with Matchers {
   }
 
   "A long" should "represent seconds" in {
-    l.seconds should be (864000)
+    l.seconds should === (864000L)
   }
 
   it should "represent minutes" in {
-    l.minutes should be (14400)
+    l.minutes should === (14400L)
   }
 
   it should "represent hours" in {
-    l.hours should be (240)
+    l.hours should === (240L)
   }
 
   it should "represent days" in {
-    l.days should be (10)
+    l.days should === (10L)
   }
 
   it should "represent sidereal days" in {
@@ -92,11 +92,11 @@ class TemporalUnitsSpec extends FlatSpec with Matchers {
   }
 
   it should "represent weeks" in {
-    l.weeks should be (1)
+    l.weeks should === (1L)
   }
 
   it should "represent years" in {
-    ly.years should be (5)
+    ly.years should === (5L)
   }
 
   it should "represent astronomical years" in {
@@ -107,19 +107,19 @@ class TemporalUnitsSpec extends FlatSpec with Matchers {
   }
 
   "A double" should "represent seconds" in {
-    d.seconds should be (864000)
+    d.seconds should === (864000.0)
   }
 
   it should "represent minutes" in {
-    d.minutes should be (14400)
+    d.minutes should === (14400.0)
   }
 
   it should "represent hours" in {
-    d.hours should be (240)
+    d.hours should === (240.0)
   }
 
   it should "represent days" in {
-    d.days should be (10)
+    d.days should === (10.0)
   }
 
   it should "represent sidereal days" in {
@@ -130,11 +130,17 @@ class TemporalUnitsSpec extends FlatSpec with Matchers {
   }
 
   it should "represent weeks" in {
-    d.weeks should be (1)
+    val actual = d.weeks
+    val expected = 1.429
+    val delta = (actual - expected).abs
+    delta should be <= 0.01
   }
 
   it should "represent years" in {
-    dy.years should be (5)
+    val actual = dy.years
+    val expected = 5.3
+    val delta = (actual - expected).abs
+    delta should be <= 0.01
   }
 
   it should "represent astronomical years" in {

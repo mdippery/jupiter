@@ -17,9 +17,12 @@
 package com.mipadi.math
 
 
-/** A type class that represents types on which division can be performed. */
-// See <http://danielwestheide.com/blog/2013/02/06/the-neophytes-guide-to-scala-part-12-type-classes.html>
-// for more information on type classes in Scala.
+/** A type class that represents types on which division can be performed.
+ *
+ *  @see
+ *    [[http://danielwestheide.com/blog/2013/02/06/the-neophytes-guide-to-scala-part-12-type-classes.html
+ *      Type classes in Scala]]
+ */
 trait Dividable[T] {
   def divide(x: T, y: Long): T
   def divide(x: T, y: Int): T
