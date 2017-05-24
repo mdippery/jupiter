@@ -150,70 +150,81 @@
  Finally, it provides a <code>p</code> prefix for strings, so paths can be created
  directly from a string:</p><pre><span class="kw">import</span> com.mipadi.io.files._
 <span class="kw">val</span> path = p<span class="lit">"src/main/scala"</span></pre></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="com.mipadi.io">io</a></dd></dl></div>
-    </li><li name="com.mipadi.io.files.PathLike" visbl="pub" class="indented5 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="PathLike"></a><a id="PathLike:PathLike"></a>
-      <span class="permalink">
-      <a href="../../../../com/mipadi/io/files/index.html#PathLike" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">object</span>
-      </span>
-      <span class="symbol">
-        <a title="Provides implicit vals for java.io.File and java.nio.file.Path." href="package$$PathLike$.html">
-              <span class="name">PathLike</span>
-            </a>
-      </span>
-      
-      <p class="shortcomment cmt">Provides implicit vals for <code>java.io.File</code> and <code>java.nio.file.Path</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Provides implicit vals for <code>java.io.File</code> and <code>java.nio.file.Path</code>.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="index.html" class="extype" name="com.mipadi.io.files">files</a></dd></dl></div>
-    </li><li class="current-entities indented5">
+    </li><li class="current-entities indented4">
                         <span class="separator"></span>
-                        <a class="object" href="package$$PathLike$$PathLikeFile$.html" title=""></a>
-                        <a href="package$$PathLike$$PathLikeFile$.html" title="">
-                          PathLikeFile
+                        <a class="class" href="FileTree.html" title="Represents a recursive list of files at a given file system root."></a>
+                        <a href="FileTree.html" title="Represents a recursive list of files at a given file system root.">
+                          FileTree
                         </a>
-                      </li><li class="current-entities indented5">
+                      </li><li class="current-entities indented4">
+                        <a class="object" href="Locatable$.html" title="Provides implicit vals for java.io.File and java.nio.file.Path."></a>
+                        <a class="trait" href="" title="A type class for path-like objects."></a>
+                        <a href="" title="A type class for path-like objects.">
+                          Locatable
+                        </a>
+                      </li><li class="current-entities indented4">
                         <span class="separator"></span>
-                        <a class="object" href="" title=""></a>
-                        <a href="" title="">
-                          PathLikePath
+                        <a class="class" href="package$$PathStringContext.html" title="Allows paths to be built from strings using the p prefix:"></a>
+                        <a href="package$$PathStringContext.html" title="Allows paths to be built from strings using the p prefix:">
+                          PathStringContext
+                        </a>
+                      </li><li class="current-entities indented4">
+                        <span class="separator"></span>
+                        <a class="class" href="package$$RichFile.html" title="Implicitly converts java.io.File objects and adds some extension
+ methods."></a>
+                        <a href="package$$RichFile.html" title="Implicitly converts java.io.File objects and adds some extension
+ methods.">
+                          RichFile
+                        </a>
+                      </li><li class="current-entities indented4">
+                        <span class="separator"></span>
+                        <a class="class" href="package$$RichPath.html" title="Allows paths to be built using the / operator."></a>
+                        <a href="package$$RichPath.html" title="Allows paths to be built using the / operator.">
+                          RichPath
                         </a>
                       </li>
               </ul>
             </div>
           </div>
           <div id="content">
-            <body class="object value">
+            <body class="trait type">
       <div id="definition">
-        <div class="big-circle object">o</div>
-        <p id="owner"><a href="../../../index.html" class="extype" name="com">com</a>.<a href="../../index.html" class="extype" name="com.mipadi">mipadi</a>.<a href="../index.html" class="extype" name="com.mipadi.io">io</a>.<a href="index.html" class="extype" name="com.mipadi.io.files">files</a>.<a href="package$$PathLike$.html" class="extype" name="com.mipadi.io.files.PathLike">PathLike</a></p>
-        <h1>PathLikePath<span class="permalink">
-      <a href="../../../../com/mipadi/io/files/package$$PathLike$$PathLikePath$.html" title="Permalink">
+        <a href="Locatable$.html" title="See companion object"><div class="big-circle trait-companion-object">t</div></a>
+        <p id="owner"><a href="../../../index.html" class="extype" name="com">com</a>.<a href="../../index.html" class="extype" name="com.mipadi">mipadi</a>.<a href="../index.html" class="extype" name="com.mipadi.io">io</a>.<a href="index.html" class="extype" name="com.mipadi.io.files">files</a></p>
+        <h1><a href="Locatable$.html" title="See companion object">Locatable</a><span class="permalink">
+      <a href="../../../../com/mipadi/io/files/Locatable.html" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span></h1>
-        <h3><span class="morelinks"></span></h3>
+        <h3><span class="morelinks"><div>
+            Companion <a href="Locatable$.html" title="See companion object">object Locatable</a>
+          </div></span></h3>
       </div>
 
       <h4 id="signature" class="signature">
       <span class="modifier_kind">
-        <span class="modifier">implicit </span>
-        <span class="kind">object</span>
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <span class="name">PathLikePath</span><span class="result"> extends <a href="package$$PathLike.html" class="extype" name="com.mipadi.io.files.PathLike">PathLike</a>[<span class="extype" name="java.nio.file.Path">Path</span>]</span>
+        <span class="name">Locatable</span><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
 
       
-          <div id="comment" class="fullcommenttop"><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>A type class for path-like objects.
+</p></div><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p>
+   <a href="http://danielwestheide.com/blog/2013/02/06/the-neophytes-guide-to-scala-part-12-type-classes.html" target="_blank">Type classes in Scala</a></p></span></dd></dl><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
           </span>
-          <div class="superTypes hiddenContent"><a href="package$$PathLike.html" class="extype" name="com.mipadi.io.files.PathLike">PathLike</a>[<span class="extype" name="java.nio.file.Path">Path</span>], <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
-        </div></div>
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+        </div><div class="toggleContainer block">
+            <span class="toggle">
+              Known Subclasses
+            </span>
+            <div class="subClasses hiddenContent"><a href="Locatable$$LocatableFile$.html" class="extype" name="com.mipadi.io.files.Locatable.LocatableFile">LocatableFile</a>, <a href="Locatable$$LocatablePath$.html" class="extype" name="com.mipadi.io.files.Locatable.LocatablePath">LocatablePath</a></div>
+          </div></div>
         
 
       <div id="mbrsel">
@@ -238,7 +249,7 @@
                   <span class="filtertype">Inherited<br />
                   </span>
                   <ol id="linearization">
-                    <li class="in" name="com.mipadi.io.files.PathLike.PathLikePath"><span>PathLikePath</span></li><li class="in" name="com.mipadi.io.files.PathLike"><span>PathLike</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                    <li class="in" name="com.mipadi.io.files.Locatable"><span>Locatable</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                   </ol>
                 </div><div class="ancestors">
               <span class="filtertype"></span>
@@ -260,15 +271,34 @@
 
         
 
-        
+        <div class="values members">
+              <h3>Abstract Value Members</h3>
+              <ol><li name="com.mipadi.io.files.Locatable#join" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="join(a:T,b:String):java.nio.file.Path"></a><a id="join(T,String):Path"></a>
+      <span class="permalink">
+      <a href="../../../../com/mipadi/io/files/Locatable.html#join(a:T,b:String):java.nio.file.Path" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">join</span><span class="params">(<span name="a">a: <span class="extype" name="com.mipadi.io.files.Locatable.T">T</span></span>, <span name="b">b: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="java.nio.file.Path">Path</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Joins a path-like object and a string together to form a new path.</p>
+    </li></ol>
+            </div>
 
         <div class="values members">
-              <h3>Value Members</h3>
+              <h3>Concrete Value Members</h3>
               <ol>
                 <li name="scala.AnyRef#!=" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="!=(x$1:Any):Boolean"></a><a id="!=(Any):Boolean"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/io/files/package$$PathLike$$PathLikePath$.html#!=(x$1:Any):Boolean" title="Permalink">
+      <a href="../../../../com/mipadi/io/files/Locatable.html#!=(x$1:Any):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -284,7 +314,7 @@
     </li><li name="scala.AnyRef###" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="##():Int"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/io/files/package$$PathLike$$PathLikePath$.html###():Int" title="Permalink">
+      <a href="../../../../com/mipadi/io/files/Locatable.html###():Int" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -300,7 +330,7 @@
     </li><li name="scala.AnyRef#==" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="==(x$1:Any):Boolean"></a><a id="==(Any):Boolean"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/io/files/package$$PathLike$$PathLikePath$.html#==(x$1:Any):Boolean" title="Permalink">
+      <a href="../../../../com/mipadi/io/files/Locatable.html#==(x$1:Any):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -316,7 +346,7 @@
     </li><li name="scala.Any#asInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/io/files/package$$PathLike$$PathLikePath$.html#asInstanceOf[T0]:T0" title="Permalink">
+      <a href="../../../../com/mipadi/io/files/Locatable.html#asInstanceOf[T0]:T0" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -332,7 +362,7 @@
     </li><li name="scala.AnyRef#clone" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="clone():Object"></a><a id="clone():AnyRef"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/io/files/package$$PathLike$$PathLikePath$.html#clone():Object" title="Permalink">
+      <a href="../../../../com/mipadi/io/files/Locatable.html#clone():Object" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -354,7 +384,7 @@
     </li><li name="scala.AnyRef#eq" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="eq(x$1:AnyRef):Boolean"></a><a id="eq(AnyRef):Boolean"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/io/files/package$$PathLike$$PathLikePath$.html#eq(x$1:AnyRef):Boolean" title="Permalink">
+      <a href="../../../../com/mipadi/io/files/Locatable.html#eq(x$1:AnyRef):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -370,7 +400,7 @@
     </li><li name="scala.AnyRef#equals" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="equals(x$1:Any):Boolean"></a><a id="equals(Any):Boolean"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/io/files/package$$PathLike$$PathLikePath$.html#equals(x$1:Any):Boolean" title="Permalink">
+      <a href="../../../../com/mipadi/io/files/Locatable.html#equals(x$1:Any):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -386,7 +416,7 @@
     </li><li name="scala.AnyRef#finalize" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="finalize():Unit"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/io/files/package$$PathLike$$PathLikePath$.html#finalize():Unit" title="Permalink">
+      <a href="../../../../com/mipadi/io/files/Locatable.html#finalize():Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -408,7 +438,7 @@
     </li><li name="scala.AnyRef#getClass" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getClass():Class[_]"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/io/files/package$$PathLike$$PathLikePath$.html#getClass():Class[_]" title="Permalink">
+      <a href="../../../../com/mipadi/io/files/Locatable.html#getClass():Class[_]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -424,7 +454,7 @@
     </li><li name="scala.AnyRef#hashCode" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="hashCode():Int"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/io/files/package$$PathLike$$PathLikePath$.html#hashCode():Int" title="Permalink">
+      <a href="../../../../com/mipadi/io/files/Locatable.html#hashCode():Int" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -440,7 +470,7 @@
     </li><li name="scala.Any#isInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="isInstanceOf[T0]:Boolean"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/io/files/package$$PathLike$$PathLikePath$.html#isInstanceOf[T0]:Boolean" title="Permalink">
+      <a href="../../../../com/mipadi/io/files/Locatable.html#isInstanceOf[T0]:Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -453,30 +483,10 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li name="com.mipadi.io.files.PathLike.PathLikePath#join" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="join(a:java.nio.file.Path,b:String):java.nio.file.Path"></a><a id="join(Path,String):Path"></a>
-      <span class="permalink">
-      <a href="../../../../com/mipadi/io/files/package$$PathLike$$PathLikePath$.html#join(a:java.nio.file.Path,b:String):java.nio.file.Path" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">join</span><span class="params">(<span name="a">a: <span class="extype" name="java.nio.file.Path">Path</span></span>, <span name="b">b: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="java.nio.file.Path">Path</span></span>
-      </span>
-      
-      <p class="shortcomment cmt">Joins a path-like object and a string together to form a new path.</p><div class="fullcomment"><div class="comment cmt"><p>Joins a path-like object and a string together to form a new path.
-</p></div><dl class="paramcmts block"><dt class="param">a</dt><dd class="cmt"><p>
-   The parent path</p></dd><dt class="param">b</dt><dd class="cmt"><p>
-   The child</p></dd><dt>returns</dt><dd class="cmt"><p>
-   A new path by combining the parent and child together</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="com.mipadi.io.files.PathLike.PathLikePath">PathLikePath</a> → <a href="package$$PathLike.html" class="extype" name="com.mipadi.io.files.PathLike">PathLike</a></dd></dl></div>
     </li><li name="scala.AnyRef#ne" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ne(x$1:AnyRef):Boolean"></a><a id="ne(AnyRef):Boolean"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/io/files/package$$PathLike$$PathLikePath$.html#ne(x$1:AnyRef):Boolean" title="Permalink">
+      <a href="../../../../com/mipadi/io/files/Locatable.html#ne(x$1:AnyRef):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -492,7 +502,7 @@
     </li><li name="scala.AnyRef#notify" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="notify():Unit"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/io/files/package$$PathLike$$PathLikePath$.html#notify():Unit" title="Permalink">
+      <a href="../../../../com/mipadi/io/files/Locatable.html#notify():Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -508,7 +518,7 @@
     </li><li name="scala.AnyRef#notifyAll" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="notifyAll():Unit"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/io/files/package$$PathLike$$PathLikePath$.html#notifyAll():Unit" title="Permalink">
+      <a href="../../../../com/mipadi/io/files/Locatable.html#notifyAll():Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -524,7 +534,7 @@
     </li><li name="scala.AnyRef#synchronized" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a><a id="synchronized[T0](⇒T0):T0"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/io/files/package$$PathLike$$PathLikePath$.html#synchronized[T0](x$1:=&gt;T0):T0" title="Permalink">
+      <a href="../../../../com/mipadi/io/files/Locatable.html#synchronized[T0](x$1:=&gt;T0):T0" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -540,7 +550,7 @@
     </li><li name="scala.AnyRef#toString" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="toString():String"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/io/files/package$$PathLike$$PathLikePath$.html#toString():String" title="Permalink">
+      <a href="../../../../com/mipadi/io/files/Locatable.html#toString():String" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -556,7 +566,7 @@
     </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/io/files/package$$PathLike$$PathLikePath$.html#wait():Unit" title="Permalink">
+      <a href="../../../../com/mipadi/io/files/Locatable.html#wait():Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -578,7 +588,7 @@
     </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait(x$1:Long,x$2:Int):Unit"></a><a id="wait(Long,Int):Unit"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/io/files/package$$PathLike$$PathLikePath$.html#wait(x$1:Long,x$2:Int):Unit" title="Permalink">
+      <a href="../../../../com/mipadi/io/files/Locatable.html#wait(x$1:Long,x$2:Int):Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -600,7 +610,7 @@
     </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait(x$1:Long):Unit"></a><a id="wait(Long):Unit"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/io/files/package$$PathLike$$PathLikePath$.html#wait(x$1:Long):Unit" title="Permalink">
+      <a href="../../../../com/mipadi/io/files/Locatable.html#wait(x$1:Long):Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -629,9 +639,7 @@
         </div>
 
         <div id="inheritedMembers">
-        <div class="parent" name="com.mipadi.io.files.PathLike">
-              <h3>Inherited from <a href="package$$PathLike.html" class="extype" name="com.mipadi.io.files.PathLike">PathLike</a>[<span class="extype" name="java.nio.file.Path">Path</span>]</h3>
-            </div><div class="parent" name="scala.AnyRef">
+        <div class="parent" name="scala.AnyRef">
               <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
             </div><div class="parent" name="scala.Any">
               <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
