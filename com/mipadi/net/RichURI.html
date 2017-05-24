@@ -125,78 +125,56 @@
       </span>
       
       <p class="shortcomment cmt">Utilities for working with networked communications.</p><div class="fullcomment"><div class="comment cmt"><p>Utilities for working with networked communications.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="com.mipadi">mipadi</a></dd></dl></div>
-    </li><li name="com.mipadi.net.RichURI" visbl="pub" class="indented4 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="RichURI"></a><a id="RichURI:RichURI"></a>
-      <span class="permalink">
-      <a href="../../../com/mipadi/net/index.html#RichURI" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">object</span>
-      </span>
-      <span class="symbol">
-        <a title="Additional operations for java.net.URI and java.net.URL classes." href="RichURI$.html">
-              <span class="name">RichURI</span>
-            </a>
-      </span>
-      
-      <p class="shortcomment cmt">Additional operations for <code>java.net.URI</code> and <code>java.net.URL</code> classes.</p><div class="fullcomment"><div class="comment cmt"><p>Additional operations for <code>java.net.URI</code> and <code>java.net.URL</code> classes.</p><p> In particular, <code>RichURI</code> provides an implicit conversion to
- <code><a href="RichURI$$ExtendedURI.html" class="extype" name="com.mipadi.net.RichURI.ExtendedURI">ExtendedURI</a></code>, which allows
- additional methods to be called on <code>java.net.URI</code> objects:</p><pre><span class="kw">import</span> java.net.URI
-<span class="kw">import</span> com.mipadi.net.RichURI._
-<span class="kw">val</span> uri = <span class="kw">new</span> URI(<span class="lit">"http://monkey-robot.com/archives"</span>)
-<span class="kw">val</span> parts = uri.pathComponents</pre></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="index.html" class="extype" name="com.mipadi.net">net</a></dd></dl></div>
-    </li><li class="current-entities indented4">
-                        <span class="separator"></span>
-                        <a class="trait" href="" title="Extends java.net.URI with useful methods and a more Scala-like API."></a>
-                        <a href="" title="Extends java.net.URI with useful methods and a more Scala-like API.">
-                          ConvertibleURI
+    </li><li class="current-entities indented3">
+                        <a class="object" href="Addressable$.html" title="Implicit URI-like converts for java.net.URI and java.net.URL."></a>
+                        <a class="trait" href="Addressable.html" title="A type class for URI-like objects"></a>
+                        <a href="Addressable.html" title="A type class for URI-like objects">
+                          Addressable
                         </a>
-                      </li><li class="current-entities indented4">
-                        <span class="separator"></span>
-                        <a class="class" href="RichURI$$ExtendedURI.html" title="Converts an instance of java.net.URI and adds additional methods."></a>
-                        <a href="RichURI$$ExtendedURI.html" title="Converts an instance of java.net.URI and adds additional methods.">
-                          ExtendedURI
+                      </li><li class="current-entities indented3">
+                        <a class="object" href="RichURI$.html" title="Additional operations for java.net.URI and java.net.URL classes."></a>
+                        <a class="class" href="" title="Extends java.net.URI with useful methods and a more Scala-like API."></a>
+                        <a href="" title="Extends java.net.URI with useful methods and a more Scala-like API.">
+                          RichURI
                         </a>
                       </li>
               </ul>
             </div>
           </div>
           <div id="content">
-            <body class="trait type">
+            <body class="class type">
       <div id="definition">
-        <div class="big-circle trait">t</div>
-        <p id="owner"><a href="../../index.html" class="extype" name="com">com</a>.<a href="../index.html" class="extype" name="com.mipadi">mipadi</a>.<a href="index.html" class="extype" name="com.mipadi.net">net</a>.<a href="RichURI$.html" class="extype" name="com.mipadi.net.RichURI">RichURI</a></p>
-        <h1>ConvertibleURI<span class="permalink">
-      <a href="../../../com/mipadi/net/RichURI$$ConvertibleURI.html" title="Permalink">
+        <a href="RichURI$.html" title="See companion object"><div class="big-circle class-companion-object">c</div></a>
+        <p id="owner"><a href="../../index.html" class="extype" name="com">com</a>.<a href="../index.html" class="extype" name="com.mipadi">mipadi</a>.<a href="index.html" class="extype" name="com.mipadi.net">net</a></p>
+        <h1><a href="RichURI$.html" title="See companion object">RichURI</a><span class="permalink">
+      <a href="../../../com/mipadi/net/RichURI.html" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span></h1>
-        <h3><span class="morelinks"></span></h3>
+        <h3><span class="morelinks"><div>
+            Companion <a href="RichURI$.html" title="See companion object">object RichURI</a>
+          </div></span></h3>
       </div>
 
       <h4 id="signature" class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
-        <span class="kind">trait</span>
+        <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <span class="name">ConvertibleURI</span><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+        <span class="name">RichURI</span><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
 
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Extends <code>java.net.URI</code> with useful methods and a more Scala-like API.</p><p> <code>ConvertibleURI</code> is especially useful for implicit conversions to
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Extends <code>java.net.URI</code> with useful methods and a more Scala-like API.</p><p> <code>RichURI</code> is especially useful for implicit conversions to
  more specific types of URIs. For example, it could be used to create
- a specialized <code>ConvertibleMongoURI</code> implicit:</p><pre><span class="kw">import</span> com.mipadi.net.RichURI.ConvertibleURI
-<span class="kw">implicit</span> <span class="kw">class</span> ConvertibleMongoURI(<span class="kw">val</span> uri: URI) <span class="kw">extends</span> ConvertibleURI {
+ a specialized <code>RichMongoURI</code> implicit:</p><pre><span class="kw">import</span> com.mipadi.net.RichURI
+<span class="kw">implicit</span> <span class="kw">class</span> AugmentedMongoURI(uri: URI)(<span class="kw">implicit</span> ev: Addressable[URI]
+  <span class="kw">extends</span> ConvertibleURI {
   <span class="kw">lazy</span> <span class="kw">val</span> database: <span class="std">Option</span>[<span class="std">String</span>] = uri.pathComponents.lift(<span class="num">1</span>)
   <span class="kw">lazy</span> <span class="kw">val</span> collection: <span class="std">Option</span>[<span class="std">String</span>] = uri.pathComponents.lift(<span class="num">2</span>)
-}</pre><p> Classes that extend <code>ConvertibleURI</code> need only provide a <code>uri</code> method,
- and <code>ConvertibleURI</code> will do the rest of the work automagically.
-</p></div><div class="toggleContainer block">
+}</pre></div><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
           </span>
@@ -231,7 +209,7 @@
                   <span class="filtertype">Inherited<br />
                   </span>
                   <ol id="linearization">
-                    <li class="in" name="com.mipadi.net.RichURI.ConvertibleURI"><span>ConvertibleURI</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                    <li class="in" name="com.mipadi.net.RichURI"><span>RichURI</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                   </ol>
                 </div><div class="ancestors">
               <span class="filtertype"></span>
@@ -249,54 +227,46 @@
 
       <div id="template">
         <div id="allMembers">
-        
-
-        
-
-        <div class="values members">
-              <h3>Abstract Value Members</h3>
-              <ol><li name="com.mipadi.net.RichURI.ConvertibleURI#ev" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="ev:com.mipadi.net.Addressable[T]"></a><a id="ev:Addressable[T]"></a>
+        <div id="constructors" class="members">
+              <h3>Instance Constructors</h3>
+              <ol><li name="com.mipadi.net.RichURI#&lt;init&gt;" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="&lt;init&gt;(uri:T)(implicitev:com.mipadi.net.Addressable[T]):com.mipadi.net.RichURI[T]"></a><a id="&lt;init&gt;:RichURI[T]"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/net/RichURI$$ConvertibleURI.html#ev:com.mipadi.net.Addressable[T]" title="Permalink">
+      <a href="../../../com/mipadi/net/RichURI.html#&lt;init&gt;(uri:T)(implicitev:com.mipadi.net.Addressable[T]):com.mipadi.net.RichURI[T]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
       <span class="modifier_kind">
-        <span class="modifier">abstract </span>
-        <span class="kind">def</span>
+        <span class="modifier"></span>
+        <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">ev</span><span class="result">: <a href="Addressable.html" class="extype" name="com.mipadi.net.Addressable">Addressable</a>[<span class="extype" name="com.mipadi.net.RichURI.ConvertibleURI.T">T</span>]</span>
+        <span class="name">RichURI</span><span class="params">(<span name="uri">uri: <span class="extype" name="com.mipadi.net.RichURI.T">T</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="ev">ev: <a href="Addressable.html" class="extype" name="com.mipadi.net.Addressable">Addressable</a>[<span class="extype" name="com.mipadi.net.RichURI.T">T</span>]</span>)</span>
       </span>
       
-      <p class="shortcomment cmt">The addressable object delegate</p>
-    </li><li name="com.mipadi.net.RichURI.ConvertibleURI#uri" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="uri:T"></a>
-      <span class="permalink">
-      <a href="../../../com/mipadi/net/RichURI$$ConvertibleURI.html#uri:T" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier">abstract </span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">uri</span><span class="result">: <span class="extype" name="com.mipadi.net.RichURI.ConvertibleURI.T">T</span></span>
-      </span>
-      
-      <p class="shortcomment cmt">The wrapped URI.</p>
+      <p class="shortcomment cmt">
+   Creates a new <code>RichURI</code>.</p><div class="fullcomment"><div class="comment cmt"><p>
+   Creates a new <code>RichURI</code>. The <code>uri</code> parameter is the wrapped URI-like
+   object. Also takes an implicit <code>Addressable[T]</code> parameter, to which
+   <code>RichURI</code> delegates many of its URI-like operations. <code>Addressable</code>
+   implicits for both <code>java.net.URI</code> and <code>java.net.URL</code> can be imported
+   from the <code><a href="Addressable.html" class="extype" name="com.mipadi.net.Addressable">Addressable</a></code> object:</p><pre><span class="kw">import</span> com.mipadi.net.Addressable._</pre></div><dl class="paramcmts block"><dt class="param">uri</dt><dd class="cmt"><p>
+   The wrapped URI-like object</p></dd><dt class="param">ev</dt><dd class="cmt"><p>
+   The delegate responsible for getting data from the URI-like object</p></dd></dl></div>
     </li></ol>
             </div>
 
+        
+
+        
+
         <div class="values members">
-              <h3>Concrete Value Members</h3>
+              <h3>Value Members</h3>
               <ol>
                 <li name="scala.AnyRef#!=" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="!=(x$1:Any):Boolean"></a><a id="!=(Any):Boolean"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/net/RichURI$$ConvertibleURI.html#!=(x$1:Any):Boolean" title="Permalink">
+      <a href="../../../com/mipadi/net/RichURI.html#!=(x$1:Any):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -312,7 +282,7 @@
     </li><li name="scala.AnyRef###" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="##():Int"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/net/RichURI$$ConvertibleURI.html###():Int" title="Permalink">
+      <a href="../../../com/mipadi/net/RichURI.html###():Int" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -328,7 +298,7 @@
     </li><li name="scala.AnyRef#==" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="==(x$1:Any):Boolean"></a><a id="==(Any):Boolean"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/net/RichURI$$ConvertibleURI.html#==(x$1:Any):Boolean" title="Permalink">
+      <a href="../../../com/mipadi/net/RichURI.html#==(x$1:Any):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -344,7 +314,7 @@
     </li><li name="scala.Any#asInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/net/RichURI$$ConvertibleURI.html#asInstanceOf[T0]:T0" title="Permalink">
+      <a href="../../../com/mipadi/net/RichURI.html#asInstanceOf[T0]:T0" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -360,7 +330,7 @@
     </li><li name="scala.AnyRef#clone" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="clone():Object"></a><a id="clone():AnyRef"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/net/RichURI$$ConvertibleURI.html#clone():Object" title="Permalink">
+      <a href="../../../com/mipadi/net/RichURI.html#clone():Object" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -382,7 +352,7 @@
     </li><li name="scala.AnyRef#eq" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="eq(x$1:AnyRef):Boolean"></a><a id="eq(AnyRef):Boolean"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/net/RichURI$$ConvertibleURI.html#eq(x$1:AnyRef):Boolean" title="Permalink">
+      <a href="../../../com/mipadi/net/RichURI.html#eq(x$1:AnyRef):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -398,7 +368,7 @@
     </li><li name="scala.AnyRef#equals" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="equals(x$1:Any):Boolean"></a><a id="equals(Any):Boolean"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/net/RichURI$$ConvertibleURI.html#equals(x$1:Any):Boolean" title="Permalink">
+      <a href="../../../com/mipadi/net/RichURI.html#equals(x$1:Any):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -414,7 +384,7 @@
     </li><li name="scala.AnyRef#finalize" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="finalize():Unit"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/net/RichURI$$ConvertibleURI.html#finalize():Unit" title="Permalink">
+      <a href="../../../com/mipadi/net/RichURI.html#finalize():Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -436,7 +406,7 @@
     </li><li name="scala.AnyRef#getClass" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getClass():Class[_]"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/net/RichURI$$ConvertibleURI.html#getClass():Class[_]" title="Permalink">
+      <a href="../../../com/mipadi/net/RichURI.html#getClass():Class[_]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -452,7 +422,7 @@
     </li><li name="scala.AnyRef#hashCode" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="hashCode():Int"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/net/RichURI$$ConvertibleURI.html#hashCode():Int" title="Permalink">
+      <a href="../../../com/mipadi/net/RichURI.html#hashCode():Int" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -465,10 +435,10 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="com.mipadi.net.RichURI.ConvertibleURI#host" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+    </li><li name="com.mipadi.net.RichURI#host" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="host:String"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/net/RichURI$$ConvertibleURI.html#host:String" title="Permalink">
+      <a href="../../../com/mipadi/net/RichURI.html#host:String" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -484,7 +454,7 @@
     </li><li name="scala.Any#isInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="isInstanceOf[T0]:Boolean"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/net/RichURI$$ConvertibleURI.html#isInstanceOf[T0]:Boolean" title="Permalink">
+      <a href="../../../com/mipadi/net/RichURI.html#isInstanceOf[T0]:Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -500,7 +470,7 @@
     </li><li name="scala.AnyRef#ne" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ne(x$1:AnyRef):Boolean"></a><a id="ne(AnyRef):Boolean"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/net/RichURI$$ConvertibleURI.html#ne(x$1:AnyRef):Boolean" title="Permalink">
+      <a href="../../../com/mipadi/net/RichURI.html#ne(x$1:AnyRef):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -516,7 +486,7 @@
     </li><li name="scala.AnyRef#notify" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="notify():Unit"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/net/RichURI$$ConvertibleURI.html#notify():Unit" title="Permalink">
+      <a href="../../../com/mipadi/net/RichURI.html#notify():Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -532,7 +502,7 @@
     </li><li name="scala.AnyRef#notifyAll" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="notifyAll():Unit"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/net/RichURI$$ConvertibleURI.html#notifyAll():Unit" title="Permalink">
+      <a href="../../../com/mipadi/net/RichURI.html#notifyAll():Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -545,10 +515,10 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="com.mipadi.net.RichURI.ConvertibleURI#path" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+    </li><li name="com.mipadi.net.RichURI#path" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="path:String"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/net/RichURI$$ConvertibleURI.html#path:String" title="Permalink">
+      <a href="../../../com/mipadi/net/RichURI.html#path:String" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -561,10 +531,10 @@
       </span>
       
       <p class="shortcomment cmt">The URI's path.</p>
-    </li><li name="com.mipadi.net.RichURI.ConvertibleURI#pathComponents" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+    </li><li name="com.mipadi.net.RichURI#pathComponents" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="pathComponents:Seq[String]"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/net/RichURI$$ConvertibleURI.html#pathComponents:Seq[String]" title="Permalink">
+      <a href="../../../com/mipadi/net/RichURI.html#pathComponents:Seq[String]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -577,10 +547,10 @@
       </span>
       
       <p class="shortcomment cmt">Each part of the URI's path.</p>
-    </li><li name="com.mipadi.net.RichURI.ConvertibleURI#port" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="com.mipadi.net.RichURI#port" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="port:Option[Int]"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/net/RichURI$$ConvertibleURI.html#port:Option[Int]" title="Permalink">
+      <a href="../../../com/mipadi/net/RichURI.html#port:Option[Int]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -594,10 +564,10 @@
       
       <p class="shortcomment cmt">The URI's port.</p><div class="fullcomment"><div class="comment cmt"><p>The URI's port.</p><p> If a port is not specified, <code>None</code> is returned instead.
 </p></div></div>
-    </li><li name="com.mipadi.net.RichURI.ConvertibleURI#protocol" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+    </li><li name="com.mipadi.net.RichURI#protocol" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="protocol:String"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/net/RichURI$$ConvertibleURI.html#protocol:String" title="Permalink">
+      <a href="../../../com/mipadi/net/RichURI.html#protocol:String" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -613,7 +583,7 @@
     </li><li name="scala.AnyRef#synchronized" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a><a id="synchronized[T0](⇒T0):T0"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/net/RichURI$$ConvertibleURI.html#synchronized[T0](x$1:=&gt;T0):T0" title="Permalink">
+      <a href="../../../com/mipadi/net/RichURI.html#synchronized[T0](x$1:=&gt;T0):T0" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -629,7 +599,7 @@
     </li><li name="scala.AnyRef#toString" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="toString():String"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/net/RichURI$$ConvertibleURI.html#toString():String" title="Permalink">
+      <a href="../../../com/mipadi/net/RichURI.html#toString():String" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -645,7 +615,7 @@
     </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/net/RichURI$$ConvertibleURI.html#wait():Unit" title="Permalink">
+      <a href="../../../com/mipadi/net/RichURI.html#wait():Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -667,7 +637,7 @@
     </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait(x$1:Long,x$2:Int):Unit"></a><a id="wait(Long,Int):Unit"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/net/RichURI$$ConvertibleURI.html#wait(x$1:Long,x$2:Int):Unit" title="Permalink">
+      <a href="../../../com/mipadi/net/RichURI.html#wait(x$1:Long,x$2:Int):Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -689,7 +659,7 @@
     </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait(x$1:Long):Unit"></a><a id="wait(Long):Unit"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/net/RichURI$$ConvertibleURI.html#wait(x$1:Long):Unit" title="Permalink">
+      <a href="../../../com/mipadi/net/RichURI.html#wait(x$1:Long):Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>

@@ -184,9 +184,9 @@
                           Addressable
                         </a>
                       </li><li class="current-entities indented3">
-                        <span class="separator"></span>
                         <a class="object" href="RichURI$.html" title="Additional operations for java.net.URI and java.net.URL classes."></a>
-                        <a href="RichURI$.html" title="Additional operations for java.net.URI and java.net.URL classes.">
+                        <a class="class" href="RichURI.html" title="Extends java.net.URI with useful methods and a more Scala-like API."></a>
+                        <a href="RichURI.html" title="Extends java.net.URI with useful methods and a more Scala-like API.">
                           RichURI
                         </a>
                       </li><li name="com.mipadi.text" visbl="pub" class="indented3 " data-isabs="false" fullComment="yes" group="Ungrouped">
@@ -324,6 +324,31 @@
       
       <p class="shortcomment cmt">A type class for URI-like objects</p><div class="fullcomment"><div class="comment cmt"><p>A type class for URI-like objects</p></div><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p>
    <a href="http://danielwestheide.com/blog/2013/02/06/the-neophytes-guide-to-scala-part-12-type-classes.html" target="_blank">Type classes in Scala</a></p></span></dd></dl></div>
+    </li><li name="com.mipadi.net.RichURI" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="RichURI[T]extendsAnyRef"></a><a id="RichURI[T]:RichURI[T]"></a>
+      <span class="permalink">
+      <a href="../../../com/mipadi/net/index.html#RichURI[T]extendsAnyRef" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a title="Extends java.net.URI with useful methods and a more Scala-like API." href="RichURI.html">
+              <span class="name">RichURI</span>
+            </a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Extends <code>java.net.URI</code> with useful methods and a more Scala-like API.</p><div class="fullcomment"><div class="comment cmt"><p>Extends <code>java.net.URI</code> with useful methods and a more Scala-like API.</p><p> <code>RichURI</code> is especially useful for implicit conversions to
+ more specific types of URIs. For example, it could be used to create
+ a specialized <code>RichMongoURI</code> implicit:</p><pre><span class="kw">import</span> com.mipadi.net.RichURI
+<span class="kw">implicit</span> <span class="kw">class</span> AugmentedMongoURI(uri: URI)(<span class="kw">implicit</span> ev: Addressable[URI]
+  <span class="kw">extends</span> ConvertibleURI {
+  <span class="kw">lazy</span> <span class="kw">val</span> database: <span class="std">Option</span>[<span class="std">String</span>] = uri.pathComponents.lift(<span class="num">1</span>)
+  <span class="kw">lazy</span> <span class="kw">val</span> collection: <span class="std">Option</span>[<span class="std">String</span>] = uri.pathComponents.lift(<span class="num">2</span>)
+}</pre></div></div>
     </li></ol>
             </div>
 

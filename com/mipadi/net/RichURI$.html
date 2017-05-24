@@ -132,9 +132,9 @@
                           Addressable
                         </a>
                       </li><li class="current-entities indented3">
-                        <span class="separator"></span>
                         <a class="object" href="" title="Additional operations for java.net.URI and java.net.URL classes."></a>
-                        <a href="" title="Additional operations for java.net.URI and java.net.URL classes.">
+                        <a class="class" href="RichURI.html" title="Extends java.net.URI with useful methods and a more Scala-like API."></a>
+                        <a href="RichURI.html" title="Extends java.net.URI with useful methods and a more Scala-like API.">
                           RichURI
                         </a>
                       </li>
@@ -144,14 +144,16 @@
           <div id="content">
             <body class="object value">
       <div id="definition">
-        <div class="big-circle object">o</div>
+        <a href="RichURI.html" title="See companion class"><div class="big-circle object-companion-class">o</div></a>
         <p id="owner"><a href="../../index.html" class="extype" name="com">com</a>.<a href="../index.html" class="extype" name="com.mipadi">mipadi</a>.<a href="index.html" class="extype" name="com.mipadi.net">net</a></p>
-        <h1>RichURI<span class="permalink">
+        <h1><a href="RichURI.html" title="See companion class">RichURI</a><span class="permalink">
       <a href="../../../com/mipadi/net/RichURI$.html" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span></h1>
-        <h3><span class="morelinks"></span></h3>
+        <h3><span class="morelinks"><div>
+            Companion <a href="RichURI.html" title="See companion class">class RichURI</a>
+          </div></span></h3>
       </div>
 
       <h4 id="signature" class="signature">
@@ -222,36 +224,10 @@
 
         <div id="types" class="types members">
               <h3>Type Members</h3>
-              <ol><li name="com.mipadi.net.RichURI.ConvertibleURI" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="Ungrouped">
-      <a id="ConvertibleURI[T]extendsAnyRef"></a><a id="ConvertibleURI[T]:ConvertibleURI[T]"></a>
+              <ol><li name="com.mipadi.net.RichURI.ExtendedURI" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ExtendedURI[T]extendsRichURI[T]"></a><a id="ExtendedURI[T]:ExtendedURI[T]"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/net/RichURI$.html#ConvertibleURI[T]extendsAnyRef" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">trait</span>
-      </span>
-      <span class="symbol">
-        <a title="Extends java.net.URI with useful methods and a more Scala-like API." href="RichURI$$ConvertibleURI.html">
-              <span class="name">ConvertibleURI</span>
-            </a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
-      </span>
-      
-      <p class="shortcomment cmt">Extends <code>java.net.URI</code> with useful methods and a more Scala-like API.</p><div class="fullcomment"><div class="comment cmt"><p>Extends <code>java.net.URI</code> with useful methods and a more Scala-like API.</p><p> <code>ConvertibleURI</code> is especially useful for implicit conversions to
- more specific types of URIs. For example, it could be used to create
- a specialized <code>ConvertibleMongoURI</code> implicit:</p><pre><span class="kw">import</span> com.mipadi.net.RichURI.ConvertibleURI
-<span class="kw">implicit</span> <span class="kw">class</span> ConvertibleMongoURI(<span class="kw">val</span> uri: URI) <span class="kw">extends</span> ConvertibleURI {
-  <span class="kw">lazy</span> <span class="kw">val</span> database: <span class="std">Option</span>[<span class="std">String</span>] = uri.pathComponents.lift(<span class="num">1</span>)
-  <span class="kw">lazy</span> <span class="kw">val</span> collection: <span class="std">Option</span>[<span class="std">String</span>] = uri.pathComponents.lift(<span class="num">2</span>)
-}</pre><p> Classes that extend <code>ConvertibleURI</code> need only provide a <code>uri</code> method,
- and <code>ConvertibleURI</code> will do the rest of the work automagically.
-</p></div></div>
-    </li><li name="com.mipadi.net.RichURI.ExtendedURI" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="ExtendedURI[T]extendsRichURI.ConvertibleURI[T]"></a><a id="ExtendedURI[T]:ExtendedURI[T]"></a>
-      <span class="permalink">
-      <a href="../../../com/mipadi/net/RichURI$.html#ExtendedURI[T]extendsRichURI.ConvertibleURI[T]" title="Permalink">
+      <a href="../../../com/mipadi/net/RichURI$.html#ExtendedURI[T]extendsRichURI[T]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -260,12 +236,15 @@
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a title="Converts an instance of java.net.URI and adds additional methods." href="RichURI$$ExtendedURI.html">
+        <a title="Implicit converts a instances of java.net.URI and java.net.URL,
+ adding additional methods." href="RichURI$$ExtendedURI.html">
               <span class="name">ExtendedURI</span>
-            </a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="RichURI$$ConvertibleURI.html" class="extype" name="com.mipadi.net.RichURI.ConvertibleURI">ConvertibleURI</a>[<span class="extype" name="com.mipadi.net.RichURI.ExtendedURI.T">T</span>]</span>
+            </a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="RichURI.html" class="extype" name="com.mipadi.net.RichURI">RichURI</a>[<span class="extype" name="com.mipadi.net.RichURI.ExtendedURI.T">T</span>]</span>
       </span>
       
-      <p class="shortcomment cmt">Converts an instance of <code>java.net.URI</code> and adds additional methods.</p><div class="fullcomment"><div class="comment cmt"><p>Converts an instance of <code>java.net.URI</code> and adds additional methods.</p><p> For example:</p><pre><span class="kw">import</span> java.net.URI
+      <p class="shortcomment cmt">Implicit converts a instances of <code>java.net.URI</code> and <code>java.net.URL</code>,
+ adding additional methods.</p><div class="fullcomment"><div class="comment cmt"><p>Implicit converts a instances of <code>java.net.URI</code> and <code>java.net.URL</code>,
+ adding additional methods.</p><p> For example:</p><pre><span class="kw">import</span> java.net.URI
 <span class="kw">import</span> com.mipadi.net.RichURI._
 <span class="kw">val</span> uri = <span class="kw">new</span> URI(<span class="lit">"http://monkey-robot.com/archives"</span>)
 <span class="kw">val</span> parts = uri.pathComponents</pre></div></div>
