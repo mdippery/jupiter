@@ -50,7 +50,7 @@ object DateConversions {
     def toLocal: LocalDateTime =
       LocalDateTime.ofInstant(d.toInstant, ZoneId.of("UTC"))
 
-    /** Converts a `java.util.Date to a `java.time.ZonedDateTime`.
+    /** Converts a `java.util.Date` to a `java.time.ZonedDateTime`.
      *
      *  Assumes that the `java.util.Date` is in UTC.
      *
