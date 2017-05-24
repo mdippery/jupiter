@@ -537,7 +537,13 @@
       <p class="shortcomment cmt">Converts a Scala <code>Double</code> to a <code>java.util.Date</code> object.</p><div class="fullcomment"><div class="comment cmt"><p>Converts a Scala <code>Double</code> to a <code>java.util.Date</code> object.</p><p> <code>toDate</code> can be called on a Scala <code>Double</code> representing a Unix
  timestamp to convert it into the associated <code>Date</code>:</p><pre><span class="kw">import</span> com.mipadi.time.UnixTimestamp._
 <span class="kw">val</span> timestamp = <span class="num">1490999455.0</span>
-<span class="kw">val</span> date = timestamp.toDate</pre></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>
+<span class="kw">val</span> date = timestamp.toDate</pre><p> Since Unix timestamps represent times in UTC, callers can easily
+ convert the returned date to a <code>java.time.ZonedDateTime</code> instance
+ using the <code><a href="DateConversions$$BridgedDate.html" class="extype" name="com.mipadi.time.DateConversions.BridgedDate">BridgedDate</a></code>
+ implicit conversion:</p><pre><span class="kw">import</span> com.mipadi.time.DateConversions._
+<span class="kw">import</span> com.mipadi.time.UnixTimestamp._
+<span class="kw">val</span> timestamp = <span class="num">1490999455.0</span>
+<span class="kw">val</span> date = timestamp.toDate.toZoned</pre></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>
    The <code>java.util.Date</code> object associated with the Unix timestamp
    respresented by the Scala <code>Double</code>.</p></dd></dl></div>
     </li><li name="scala.AnyRef#toString" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
