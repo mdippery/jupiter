@@ -17,21 +17,21 @@
 package com.mipadi.time
 
 import java.time.{LocalDateTime, ZonedDateTime, ZoneId}
-import java.util.{Calendar, GregorianCalendar}
+import java.util.Date
 import org.scalatest._
 import com.mipadi.time.DateConversions._
 
 
 class DateConversionsSpec extends FlatSpec with Matchers {
   "A date" should "be convertible to a local datetime" in {
-    val date = new GregorianCalendar(2017, Calendar.MAY, 23, 17, 33, 1).getTime
-    val expected = LocalDateTime.of(2017, 5, 24, 0, 33, 1)
+    val date = new Date(1495587575000L)
+    val expected = LocalDateTime.of(2017, 5, 24, 0, 59, 35)
     date.toLocal should be (expected)
   }
 
   it should "be convertible to a zoned datetime" in {
-    val date = new GregorianCalendar(2017, Calendar.MAY, 23, 17, 33, 1).getTime
-    val expected = ZonedDateTime.of(2017, 5, 24, 0, 33, 1, 0, ZoneId.of("UTC"))
+    val date = new Date(1495587575000L)
+    val expected = ZonedDateTime.of(2017, 5, 24, 0, 59, 35, 0, ZoneId.of("UTC"))
     date.toZoned should be (expected)
   }
 }
