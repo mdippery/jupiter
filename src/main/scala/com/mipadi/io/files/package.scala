@@ -37,38 +37,6 @@ import java.nio.file.{FileSystems, Path}
  */
 package object files {
 
-  /** A type class for path-like objects.
-   *  @see
-   *    [[http://danielwestheide.com/blog/2013/02/06/the-neophytes-guide-to-scala-part-12-type-classes.html
-   *      Type classes in Scala]]
-   */
-  trait PathLike[T] {
-
-    /** Joins a path-like object and a string together to form a new path.
-     *
-     *  @param a
-     *    The parent path
-     *  @param b
-     *    The child
-     *  @return
-     *    A new path by combining the parent and child together
-     */
-    def join(a: T, b: String): Path
-  }
-
-  /** Provides implicit vals for `java.io.File` and `java.nio.file.Path`. */
-  object PathLike {
-    implicit object PathLikePath extends PathLike[Path] {
-      override def join(a: Path, b: String): Path =
-        FileSystems.getDefault.getPath(a.toString, b)
-    }
-
-    implicit object PathLikeFile extends PathLike[File] {
-      override def join(a: File, b: String): Path =
-        FileSystems.getDefault.getPath(a.toPath.toString, b)
-    }
-  }
-
   /** Implicitly converts `java.io.File` objects and adds some extension
    *  methods. Also allows `File` objects to be ordered based on their
    *  paths.
@@ -111,8 +79,10 @@ package object files {
    *
    *  @param path
    *    The wrapped path
+   *  @param ev
+   *    The path locator delegate
    */
-  implicit class RichPath[T](path: T)(implicit ev: PathLike[T]) {
+  implicit class RichPath[T](path: T)(implicit ev: Locatable[T]) {
 
     /** Create a new path consisting of `that` appended to `path`.
      *
