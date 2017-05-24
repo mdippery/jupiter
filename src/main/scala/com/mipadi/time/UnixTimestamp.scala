@@ -61,6 +61,18 @@ object UnixTimestamp {
      *  val date = timestamp.toDate
      *  }}}
      *
+     *  Since Unix timestamps represent times in UTC, callers can easily
+     *  convert the returned date to a `java.time.ZonedDateTime` instance
+     *  using the `[[com.mipadi.time.DateConversions.BridgedDate BridgedDate]]`
+     *  implicit conversion:
+     *
+     *  {{{
+     *  import com.mipadi.time.DateConversions._
+     *  import com.mipadi.time.UnixTimestamp._
+     *  val timestamp = 1490999455.0
+     *  val date = timestamp.toDate.toZoned
+     *  }}}
+     *
      *  @return
      *    The `java.util.Date` object associated with the Unix timestamp
      *    respresented by the Scala `Double`.
