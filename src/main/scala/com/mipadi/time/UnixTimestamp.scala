@@ -81,22 +81,21 @@ object UnixTimestamp {
   }
 
 
-  /** Adds extension methods to `java.util.Date`.
+  /** Adds extension methods to datetime-like objects.
    *
-   *  @param d
+   *  @param dt
    *    The wrapped date
+   *  @param ev
+   *    A delegate for date behaviors and conversions
    */
-  implicit class ConvertibleUnixDateTime(d: Date) {
+  implicit class ConvertibleUnixDateTime[T](dt: T)(implicit ev: DateTime[T]) {
 
     /** Returns midnight for the given date.
      *
-     *  This assumes that the wrapped date is in UTC.
-     *
      *  @return
-     *    The date at midnight.
+     *    The date at midnight
      */
-    def atMidnight: Date =
-      new Date(d.toInstant.truncatedTo(ChronoUnit.DAYS).toEpochMilli)
+    def atMidnight: T = ev.atMidnight(dt)
 
     /** Calculates the number of seconds since the Unix epoch.
      *
@@ -110,8 +109,8 @@ object UnixTimestamp {
      *  }}}
      *
      *  @return
-     *    The number of seconds since the Unix epoch.
+     *    The number of seconds since the Unix epoch
      */
-    def sinceEpoch: Long = d.toInstant.getEpochSecond
+    def sinceEpoch: Long = ev.sinceEpoch(dt)
   }
 }

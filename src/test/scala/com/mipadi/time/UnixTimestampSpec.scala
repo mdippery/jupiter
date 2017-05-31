@@ -16,7 +16,7 @@
 
 package com.mipadi.time
 
-import java.time.{ZonedDateTime, ZoneId}
+import java.time.{LocalDateTime, ZonedDateTime, ZoneId}
 import java.util.{Calendar, Date, GregorianCalendar}
 import org.scalatest._
 import com.mipadi.time.UnixTimestamp._
@@ -43,7 +43,7 @@ class UnixTimestampSpec extends FlatSpec with Matchers {
     timestamp.toDate.sinceEpoch should be (timestamp)
   }
 
-  "A date" should "be convertible to a Unix timestamp" in {
+  "A date" should "return the number of seconds since the Unix epoch" in {
     val date = new GregorianCalendar(2017, Calendar.MAY, 23, 16, 3, 49).getTime
     date.sinceEpoch should be (1495580629)
   }
@@ -55,8 +55,29 @@ class UnixTimestampSpec extends FlatSpec with Matchers {
 
   it should "return the date at midnight UTC" in {
     val expected = new Date(1496188800L * 1000)
-
     val date = new Date(1496257644L * 1000)
+    date.atMidnight should be (expected)
+  }
+
+  "A local datetime" should "return the number of seconds since the Unix epoch" in {
+    val date = LocalDateTime.of(2017, 5, 23, 16, 3, 49)
+    date.sinceEpoch should be (1495555429)
+  }
+
+  it should "return the date at midnight" in {
+    val expected = LocalDateTime.of(2017, 5, 23, 0, 0, 0)
+    val date = LocalDateTime.of(2017, 5, 23, 16, 3, 49)
+    date.atMidnight should be (expected)
+  }
+
+  "A zoned datetime" should "return the number of seconds since the Unix epoch" in {
+    val date = ZonedDateTime.of(2017, 5, 23, 16, 3, 49, 0, ZoneId.of("UTC"))
+    date.sinceEpoch should be (1495555429)
+  }
+
+  it should "return the date at midnight" in {
+    val expected = ZonedDateTime.of(2017, 5, 23, 0, 0, 0, 0, ZoneId.of("UTC"))
+    val date = ZonedDateTime.of(2017, 5, 23, 16, 3, 49, 0, ZoneId.of("UTC"))
     date.atMidnight should be (expected)
   }
 }
