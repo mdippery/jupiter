@@ -18,6 +18,7 @@ package com.mipadi.core
 
 import java.io.File
 import scala.io.Source
+import com.mipadi.core.internal._
 import com.mipadi.core.pipes._
 import com.mipadi.text.strings._
 
@@ -52,17 +53,6 @@ private class BuildSBTSource(val cls: Class[_], val file: File) extends BundleSo
 
   private def findLine(needle: String): String =
     contents.find(_ =~ s"$needle\\s+:=").fold("") { _.value }
-
-  private implicit class KeyValueString(s: String) {
-    private lazy val parts = s.split(" := ")
-
-    lazy val key: String = parts(0).removeUnwantedChars
-
-    lazy val value: String = parts(1).removeUnwantedChars
-
-    private[core] def removeUnwantedChars: String =
-      s.replaceAll("[\",]", "").trim
-  }
 }
 
 
