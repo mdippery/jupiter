@@ -95,10 +95,8 @@ object UnixTimestamp {
      *  @return
      *    The date at midnight.
      */
-    def atMidnight: ZonedDateTime =
-      ZonedDateTime.ofInstant(
-        d.toInstant, ZoneId.of("UTC")
-      ).truncatedTo(ChronoUnit.DAYS)
+    def atMidnight: Date =
+      new Date(d.toInstant.truncatedTo(ChronoUnit.DAYS).toEpochMilli)
 
     /** Calculates the number of seconds since the Unix epoch.
      *

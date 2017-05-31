@@ -17,7 +17,7 @@
 package com.mipadi.time
 
 import java.time.{ZonedDateTime, ZoneId}
-import java.util.{Calendar, Date, GregorianCalendar, TimeZone}
+import java.util.{Calendar, Date, GregorianCalendar}
 import org.scalatest._
 import com.mipadi.time.UnixTimestamp._
 
@@ -54,10 +54,9 @@ class UnixTimestampSpec extends FlatSpec with Matchers {
   }
 
   it should "return the date at midnight UTC" in {
-    val expected = ZonedDateTime.of(2017, 5, 23, 0, 0, 0, 0, ZoneId.of("UTC"))
+    val expected = new Date(1496188800L * 1000)
 
-    val date = new GregorianCalendar(2017, Calendar.MAY, 23, 16, 3, 49).getTime
+    val date = new Date(1496257644L * 1000)
     date.atMidnight should be (expected)
-    date.atMidnight.getZone.getId should be ("UTC")
   }
 }
