@@ -23,7 +23,13 @@ import com.mipadi.time.DateConversions._
 
 
 class DateConversionsSpec extends FlatSpec with Matchers {
-  "A date" should "be convertible to a local datetime" in {
+  "A date" should "be convertible to a legacy date" in {
+    val date = new Date(1495587575000L)
+    val expected = new Date(1495587575000L)
+    date.toDate should be (expected)
+  }
+
+  it should "be convertible to a local datetime" in {
     val date = new Date(1495587575000L)
     val expected = LocalDateTime.of(2017, 5, 24, 0, 59, 35)
     date.toLocal should be (expected)
@@ -31,6 +37,42 @@ class DateConversionsSpec extends FlatSpec with Matchers {
 
   it should "be convertible to a zoned datetime" in {
     val date = new Date(1495587575000L)
+    val expected = ZonedDateTime.of(2017, 5, 24, 0, 59, 35, 0, ZoneId.of("UTC"))
+    date.toZoned should be (expected)
+  }
+
+  "A local datetime" should "be convertible to a legacy date" in {
+    val date = LocalDateTime.of(2017, 5, 24, 0, 59, 35)
+    val expected = new Date(1495587575000L)
+    date.toDate should be (expected)
+  }
+
+  it should "be convertible to a local datetime" in {
+    val date = LocalDateTime.of(2017, 5, 24, 0, 59, 35)
+    val expected = LocalDateTime.of(2017, 5, 24, 0, 59, 35)
+    date.toLocal should be (expected)
+  }
+
+  it should "be convertible to a zoned datetime" in {
+    val date = LocalDateTime.of(2017, 5, 24, 0, 59, 35)
+    val expected = ZonedDateTime.of(2017, 5, 24, 0, 59, 35, 0, ZoneId.systemDefault)
+    date.toZoned should be (expected)
+  }
+
+  "A zoned datetime" should "be convertible to a legacy date" in {
+    val date = ZonedDateTime.of(2017, 5, 24, 0, 59, 35, 0, ZoneId.of("UTC"))
+    val expected = new Date(1495587575000L)
+    date.toDate should be (expected)
+  }
+
+  it should "be convertible to a local datetime" in {
+    val date = ZonedDateTime.of(2017, 5, 24, 0, 59, 35, 0, ZoneId.systemDefault)
+    val expected = LocalDateTime.of(2017, 5, 24, 0, 59, 35)
+    date.toLocal should be (expected)
+  }
+
+  it should "be convertible to a zoned datetime" in {
+    val date = ZonedDateTime.of(2017, 5, 24, 0, 59, 35, 0, ZoneId.of("UTC"))
     val expected = ZonedDateTime.of(2017, 5, 24, 0, 59, 35, 0, ZoneId.of("UTC"))
     date.toZoned should be (expected)
   }

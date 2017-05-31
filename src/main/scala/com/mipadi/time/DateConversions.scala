@@ -20,9 +20,9 @@ import java.time.{LocalDateTime, ZonedDateTime, ZoneId}
 import java.util.Date
 
 
-/** Provides various conversions for `java.util.Date` objects.
+/** Provides various conversions for datetime-like objects.
  *
- *  Namely, it allows the conversion of `java.util.Date` objects to types
+ *  Namely, it allows the conversion of datetime objects to types
  *  from the new `java.time` API through the use of the
  *  `[[com.mipadi.time.DateConversions.BridgedDate BridgedDate]]` implicit
  *  conversion.
@@ -35,29 +35,37 @@ object DateConversions {
    *  Adds two methods to seamlessly convert `java.util.Date` to
    *  `java.time.LocalDateTime` and `java.time.ZonedDateTime`.
    *
-   *  @param d
+   *  @param dt
    *    The wrapped date
+   *  @param ev
+   *    An implicit delegate for handling datetime type conversions
    */
-  implicit class BridgedDate(d: Date) {
+  implicit class BridgedDate[T](dt: T)(implicit ev: DateTime[T]) {
 
-    /** Converts a `java.util.Date` to a `java.time.LocalDateTime`.
+    /** Converts the datetime object into a legacy-style date.
+     *
+     *  @return
+     *    A date
+     */
+    def toDate: Date = ev.toDate(dt)
+
+    /** Converts the datetime object into a date.
      *
      *  Assumes that the `java.util.Date` is in UTC.
      *
      *  @return
      *    The converted datetime
      */
-    def toLocal: LocalDateTime =
-      LocalDateTime.ofInstant(d.toInstant, ZoneId.of("UTC"))
+    def toLocal: LocalDateTime = ev.toLocal(dt)
 
-    /** Converts a `java.util.Date` to a `java.time.ZonedDateTime`.
+    /** Converts the datetime object into a zoned datetime.
      *
-     *  Assumes that the `java.util.Date` is in UTC.
+     *  Assumes that the datetime object is in UTC if it does not already
+     *  have a zone.
      *
      *  @return
      *    The converted datetime
      */
-    def toZoned: ZonedDateTime =
-      ZonedDateTime.ofInstant(d.toInstant, ZoneId.of("UTC"))
+    def toZoned: ZonedDateTime = ev.toZoned(dt)
   }
 }
