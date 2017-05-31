@@ -170,7 +170,7 @@
           <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Extends <code>java.net.URI</code> with useful methods and a more Scala-like API.</p><p> <code>RichURI</code> is especially useful for implicit conversions to
  more specific types of URIs. For example, it could be used to create
  a specialized <code>RichMongoURI</code> implicit:</p><pre><span class="kw">import</span> com.mipadi.net.RichURI
-<span class="kw">implicit</span> <span class="kw">class</span> AugmentedMongoURI(uri: URI)(<span class="kw">implicit</span> ev: Addressable[URI]
+<span class="kw">implicit</span> <span class="kw">class</span> RichMongoURI(uri: URI)(<span class="kw">implicit</span> ev: Addressable[URI]
   <span class="kw">extends</span> ConvertibleURI {
   <span class="kw">lazy</span> <span class="kw">val</span> database: <span class="std">Option</span>[<span class="std">String</span>] = uri.pathComponents.lift(<span class="num">1</span>)
   <span class="kw">lazy</span> <span class="kw">val</span> collection: <span class="std">Option</span>[<span class="std">String</span>] = uri.pathComponents.lift(<span class="num">2</span>)

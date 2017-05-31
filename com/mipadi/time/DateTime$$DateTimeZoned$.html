@@ -125,31 +125,41 @@
       </span>
       
       <p class="shortcomment cmt">A gentler way of working with dates and times in Scala.</p><div class="fullcomment"><div class="comment cmt"><p>A gentler way of working with dates and times in Scala.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="com.mipadi">mipadi</a></dd></dl></div>
-    </li><li class="current-entities indented3">
+    </li><li name="com.mipadi.time.DateTime" visbl="pub" class="indented4 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="DateTime"></a><a id="DateTime:DateTime"></a>
+      <span class="permalink">
+      <a href="../../../com/mipadi/time/index.html#DateTime" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a title="Provides default implicits for various datetime-like objects." href="DateTime$.html">
+              <span class="name">DateTime</span>
+            </a>
+      </span>
+      
+      <p class="shortcomment cmt">Provides default implicits for various datetime-like objects.</p><div class="fullcomment"><div class="comment cmt"><p>Provides default implicits for various datetime-like objects.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="index.html" class="extype" name="com.mipadi.time">time</a></dd></dl></div>
+    </li><li class="current-entities indented4">
                         <span class="separator"></span>
-                        <a class="object" href="DateConversions$.html" title="Provides various conversions for datetime-like objects."></a>
-                        <a href="DateConversions$.html" title="Provides various conversions for datetime-like objects.">
-                          DateConversions
+                        <a class="object" href="DateTime$$DateTimeDate$.html" title=""></a>
+                        <a href="DateTime$$DateTimeDate$.html" title="">
+                          DateTimeDate
                         </a>
-                      </li><li class="current-entities indented3">
-                        <a class="object" href="DateTime$.html" title="Provides default implicits for various datetime-like objects."></a>
-                        <a class="trait" href="DateTime.html" title="A type class for datetime-like objects."></a>
-                        <a href="DateTime.html" title="A type class for datetime-like objects.">
-                          DateTime
-                        </a>
-                      </li><li class="current-entities indented3">
+                      </li><li class="current-entities indented4">
                         <span class="separator"></span>
-                        <a class="object" href="TemporalUnits$.html" title="Convert longs, ints, and doubles to temporal units like seconds, minutes,
- hours, etc."></a>
-                        <a href="TemporalUnits$.html" title="Convert longs, ints, and doubles to temporal units like seconds, minutes,
- hours, etc.">
-                          TemporalUnits
+                        <a class="object" href="DateTime$$DateTimeLocal$.html" title=""></a>
+                        <a href="DateTime$$DateTimeLocal$.html" title="">
+                          DateTimeLocal
                         </a>
-                      </li><li class="current-entities indented3">
+                      </li><li class="current-entities indented4">
                         <span class="separator"></span>
-                        <a class="object" href="" title="Useful methods and operations for representations of Unix timestamps."></a>
-                        <a href="" title="Useful methods and operations for representations of Unix timestamps.">
-                          UnixTimestamp
+                        <a class="object" href="" title=""></a>
+                        <a href="" title="">
+                          DateTimeZoned
                         </a>
                       </li>
               </ul>
@@ -159,9 +169,9 @@
             <body class="object value">
       <div id="definition">
         <div class="big-circle object">o</div>
-        <p id="owner"><a href="../../index.html" class="extype" name="com">com</a>.<a href="../index.html" class="extype" name="com.mipadi">mipadi</a>.<a href="index.html" class="extype" name="com.mipadi.time">time</a></p>
-        <h1>UnixTimestamp<span class="permalink">
-      <a href="../../../com/mipadi/time/UnixTimestamp$.html" title="Permalink">
+        <p id="owner"><a href="../../index.html" class="extype" name="com">com</a>.<a href="../index.html" class="extype" name="com.mipadi">mipadi</a>.<a href="index.html" class="extype" name="com.mipadi.time">time</a>.<a href="DateTime$.html" class="extype" name="com.mipadi.time.DateTime">DateTime</a></p>
+        <h1>DateTimeZoned<span class="permalink">
+      <a href="../../../com/mipadi/time/DateTime$$DateTimeZoned$.html" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span></h1>
@@ -170,26 +180,20 @@
 
       <h4 id="signature" class="signature">
       <span class="modifier_kind">
-        <span class="modifier"></span>
+        <span class="modifier">implicit </span>
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <span class="name">UnixTimestamp</span>
+        <span class="name">DateTimeZoned</span><span class="result"> extends <a href="DateTime.html" class="extype" name="com.mipadi.time.DateTime">DateTime</a>[<span class="extype" name="java.time.ZonedDateTime">ZonedDateTime</span>]</span>
       </span>
       </h4>
 
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Useful methods and operations for representations of Unix timestamps.</p><p> Provides a way to convert a Scala <code>Double</code> representing a Unix timestamp
- to a <code>java.util.Date</code> object:</p><pre><span class="kw">import</span> com.mipadi.time.UnixTimestamp._
-<span class="kw">val</span> timestamp = <span class="num">1490999455.0</span>
-<span class="kw">val</span> date = timestamp.toDate</pre><p> It also provides a way to get the number of seconds since the Unix epoch
- from a <code>java.util.Date</code> object:</p><pre><span class="kw">import</span> com.mipadi.time.UnixTimestamp._
-<span class="kw">val</span> date = <span class="kw">new</span> Date()
-<span class="kw">val</span> seconds = date.sinceEpoch</pre></div><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
           </span>
-          <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+          <div class="superTypes hiddenContent"><a href="DateTime.html" class="extype" name="com.mipadi.time.DateTime">DateTime</a>[<span class="extype" name="java.time.ZonedDateTime">ZonedDateTime</span>], <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
         
 
@@ -215,7 +219,7 @@
                   <span class="filtertype">Inherited<br />
                   </span>
                   <ol id="linearization">
-                    <li class="in" name="com.mipadi.time.UnixTimestamp"><span>UnixTimestamp</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                    <li class="in" name="com.mipadi.time.DateTime.DateTimeZoned"><span>DateTimeZoned</span></li><li class="in" name="com.mipadi.time.DateTime"><span>DateTime</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                   </ol>
                 </div><div class="ancestors">
               <span class="filtertype"></span>
@@ -235,46 +239,7 @@
         <div id="allMembers">
         
 
-        <div id="types" class="types members">
-              <h3>Type Members</h3>
-              <ol><li name="com.mipadi.time.UnixTimestamp.ConvertibleUnixDateTime" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="ConvertibleUnixDateTime[T]extendsAnyRef"></a><a id="ConvertibleUnixDateTime[T]:ConvertibleUnixDateTime[T]"></a>
-      <span class="permalink">
-      <a href="../../../com/mipadi/time/UnixTimestamp$.html#ConvertibleUnixDateTime[T]extendsAnyRef" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier">implicit </span>
-        <span class="kind">class</span>
-      </span>
-      <span class="symbol">
-        <a title="Adds extension methods to datetime-like objects." href="UnixTimestamp$$ConvertibleUnixDateTime.html">
-              <span class="name">ConvertibleUnixDateTime</span>
-            </a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
-      </span>
-      
-      <p class="shortcomment cmt">Adds extension methods to datetime-like objects.</p>
-    </li><li name="com.mipadi.time.UnixTimestamp.ConvertibleUnixTimestamp" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="ConvertibleUnixTimestampextendsAnyRef"></a><a id="ConvertibleUnixTimestamp:ConvertibleUnixTimestamp"></a>
-      <span class="permalink">
-      <a href="../../../com/mipadi/time/UnixTimestamp$.html#ConvertibleUnixTimestampextendsAnyRef" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier">implicit </span>
-        <span class="kind">class</span>
-      </span>
-      <span class="symbol">
-        <a title="Adds extension methods to Scala Doubles." href="UnixTimestamp$$ConvertibleUnixTimestamp.html">
-              <span class="name">ConvertibleUnixTimestamp</span>
-            </a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
-      </span>
-      
-      <p class="shortcomment cmt">Adds extension methods to Scala <code>Double</code>s.</p>
-    </li></ol>
-            </div>
+        
 
         
 
@@ -284,7 +249,7 @@
                 <li name="scala.AnyRef#!=" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="!=(x$1:Any):Boolean"></a><a id="!=(Any):Boolean"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/time/UnixTimestamp$.html#!=(x$1:Any):Boolean" title="Permalink">
+      <a href="../../../com/mipadi/time/DateTime$$DateTimeZoned$.html#!=(x$1:Any):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -300,7 +265,7 @@
     </li><li name="scala.AnyRef###" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="##():Int"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/time/UnixTimestamp$.html###():Int" title="Permalink">
+      <a href="../../../com/mipadi/time/DateTime$$DateTimeZoned$.html###():Int" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -316,7 +281,7 @@
     </li><li name="scala.AnyRef#==" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="==(x$1:Any):Boolean"></a><a id="==(Any):Boolean"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/time/UnixTimestamp$.html#==(x$1:Any):Boolean" title="Permalink">
+      <a href="../../../com/mipadi/time/DateTime$$DateTimeZoned$.html#==(x$1:Any):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -332,7 +297,7 @@
     </li><li name="scala.Any#asInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/time/UnixTimestamp$.html#asInstanceOf[T0]:T0" title="Permalink">
+      <a href="../../../com/mipadi/time/DateTime$$DateTimeZoned$.html#asInstanceOf[T0]:T0" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -345,10 +310,26 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="com.mipadi.time.DateTime.DateTimeZoned#atMidnight" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="atMidnight(dt:java.time.ZonedDateTime):java.time.ZonedDateTime"></a><a id="atMidnight(ZonedDateTime):ZonedDateTime"></a>
+      <span class="permalink">
+      <a href="../../../com/mipadi/time/DateTime$$DateTimeZoned$.html#atMidnight(dt:java.time.ZonedDateTime):java.time.ZonedDateTime" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">atMidnight</span><span class="params">(<span name="dt">dt: <span class="extype" name="java.time.ZonedDateTime">ZonedDateTime</span></span>)</span><span class="result">: <span class="extype" name="java.time.ZonedDateTime">ZonedDateTime</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Calculates the corresponding time at midnight</p><div class="fullcomment"><div class="comment cmt"><p>Calculates the corresponding time at midnight</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="com.mipadi.time.DateTime.DateTimeZoned">DateTimeZoned</a> → <a href="DateTime.html" class="extype" name="com.mipadi.time.DateTime">DateTime</a></dd></dl></div>
     </li><li name="scala.AnyRef#clone" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="clone():Object"></a><a id="clone():AnyRef"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/time/UnixTimestamp$.html#clone():Object" title="Permalink">
+      <a href="../../../com/mipadi/time/DateTime$$DateTimeZoned$.html#clone():Object" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -370,7 +351,7 @@
     </li><li name="scala.AnyRef#eq" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="eq(x$1:AnyRef):Boolean"></a><a id="eq(AnyRef):Boolean"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/time/UnixTimestamp$.html#eq(x$1:AnyRef):Boolean" title="Permalink">
+      <a href="../../../com/mipadi/time/DateTime$$DateTimeZoned$.html#eq(x$1:AnyRef):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -386,7 +367,7 @@
     </li><li name="scala.AnyRef#equals" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="equals(x$1:Any):Boolean"></a><a id="equals(Any):Boolean"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/time/UnixTimestamp$.html#equals(x$1:Any):Boolean" title="Permalink">
+      <a href="../../../com/mipadi/time/DateTime$$DateTimeZoned$.html#equals(x$1:Any):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -402,7 +383,7 @@
     </li><li name="scala.AnyRef#finalize" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="finalize():Unit"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/time/UnixTimestamp$.html#finalize():Unit" title="Permalink">
+      <a href="../../../com/mipadi/time/DateTime$$DateTimeZoned$.html#finalize():Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -424,7 +405,7 @@
     </li><li name="scala.AnyRef#getClass" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getClass():Class[_]"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/time/UnixTimestamp$.html#getClass():Class[_]" title="Permalink">
+      <a href="../../../com/mipadi/time/DateTime$$DateTimeZoned$.html#getClass():Class[_]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -440,7 +421,7 @@
     </li><li name="scala.AnyRef#hashCode" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="hashCode():Int"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/time/UnixTimestamp$.html#hashCode():Int" title="Permalink">
+      <a href="../../../com/mipadi/time/DateTime$$DateTimeZoned$.html#hashCode():Int" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -456,7 +437,7 @@
     </li><li name="scala.Any#isInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="isInstanceOf[T0]:Boolean"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/time/UnixTimestamp$.html#isInstanceOf[T0]:Boolean" title="Permalink">
+      <a href="../../../com/mipadi/time/DateTime$$DateTimeZoned$.html#isInstanceOf[T0]:Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -472,7 +453,7 @@
     </li><li name="scala.AnyRef#ne" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ne(x$1:AnyRef):Boolean"></a><a id="ne(AnyRef):Boolean"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/time/UnixTimestamp$.html#ne(x$1:AnyRef):Boolean" title="Permalink">
+      <a href="../../../com/mipadi/time/DateTime$$DateTimeZoned$.html#ne(x$1:AnyRef):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -488,7 +469,7 @@
     </li><li name="scala.AnyRef#notify" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="notify():Unit"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/time/UnixTimestamp$.html#notify():Unit" title="Permalink">
+      <a href="../../../com/mipadi/time/DateTime$$DateTimeZoned$.html#notify():Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -504,7 +485,7 @@
     </li><li name="scala.AnyRef#notifyAll" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="notifyAll():Unit"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/time/UnixTimestamp$.html#notifyAll():Unit" title="Permalink">
+      <a href="../../../com/mipadi/time/DateTime$$DateTimeZoned$.html#notifyAll():Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -517,10 +498,26 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="com.mipadi.time.DateTime.DateTimeZoned#sinceEpoch" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="sinceEpoch(dt:java.time.ZonedDateTime):Long"></a><a id="sinceEpoch(ZonedDateTime):Long"></a>
+      <span class="permalink">
+      <a href="../../../com/mipadi/time/DateTime$$DateTimeZoned$.html#sinceEpoch(dt:java.time.ZonedDateTime):Long" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">sinceEpoch</span><span class="params">(<span name="dt">dt: <span class="extype" name="java.time.ZonedDateTime">ZonedDateTime</span></span>)</span><span class="result">: <span class="extype" name="scala.Long">Long</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Calculates the seconds since the Unix epoch</p><div class="fullcomment"><div class="comment cmt"><p>Calculates the seconds since the Unix epoch</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="com.mipadi.time.DateTime.DateTimeZoned">DateTimeZoned</a> → <a href="DateTime.html" class="extype" name="com.mipadi.time.DateTime">DateTime</a></dd></dl></div>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a><a id="synchronized[T0](⇒T0):T0"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/time/UnixTimestamp$.html#synchronized[T0](x$1:=&gt;T0):T0" title="Permalink">
+      <a href="../../../com/mipadi/time/DateTime$$DateTimeZoned$.html#synchronized[T0](x$1:=&gt;T0):T0" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -533,10 +530,42 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="com.mipadi.time.DateTime.DateTimeZoned#toDate" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toDate(dt:java.time.ZonedDateTime):java.util.Date"></a><a id="toDate(ZonedDateTime):Date"></a>
+      <span class="permalink">
+      <a href="../../../com/mipadi/time/DateTime$$DateTimeZoned$.html#toDate(dt:java.time.ZonedDateTime):java.util.Date" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toDate</span><span class="params">(<span name="dt">dt: <span class="extype" name="java.time.ZonedDateTime">ZonedDateTime</span></span>)</span><span class="result">: <span class="extype" name="java.util.Date">Date</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Converts the datetime to a date</p><div class="fullcomment"><div class="comment cmt"><p>Converts the datetime to a date</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="com.mipadi.time.DateTime.DateTimeZoned">DateTimeZoned</a> → <a href="DateTime.html" class="extype" name="com.mipadi.time.DateTime">DateTime</a></dd></dl></div>
+    </li><li name="com.mipadi.time.DateTime.DateTimeZoned#toLocal" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toLocal(dt:java.time.ZonedDateTime):java.time.LocalDateTime"></a><a id="toLocal(ZonedDateTime):LocalDateTime"></a>
+      <span class="permalink">
+      <a href="../../../com/mipadi/time/DateTime$$DateTimeZoned$.html#toLocal(dt:java.time.ZonedDateTime):java.time.LocalDateTime" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toLocal</span><span class="params">(<span name="dt">dt: <span class="extype" name="java.time.ZonedDateTime">ZonedDateTime</span></span>)</span><span class="result">: <span class="extype" name="java.time.LocalDateTime">LocalDateTime</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Converts the datetime to a local date</p><div class="fullcomment"><div class="comment cmt"><p>Converts the datetime to a local date</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="com.mipadi.time.DateTime.DateTimeZoned">DateTimeZoned</a> → <a href="DateTime.html" class="extype" name="com.mipadi.time.DateTime">DateTime</a></dd></dl></div>
     </li><li name="scala.AnyRef#toString" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="toString():String"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/time/UnixTimestamp$.html#toString():String" title="Permalink">
+      <a href="../../../com/mipadi/time/DateTime$$DateTimeZoned$.html#toString():String" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -549,10 +578,26 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="com.mipadi.time.DateTime.DateTimeZoned#toZoned" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toZoned(dt:java.time.ZonedDateTime):java.time.ZonedDateTime"></a><a id="toZoned(ZonedDateTime):ZonedDateTime"></a>
+      <span class="permalink">
+      <a href="../../../com/mipadi/time/DateTime$$DateTimeZoned$.html#toZoned(dt:java.time.ZonedDateTime):java.time.ZonedDateTime" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toZoned</span><span class="params">(<span name="dt">dt: <span class="extype" name="java.time.ZonedDateTime">ZonedDateTime</span></span>)</span><span class="result">: <span class="extype" name="java.time.ZonedDateTime">ZonedDateTime</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Converts the datetime to a zoned date</p><div class="fullcomment"><div class="comment cmt"><p>Converts the datetime to a zoned date</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="com.mipadi.time.DateTime.DateTimeZoned">DateTimeZoned</a> → <a href="DateTime.html" class="extype" name="com.mipadi.time.DateTime">DateTime</a></dd></dl></div>
     </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/time/UnixTimestamp$.html#wait():Unit" title="Permalink">
+      <a href="../../../com/mipadi/time/DateTime$$DateTimeZoned$.html#wait():Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -574,7 +619,7 @@
     </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait(x$1:Long,x$2:Int):Unit"></a><a id="wait(Long,Int):Unit"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/time/UnixTimestamp$.html#wait(x$1:Long,x$2:Int):Unit" title="Permalink">
+      <a href="../../../com/mipadi/time/DateTime$$DateTimeZoned$.html#wait(x$1:Long,x$2:Int):Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -596,7 +641,7 @@
     </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait(x$1:Long):Unit"></a><a id="wait(Long):Unit"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/time/UnixTimestamp$.html#wait(x$1:Long):Unit" title="Permalink">
+      <a href="../../../com/mipadi/time/DateTime$$DateTimeZoned$.html#wait(x$1:Long):Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -625,7 +670,9 @@
         </div>
 
         <div id="inheritedMembers">
-        <div class="parent" name="scala.AnyRef">
+        <div class="parent" name="com.mipadi.time.DateTime">
+              <h3>Inherited from <a href="DateTime.html" class="extype" name="com.mipadi.time.DateTime">DateTime</a>[<span class="extype" name="java.time.ZonedDateTime">ZonedDateTime</span>]</h3>
+            </div><div class="parent" name="scala.AnyRef">
               <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
             </div><div class="parent" name="scala.Any">
               <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>

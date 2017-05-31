@@ -137,12 +137,12 @@
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a title="Provides various conversions for java.util.Date objects." href="DateConversions$.html">
+        <a title="Provides various conversions for datetime-like objects." href="DateConversions$.html">
               <span class="name">DateConversions</span>
             </a>
       </span>
       
-      <p class="shortcomment cmt">Provides various conversions for <code>java.util.Date</code> objects.</p><div class="fullcomment"><div class="comment cmt"><p>Provides various conversions for <code>java.util.Date</code> objects.</p><p> Namely, it allows the conversion of <code>java.util.Date</code> objects to types
+      <p class="shortcomment cmt">Provides various conversions for datetime-like objects.</p><div class="fullcomment"><div class="comment cmt"><p>Provides various conversions for datetime-like objects.</p><p> Namely, it allows the conversion of datetime objects to types
  from the new <code>java.time</code> API through the use of the
  <code><a href="" class="extype" name="com.mipadi.time.DateConversions.BridgedDate">BridgedDate</a></code> implicit
  conversion.
@@ -178,7 +178,7 @@
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <span class="name">BridgedDate</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+        <span class="name">BridgedDate</span><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
 
@@ -237,9 +237,9 @@
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
               <ol><li name="com.mipadi.time.DateConversions.BridgedDate#&lt;init&gt;" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="&lt;init&gt;(d:java.util.Date):com.mipadi.time.DateConversions.BridgedDate"></a><a id="&lt;init&gt;:BridgedDate"></a>
+      <a id="&lt;init&gt;(dt:T)(implicitev:com.mipadi.time.DateTime[T]):com.mipadi.time.DateConversions.BridgedDate[T]"></a><a id="&lt;init&gt;:BridgedDate[T]"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/time/DateConversions$$BridgedDate.html#&lt;init&gt;(d:java.util.Date):com.mipadi.time.DateConversions.BridgedDate" title="Permalink">
+      <a href="../../../com/mipadi/time/DateConversions$$BridgedDate.html#&lt;init&gt;(dt:T)(implicitev:com.mipadi.time.DateTime[T]):com.mipadi.time.DateConversions.BridgedDate[T]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -248,11 +248,12 @@
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">BridgedDate</span><span class="params">(<span name="d">d: <span class="extype" name="java.util.Date">Date</span></span>)</span>
+        <span class="name">BridgedDate</span><span class="params">(<span name="dt">dt: <span class="extype" name="com.mipadi.time.DateConversions.BridgedDate.T">T</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="ev">ev: <a href="DateTime.html" class="extype" name="com.mipadi.time.DateTime">DateTime</a>[<span class="extype" name="com.mipadi.time.DateConversions.BridgedDate.T">T</span>]</span>)</span>
       </span>
       
-      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">d</dt><dd class="cmt"><p>
-   The wrapped date</p></dd></dl></div>
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">dt</dt><dd class="cmt"><p>
+   The wrapped date</p></dd><dt class="param">ev</dt><dd class="cmt"><p>
+   An implicit delegate for handling datetime type conversions</p></dd></dl></div>
     </li></ol>
             </div>
 
@@ -515,6 +516,24 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="com.mipadi.time.DateConversions.BridgedDate#toDate" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toDate:java.util.Date"></a><a id="toDate:Date"></a>
+      <span class="permalink">
+      <a href="../../../com/mipadi/time/DateConversions$$BridgedDate.html#toDate:java.util.Date" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toDate</span><span class="result">: <span class="extype" name="java.util.Date">Date</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Converts the datetime object into a legacy-style date.</p><div class="fullcomment"><div class="comment cmt"><p>Converts the datetime object into a legacy-style date.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>
+   A date</p></dd></dl></div>
     </li><li name="com.mipadi.time.DateConversions.BridgedDate#toLocal" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="toLocal:java.time.LocalDateTime"></a><a id="toLocal:LocalDateTime"></a>
       <span class="permalink">
@@ -530,7 +549,7 @@
         <span class="name">toLocal</span><span class="result">: <span class="extype" name="java.time.LocalDateTime">LocalDateTime</span></span>
       </span>
       
-      <p class="shortcomment cmt">Converts a <code>java.util.Date</code> to a <code>java.time.LocalDateTime</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Converts a <code>java.util.Date</code> to a <code>java.time.LocalDateTime</code>.</p><p> Assumes that the <code>java.util.Date</code> is in UTC.
+      <p class="shortcomment cmt">Converts the datetime object into a date.</p><div class="fullcomment"><div class="comment cmt"><p>Converts the datetime object into a date.</p><p> Assumes that the <code>java.util.Date</code> is in UTC.
 </p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>
    The converted datetime</p></dd></dl></div>
     </li><li name="scala.AnyRef#toString" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
@@ -564,7 +583,8 @@
         <span class="name">toZoned</span><span class="result">: <span class="extype" name="java.time.ZonedDateTime">ZonedDateTime</span></span>
       </span>
       
-      <p class="shortcomment cmt">Converts a <code>java.util.Date</code> to a <code>java.time.ZonedDateTime</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Converts a <code>java.util.Date</code> to a <code>java.time.ZonedDateTime</code>.</p><p> Assumes that the <code>java.util.Date</code> is in UTC.
+      <p class="shortcomment cmt">Converts the datetime object into a zoned datetime.</p><div class="fullcomment"><div class="comment cmt"><p>Converts the datetime object into a zoned datetime.</p><p> Assumes that the datetime object is in UTC if it does not already
+ have a zone.
 </p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>
    The converted datetime</p></dd></dl></div>
     </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
