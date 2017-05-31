@@ -17,15 +17,19 @@
 package com.mipadi.time
 
 import java.time.{LocalDateTime, ZonedDateTime, ZoneId}
-import java.util.{Calendar, Date, GregorianCalendar}
+import java.util.{Calendar, Date, TimeZone}
 import org.scalatest._
 import com.mipadi.time.UnixTimestamp._
 
 
 class UnixTimestampSpec extends FlatSpec with Matchers {
   "A Unix timestamp represented as a double" should "be convertible to a date" in {
-    val timestamp = 1490999455.0
-    timestamp.toDate should be (new GregorianCalendar(2017, Calendar.MARCH, 31, 15, 30, 55).getTime)
+    val cal = Calendar.getInstance(TimeZone.getTimeZone("UTC"))
+    cal.set(Calendar.MILLISECOND, 0)
+    cal.set(2017, Calendar.MARCH, 31, 15, 30, 55)
+    val expected = cal.getTime
+    val timestamp = 1490974255.0
+    timestamp.toDate should be (expected)
   }
 
   it should "be convertible to a date and back to a timestamp" in {
@@ -34,8 +38,12 @@ class UnixTimestampSpec extends FlatSpec with Matchers {
   }
 
   "A Unix timestamp represented as an integer" should "be convertible to a date" in {
-    val timestamp = 1490999455
-    timestamp.toDate should be (new GregorianCalendar(2017, Calendar.MARCH, 31, 15, 30, 55).getTime)
+    val cal = Calendar.getInstance(TimeZone.getTimeZone("UTC"))
+    cal.set(Calendar.MILLISECOND, 0)
+    cal.set(2017, Calendar.MARCH, 31, 15, 30, 55)
+    val expected = cal.getTime
+    val timestamp = 1490974255
+    timestamp.toDate should be (expected)
   }
 
   it should "be convertible to a date and back to a timestamp" in {
@@ -44,12 +52,18 @@ class UnixTimestampSpec extends FlatSpec with Matchers {
   }
 
   "A date" should "return the number of seconds since the Unix epoch" in {
-    val date = new GregorianCalendar(2017, Calendar.MAY, 23, 16, 3, 49).getTime
-    date.sinceEpoch should be (1495580629)
+    val cal = Calendar.getInstance(TimeZone.getTimeZone("UTC"))
+    cal.set(Calendar.MILLISECOND, 0)
+    cal.set(2017, Calendar.MAY, 23, 16, 3, 49)
+    val date = cal.getTime
+    date.sinceEpoch should be (1495555429)
   }
 
   it should "be convertible to a Unix timestamp and back to a date" in {
-    val date = new GregorianCalendar(2017, Calendar.MAY, 23, 16, 3, 49).getTime
+    val cal = Calendar.getInstance(TimeZone.getTimeZone("UTC"))
+    cal.set(Calendar.MILLISECOND, 0)
+    cal.set(2017, Calendar.MAY, 23, 16, 3, 49)
+    val date = cal.getTime
     date.sinceEpoch.toDate should be (date)
   }
 
