@@ -27,6 +27,13 @@ import java.nio.file.{FileSystems, Path}
  *      Type classes in Scala]]
  */
 trait Locatable[T] {
+
+  /** Converts this locatable object to a file. */
+  def toFile(a: T): File
+
+  /** Converts this locatable object to a path. */
+  def toPath(a: T): Path
+
   /** Joins a path-like object and a string together to form a new path. */
   def join(a: T, b: String): Path
 }
@@ -34,11 +41,19 @@ trait Locatable[T] {
 /** Provides implicit vals for `java.io.File` and `java.nio.file.Path`. */
 object Locatable {
   implicit object LocatablePath extends Locatable[Path] {
+    override def toFile(a: Path): File = a.toFile
+
+    override def toPath(a: Path): Path = a
+
     override def join(a: Path, b: String): Path =
       FileSystems.getDefault.getPath(a.toString, b)
   }
 
   implicit object LocatableFile extends Locatable[File] {
+    override def toFile(a: File): File = a
+
+    override def toPath(a: File): Path = a.toPath
+
     override def join(a: File, b: String): Path =
       FileSystems.getDefault.getPath(a.toPath.toString, b)
   }
