@@ -24,8 +24,8 @@ import com.mipadi.math.Dividable
  */
 object TemporalUnits {
 
-  /** Implicitly converts a long to temporal units like seconds, minutes,
-   *  hours, etc.
+  /** Implicitly converts a long, int, or double to temporal units like
+   *  seconds, minutes, hours, etc.
    *
    *  With this conversion, callers can easily calculate temporal units from
    *  a raw number:
