@@ -111,9 +111,11 @@ class FileTree(val root: File) {
    *    The type of path-like object whose presence is being tested
    *  @param file
    *    The file to test
+   *  @param ev
+   *    Implicit delegate that converts the argument to a file
    *  @return
    *    `true` if the file is contained within this directory tree
    */
-  def contains[A: Locatable](file: A): Boolean =
-    all contains implicitly[Locatable[A]].toFile(file)
+  def contains[A](file: A)(implicit ev: Locatable[A]): Boolean =
+    all contains ev.toFile(file)
 }
