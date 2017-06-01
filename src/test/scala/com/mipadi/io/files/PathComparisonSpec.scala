@@ -23,7 +23,7 @@ import com.mipadi.io.files._
 
 
 class PathComparisonSpec extends FlatSpec with Matchers {
-  val tree = new File("src/main/scala").subtree.all
+  val tree = new File("src/main/scala").subtree
 
   "A file tree" should "return true if it contains a file" in {
     val f = new File("src/main/scala/com/mipadi/core/Bundle.scala")
@@ -37,21 +37,21 @@ class PathComparisonSpec extends FlatSpec with Matchers {
 
   it should "return true if it contains a path" in {
     val p = FileSystems.getDefault.getPath("src", "main", "scala", "com", "mipadi", "core", "Bundle.scala")
-    (tree contains p.toFile) should be (true)
+    (tree contains p) should be (true)
   }
 
   it should "return false if it does not contain a path" in {
     val p = FileSystems.getDefault.getPath("build.sbt")
-    (tree contains p.toFile) should be (false)
+    (tree contains p) should be (false)
   }
 
   it should "return true if it contains an interpolated path" in {
     val p = p"src" / "main" / "scala" / "com" / "mipadi" / "core" / "Bundle.scala"
-    (tree contains p.toFile) should be (true)
+    (tree contains p) should be (true)
   }
 
   it should "return false if it does not contain an interpolated path" in {
     val p = p"build.sbt"
-    (tree contains p.toFile) should be (false)
+    (tree contains p) should be (false)
   }
 }

@@ -17,6 +17,7 @@
 package com.mipadi.io.files
 
 import java.io.File
+import java.nio.file.Path
 
 
 /** Represents a recursive list of files at a given file system root.
@@ -103,4 +104,22 @@ class FileTree(val root: File) {
    *    returned.
    */
   def filesOnly: Seq[File] = all.filterNot(_.isDirectory)
+
+  /** Tests whether the directory tree contains the given file.
+   *
+   *  @param file
+   *    The file to test
+   *  @return
+   *    `true` if the file is contained within this directory tree
+   */
+  def contains(file: File): Boolean = all contains file
+
+  /** Tests whether the directory tree contains the given path.
+   *
+   *  @param path
+   *    The path to test
+   *  @return
+   *    `true` if the path is contained within this directory tree
+   */
+  def contains(path: Path): Boolean = all contains path.toFile
 }
