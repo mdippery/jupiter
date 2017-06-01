@@ -52,7 +52,7 @@ private class BuildSBTSource(val cls: Class[_], val file: File) extends BundleSo
     Source.fromFile(file.getAbsolutePath).getLines
 
   private def findLine(needle: String): String =
-    contents.find(_ =~ s"$needle\\s+:=").fold("") { _.value }
+    contents.find(_ =~ s"$needle\\s+:=").fold("")(_.value)
 }
 
 
