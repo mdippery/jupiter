@@ -34,7 +34,8 @@ class FileTree(val root: File) {
     List()
   }
 
-  /** Returns a sequence of all paths rooted under this file.
+  /** Returns a sequence of all paths rooted under this file, including
+   *  both files and directories.
    *
    *  For example, given this tree:
    *  {{{
