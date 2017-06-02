@@ -84,6 +84,11 @@ class RichFileSpec extends FlatSpec with Matchers {
     pNoFile.subtree.all shouldBe empty
   }
 
+  it should "return true when checked to see if it is a directory" in {
+    dir.isDirectory should be (true)
+    pDir.isDirectory should be (true)
+  }
+
   "A file" should "should have an empty subtree" in {
     file.subtree.all shouldBe empty
     pFile.subtree.all shouldBe empty
@@ -92,5 +97,10 @@ class RichFileSpec extends FlatSpec with Matchers {
   it should "have an empty subtree of files" in {
     file.subtree.all shouldBe empty
     pFile.subtree.all shouldBe empty
+  }
+
+  it should "return false when checked to see if it is a directory" in {
+    file.isDirectory should be (false)
+    pFile.isDirectory should be (false)
   }
 }

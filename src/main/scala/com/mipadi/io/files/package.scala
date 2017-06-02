@@ -56,6 +56,9 @@ package object files {
     /** The wrapped file's absolute path */
     val absolutePath = ev.getAbsolutePath(f)
 
+    /** `true` if the file is a directory */
+    def isDirectory = ev.isDirectory(f)
+
     /** Compares the receiver's path to `that`'s path.
      *
      *  Determines a logical sorting for `File` objects.
