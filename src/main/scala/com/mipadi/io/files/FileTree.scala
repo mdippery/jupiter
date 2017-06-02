@@ -25,14 +25,10 @@ import java.nio.file.Path
  *  @param root
  *    The root of the directory tree
  */
-class FileTree(val root: File) {
+class FileTree[T](val root: T)(implicit ev: Locatable[T]) {
   override def toString: String = root.path
 
-  private lazy val entries: Seq[File] = Option(root.listFiles) map { files =>
-    files.toSeq
-  } getOrElse {
-    List()
-  }
+  private lazy val entries: Seq[T] = ev.getFiles(root)
 
   /** Returns a sequence of all paths rooted under this file, including
    *  both files and directories.
@@ -69,7 +65,7 @@ class FileTree(val root: File) {
    *    A sequence of all paths rooted under this file, sorted by name.
    *    If this file is not a directory, an empty sequence is returned.
    */
-  def all: Seq[File] = (entries ++ entries.flatMap(_.subtree.all)).sorted
+  def all: Seq[T] = (entries ++ entries.flatMap(_.subtree.all)).sorted
 
   /** Returns a sequence of all ''file'' paths rooted under this file.
    *  Directories are excluded from this listing.
@@ -104,19 +100,14 @@ class FileTree(val root: File) {
    *    name. If this file is not a directory, an empty sequence is
    *    returned.
    */
-  def filesOnly: Seq[File] = all.filterNot(_.isDirectory)
+  def filesOnly: Seq[T] = all.filterNot(_.isDirectory)
 
   /** Tests whether the directory tree contains the given file.
    *
-   *  @tparam A
-   *    The type of path-like object whose presence is being tested
    *  @param file
    *    The file to test
-   *  @param ev
-   *    Implicit delegate that converts the argument to a file
    *  @return
    *    `true` if the file is contained within this directory tree
    */
-  def contains[A](file: A)(implicit ev: Locatable[A]): Boolean =
-    all contains ev.toFile(file)
+  def contains(file: T): Boolean = all contains file
 }

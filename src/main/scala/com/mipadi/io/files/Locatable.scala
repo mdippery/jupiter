@@ -17,7 +17,7 @@
 package com.mipadi.io.files
 
 import java.io.File
-import java.nio.file.{Files, FileSystems, NotDirectoryException, Path}
+import java.nio.file.{Files, FileSystems, NoSuchFileException, NotDirectoryException, Path}
 import collection.JavaConverters._
 
 
@@ -71,6 +71,7 @@ object Locatable {
       Files.newDirectoryStream(a).iterator.asScala.toSeq
     } catch {
       case _: NotDirectoryException => List()
+      case _: NoSuchFileException   => List()
     }
   }
 

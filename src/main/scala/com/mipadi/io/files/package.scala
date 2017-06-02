@@ -78,7 +78,7 @@ package object files {
      *    A listing of all files under the path represented by the wrapped
      *    file
      */
-    def subtree: FileTree = new FileTree(ev.toFile(f))
+    def subtree: FileTree[T] = new FileTree(f)
   }
 
 
