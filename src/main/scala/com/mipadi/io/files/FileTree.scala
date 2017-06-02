@@ -22,8 +22,33 @@ import java.nio.file.Path
 
 /** Represents a recursive list of files at a given file system root.
  *
+ *  `FileTree` is parameterized by any type that conforms to
+ *  `[[com.mipadi.io.files.Locatable Locatable]]`, which by default are
+ *  `java.io.File` and `java.nio.file.Path`. Thus, `FileTree` can work
+ *  with old-style Java files or new-style Java paths. Combined with the
+ *  the `p` string interpolation prefix from `[[com.mipadi.io.files]]`,
+ *  callers can easily create file trees for `Path`s or `File`s:
+ *
+ *  {{{
+ *  import java.io.File
+ *  import com.mipadi.io.files._
+ *  import com.mipadi.io.files.FileTree
+ *  import com.mipadi.io.files.Locatable._
+ *
+ *  val files = new File("src/main/scala").subtree.all
+ *  val paths = (p"src" / "main" / "scala").subtree.all
+ *  }}}
+ *
+ *  `[[com.mipadi.io.files.RichFile RichFile]]` also adds the `subtree`
+ *  extension method to `Locatable` types (namely, `java.io.File` and
+ *  `java.nio.file.Path`), making it trivial to get subtrees.
+ *
+ *  @tparam T
+ *    The locatable object type serving as the file tree's root
  *  @param root
  *    The root of the directory tree
+ *  @param ev
+ *    An implicit delegate for handling file system actions
  */
 class FileTree[T](val root: T)(implicit ev: Locatable[T]) {
   override def toString: String = root.path
@@ -34,6 +59,7 @@ class FileTree[T](val root: T)(implicit ev: Locatable[T]) {
    *  both files and directories.
    *
    *  For example, given this tree:
+   *
    *  {{{
    *  src/main/scala/com/mipadi/io
    *  ├── files
@@ -71,6 +97,7 @@ class FileTree[T](val root: T)(implicit ev: Locatable[T]) {
    *  Directories are excluded from this listing.
    *
    *  For example, given this tree:
+   *
    *  {{{
    *  src/main/scala/com/mipadi/io
    *  ├── files
