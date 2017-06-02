@@ -28,6 +28,11 @@ class LocatableSpec extends FlatSpec with Matchers {
   val fEv = Locatable.LocatableFile
   val pEv = Locatable.LocatablePath
 
+  val fLs = new File("src/main/scala/com/mipadi/net")
+  val pLs = FileSystems.getDefault.getPath("src", "main", "scala", "com", "mipadi", "net")
+  val fs  = List("Addressable", "RichURI", "package").map(s => new File(s"src/main/scala/com/mipadi/net/$s.scala")).sorted
+  val ps  = List("Addressable", "RichURI", "package").map(s => FileSystems.getDefault.getPath("src", "main", "scala", "com", "mipadi", "net", s"$s.scala")).sorted
+
   "A file" should "be convertible to a file" in {
     fEv.toFile(file) should be (file)
   }
@@ -42,6 +47,15 @@ class LocatableSpec extends FlatSpec with Matchers {
     fEv.join(arg, "scala").toString should be (expected)
   }
 
+  it should "return a file listing" in {
+    fEv.getFiles(fLs) should equal (fs)
+  }
+
+  it should "return an empty file listing if it is not a directory" in {
+    val f = new File("build.sbt")
+    fEv.getFiles(f) shouldBe empty
+  }
+
   "A path" should "be convertible to a file" in {
     pEv.toFile(path) should be (file)
   }
@@ -54,5 +68,14 @@ class LocatableSpec extends FlatSpec with Matchers {
     val expected = "src/main/scala"
     val arg = FileSystems.getDefault.getPath("src", "main")
     pEv.join(arg, "scala").toString should be (expected)
+  }
+
+  it should "return a file listing" in {
+    pEv.getFiles(pLs) should equal (ps)
+  }
+
+  it should "return an empty file listing if it is not a directory" in {
+    val p = FileSystems.getDefault.getPath("build.sbt")
+    pEv.getFiles(p) shouldBe empty
   }
 }

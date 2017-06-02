@@ -17,7 +17,8 @@
 package com.mipadi.io.files
 
 import java.io.File
-import java.nio.file.{FileSystems, Path}
+import java.nio.file.{Files, FileSystems, NotDirectoryException, Path}
+import collection.JavaConverters._
 
 
 /** A type class for path-like objects.
@@ -36,6 +37,9 @@ trait Locatable[T] {
 
   /** Joins a path-like object and a string together to form a new path. */
   def join(a: T, b: String): Path
+
+  /** Returns the list of files rooted at the given path. */
+  def getFiles(a: T): Seq[T]
 }
 
 /** Provides implicit vals for `java.io.File` and `java.nio.file.Path`. */
@@ -47,6 +51,12 @@ object Locatable {
 
     override def join(a: Path, b: String): Path =
       FileSystems.getDefault.getPath(a.toString, b)
+
+    override def getFiles(a: Path): Seq[Path] = try {
+      Files.newDirectoryStream(a).iterator.asScala.toSeq
+    } catch {
+      case _: NotDirectoryException => List()
+    }
   }
 
   implicit object LocatableFile extends Locatable[File] {
@@ -56,5 +66,11 @@ object Locatable {
 
     override def join(a: File, b: String): Path =
       FileSystems.getDefault.getPath(a.toPath.toString, b)
+
+    override def getFiles(a: File): Seq[File] = Option(a.listFiles) map { files =>
+      files.toSeq
+    } getOrElse {
+      List()
+    }
   }
 }
