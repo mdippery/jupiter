@@ -37,20 +37,24 @@ import java.nio.file.{FileSystems, Path}
  */
 package object files {
 
-  /** Implicitly converts `java.io.File` objects and adds some extension
-   *  methods. Also allows `File` objects to be ordered based on their
+  /** Implicitly converts file-like objects and adds some extension
+   *  methods. Also allows file-like objects to be ordered based on their
    *  paths.
    *
+   *  @tparam
+   *    The `[[com.mipadi.io.files.Locatable Locatable]]` type
    *  @param f
-   *    The wrapped file.
+   *    The wrapped file
+   *  @param ev
+   *    An implicit delegate for handling file-like operations
    */
-  implicit class RichFile(f: File) extends Ordered[File] {
+  implicit class RichFile[T](f: T)(implicit ev: Locatable[T]) extends Ordered[T] {
 
     /** The wrapped file's path */
-    val path = f.getPath
+    val path = ev.getPath(f)
 
     /** The wrapped file's absolute path */
-    val absolutePath = f.getAbsolutePath
+    val absolutePath = ev.getAbsolutePath(f)
 
     /** Compares the receiver's path to `that`'s path.
      *
@@ -63,7 +67,7 @@ package object files {
      *    - '''> 0''' if `this` comes after `that`
      *    - '''0''' if `this` is equal to `that`
      */
-    override def compare(that: File): Int = f.getPath compare that.getPath
+    override def compare(that: T): Int = ev.getPath(f) compare ev.getPath(that)
 
     /** A listing of all files rooted under this path.
      *
@@ -71,7 +75,7 @@ package object files {
      *    A listing of all files under the path represented by the wrapped
      *    file
      */
-    def subtree: FileTree = new FileTree(f)
+    def subtree: FileTree = new FileTree(ev.toFile(f))
   }
 
 
