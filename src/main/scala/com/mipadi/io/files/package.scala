@@ -41,7 +41,7 @@ package object files {
    *  methods. Also allows file-like objects to be ordered based on their
    *  paths.
    *
-   *  @tparam
+   *  @tparam T
    *    The `[[com.mipadi.io.files.Locatable Locatable]]` type
    *  @param f
    *    The wrapped file
