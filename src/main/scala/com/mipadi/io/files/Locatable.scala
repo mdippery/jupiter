@@ -35,6 +35,12 @@ trait Locatable[T] {
   /** Converts this locatable object to a path. */
   def toPath(a: T): Path
 
+  /** Returns the locatable object's path as a string. */
+  def getPath(a: T): String
+
+  /** Returns the locatable objects absolute path, as a string. */
+  def getAbsolutePath(a: T): String
+
   /** Joins a path-like object and a string together to form a new path. */
   def join(a: T, b: String): Path
 
@@ -48,6 +54,10 @@ object Locatable {
     override def toFile(a: Path): File = a.toFile
 
     override def toPath(a: Path): Path = a
+
+    override def getPath(a: Path): String = a.toString
+
+    override def getAbsolutePath(a: Path): String = a.toAbsolutePath.toString
 
     override def join(a: Path, b: String): Path =
       FileSystems.getDefault.getPath(a.toString, b)
@@ -63,6 +73,10 @@ object Locatable {
     override def toFile(a: File): File = a
 
     override def toPath(a: File): Path = a.toPath
+
+    override def getPath(a: File): String = a.getPath
+
+    override def getAbsolutePath(a: File): String = a.getAbsolutePath
 
     override def join(a: File, b: String): Path =
       FileSystems.getDefault.getPath(a.toPath.toString, b)

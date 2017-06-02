@@ -56,6 +56,14 @@ class LocatableSpec extends FlatSpec with Matchers {
     fEv.getFiles(f) shouldBe empty
   }
 
+  it should "return its path" in {
+    fEv.getPath(file) should be ("src")
+  }
+
+  it should "return its absolute path" in {
+    fEv.getAbsolutePath(file).head should be ('/')
+  }
+
   "A path" should "be convertible to a file" in {
     pEv.toFile(path) should be (file)
   }
@@ -77,5 +85,13 @@ class LocatableSpec extends FlatSpec with Matchers {
   it should "return an empty file listing if it is not a directory" in {
     val p = FileSystems.getDefault.getPath("build.sbt")
     pEv.getFiles(p) shouldBe empty
+  }
+
+  it should "return its path" in {
+    pEv.getPath(path) should be ("src")
+  }
+
+  it should "return its absolute path" in {
+    pEv.getAbsolutePath(path).head should be ('/')
   }
 }
