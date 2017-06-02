@@ -168,9 +168,9 @@
                         </a>
                       </li><li class="current-entities indented4">
                         <span class="separator"></span>
-                        <a class="class" href="package$$RichFile.html" title="Implicitly converts java.io.File objects and adds some extension
+                        <a class="class" href="package$$RichFile.html" title="Implicitly converts file-like objects and adds some extension
  methods."></a>
-                        <a href="package$$RichFile.html" title="Implicitly converts java.io.File objects and adds some extension
+                        <a href="package$$RichFile.html" title="Implicitly converts file-like objects and adds some extension
  methods.">
                           RichFile
                         </a>
@@ -285,10 +285,10 @@
 
         <div id="types" class="types members">
               <h3>Type Members</h3>
-              <ol><li name="com.mipadi.io.files.FileTree" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="FileTreeextendsAnyRef"></a><a id="FileTree:FileTree"></a>
+              <ol><li name="com.mipadi.io.files.FileTree" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="FileTree[T]extendsAnyRef"></a><a id="FileTree[T]:FileTree[T]"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/io/files/index.html#FileTreeextendsAnyRef" title="Permalink">
+      <a href="../../../../com/mipadi/io/files/index.html#FileTree[T]extendsAnyRef" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -299,10 +299,25 @@
       <span class="symbol">
         <a title="Represents a recursive list of files at a given file system root." href="FileTree.html">
               <span class="name">FileTree</span>
-            </a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+            </a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       
-      <p class="shortcomment cmt">Represents a recursive list of files at a given file system root.</p>
+      <p class="shortcomment cmt">Represents a recursive list of files at a given file system root.</p><div class="fullcomment"><div class="comment cmt"><p>Represents a recursive list of files at a given file system root.</p><p> <code>FileTree</code> is parameterized by any type that conforms to
+ <code><a href="Locatable.html" class="extype" name="com.mipadi.io.files.Locatable">Locatable</a></code>, which by default are
+ <code>java.io.File</code> and <code>java.nio.file.Path</code>. Thus, <code>FileTree</code> can work
+ with old-style Java files or new-style Java paths. Combined with the
+ the <code>p</code> string interpolation prefix from <code><a href="" class="extype" name="com.mipadi.io.files">com.mipadi.io.files</a></code>,
+ callers can easily create file trees for <code>Path</code>s or <code>File</code>s:</p><pre><span class="kw">import</span> java.io.File
+<span class="kw">import</span> com.mipadi.io.files._
+<span class="kw">import</span> com.mipadi.io.files.FileTree
+<span class="kw">import</span> com.mipadi.io.files.Locatable._
+
+<span class="kw">val</span> files = <span class="kw">new</span> File(<span class="lit">"src/main/scala"</span>).subtree.all
+<span class="kw">val</span> paths = (p<span class="lit">"src"</span> / <span class="lit">"main"</span> / <span class="lit">"scala"</span>).subtree.all</pre><p> <code><a href="package$$RichFile.html" class="extype" name="com.mipadi.io.files.RichFile">RichFile</a></code> also adds the <code>subtree</code>
+ extension method to <code>Locatable</code> types (namely, <code>java.io.File</code> and
+ <code>java.nio.file.Path</code>), making it trivial to get subtrees.
+</p></div><dl class="paramcmts block"><dt class="tparam">T</dt><dd class="cmt"><p>
+   The locatable object type serving as the file tree's root</p></dd></dl></div>
     </li><li name="com.mipadi.io.files.Locatable" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="Ungrouped">
       <a id="Locatable[T]extendsAnyRef"></a><a id="Locatable[T]:Locatable[T]"></a>
       <span class="permalink">
@@ -343,9 +358,9 @@
       <p class="shortcomment cmt">Allows paths to be built from strings using the <code>p</code> prefix:</p><div class="fullcomment"><div class="comment cmt"><p>Allows paths to be built from strings using the <code>p</code> prefix:</p><pre><span class="kw">import</span> com.mipadi.io.files._
 <span class="kw">val</span> path = p<span class="lit">"path/to/file.txt"</span></pre></div></div>
     </li><li name="com.mipadi.io.files.RichFile" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="RichFileextendsOrdered[java.io.File]"></a><a id="RichFile:RichFile"></a>
+      <a id="RichFile[T]extendsOrdered[T]"></a><a id="RichFile[T]:RichFile[T]"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/io/files/index.html#RichFileextendsOrdered[java.io.File]" title="Permalink">
+      <a href="../../../../com/mipadi/io/files/index.html#RichFile[T]extendsOrdered[T]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -354,17 +369,18 @@
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a title="Implicitly converts java.io.File objects and adds some extension
+        <a title="Implicitly converts file-like objects and adds some extension
  methods." href="package$$RichFile.html">
               <span class="name">RichFile</span>
-            </a><span class="result"> extends <span class="extype" name="scala.Ordered">Ordered</span>[<span class="extype" name="java.io.File">File</span>]</span>
+            </a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <span class="extype" name="scala.Ordered">Ordered</span>[<span class="extype" name="com.mipadi.io.files.RichFile.T">T</span>]</span>
       </span>
       
-      <p class="shortcomment cmt">Implicitly converts <code>java.io.File</code> objects and adds some extension
- methods.</p><div class="fullcomment"><div class="comment cmt"><p>Implicitly converts <code>java.io.File</code> objects and adds some extension
- methods. Also allows <code>File</code> objects to be ordered based on their
+      <p class="shortcomment cmt">Implicitly converts file-like objects and adds some extension
+ methods.</p><div class="fullcomment"><div class="comment cmt"><p>Implicitly converts file-like objects and adds some extension
+ methods. Also allows file-like objects to be ordered based on their
  paths.
-</p></div></div>
+</p></div><dl class="paramcmts block"><dt class="tparam">T</dt><dd class="cmt"><p>
+   The <code><a href="Locatable.html" class="extype" name="com.mipadi.io.files.Locatable">Locatable</a></code> type</p></dd></dl></div>
     </li><li name="com.mipadi.io.files.RichPath" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="RichPath[T]extendsAnyRef"></a><a id="RichPath[T]:RichPath[T]"></a>
       <span class="permalink">

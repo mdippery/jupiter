@@ -170,9 +170,9 @@
                         </a>
                       </li><li class="current-entities indented4">
                         <span class="separator"></span>
-                        <a class="class" href="package$$RichFile.html" title="Implicitly converts java.io.File objects and adds some extension
+                        <a class="class" href="package$$RichFile.html" title="Implicitly converts file-like objects and adds some extension
  methods."></a>
-                        <a href="package$$RichFile.html" title="Implicitly converts java.io.File objects and adds some extension
+                        <a href="package$$RichFile.html" title="Implicitly converts file-like objects and adds some extension
  methods.">
                           RichFile
                         </a>
@@ -205,13 +205,27 @@
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <span class="name">FileTree</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+        <span class="name">FileTree</span><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
 
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Represents a recursive list of files at a given file system root.
-</p></div><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Represents a recursive list of files at a given file system root.</p><p> <code>FileTree</code> is parameterized by any type that conforms to
+ <code><a href="Locatable.html" class="extype" name="com.mipadi.io.files.Locatable">Locatable</a></code>, which by default are
+ <code>java.io.File</code> and <code>java.nio.file.Path</code>. Thus, <code>FileTree</code> can work
+ with old-style Java files or new-style Java paths. Combined with the
+ the <code>p</code> string interpolation prefix from <code><a href="index.html" class="extype" name="com.mipadi.io.files">com.mipadi.io.files</a></code>,
+ callers can easily create file trees for <code>Path</code>s or <code>File</code>s:</p><pre><span class="kw">import</span> java.io.File
+<span class="kw">import</span> com.mipadi.io.files._
+<span class="kw">import</span> com.mipadi.io.files.FileTree
+<span class="kw">import</span> com.mipadi.io.files.Locatable._
+
+<span class="kw">val</span> files = <span class="kw">new</span> File(<span class="lit">"src/main/scala"</span>).subtree.all
+<span class="kw">val</span> paths = (p<span class="lit">"src"</span> / <span class="lit">"main"</span> / <span class="lit">"scala"</span>).subtree.all</pre><p> <code><a href="package$$RichFile.html" class="extype" name="com.mipadi.io.files.RichFile">RichFile</a></code> also adds the <code>subtree</code>
+ extension method to <code>Locatable</code> types (namely, <code>java.io.File</code> and
+ <code>java.nio.file.Path</code>), making it trivial to get subtrees.
+</p></div><dl class="paramcmts block"><dt class="tparam">T</dt><dd class="cmt"><p>
+   The locatable object type serving as the file tree's root</p></dd></dl><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
           </span>
@@ -262,9 +276,9 @@
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
               <ol><li name="com.mipadi.io.files.FileTree#&lt;init&gt;" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="&lt;init&gt;(root:java.io.File):com.mipadi.io.files.FileTree"></a><a id="&lt;init&gt;:FileTree"></a>
+      <a id="&lt;init&gt;(root:T)(implicitev:com.mipadi.io.files.Locatable[T]):com.mipadi.io.files.FileTree[T]"></a><a id="&lt;init&gt;:FileTree[T]"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/io/files/FileTree.html#&lt;init&gt;(root:java.io.File):com.mipadi.io.files.FileTree" title="Permalink">
+      <a href="../../../../com/mipadi/io/files/FileTree.html#&lt;init&gt;(root:T)(implicitev:com.mipadi.io.files.Locatable[T]):com.mipadi.io.files.FileTree[T]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -273,11 +287,12 @@
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">FileTree</span><span class="params">(<span name="root">root: <span class="extype" name="java.io.File">File</span></span>)</span>
+        <span class="name">FileTree</span><span class="params">(<span name="root">root: <span class="extype" name="com.mipadi.io.files.FileTree.T">T</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="ev">ev: <a href="Locatable.html" class="extype" name="com.mipadi.io.files.Locatable">Locatable</a>[<span class="extype" name="com.mipadi.io.files.FileTree.T">T</span>]</span>)</span>
       </span>
       
       <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">root</dt><dd class="cmt"><p>
-   The root of the directory tree</p></dd></dl></div>
+   The root of the directory tree</p></dd><dt class="param">ev</dt><dd class="cmt"><p>
+   An implicit delegate for handling file system actions</p></dd></dl></div>
     </li></ol>
             </div>
 
@@ -337,9 +352,9 @@
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="com.mipadi.io.files.FileTree#all" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="all:Seq[java.io.File]"></a><a id="all:Seq[File]"></a>
+      <a id="all:Seq[T]"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/io/files/FileTree.html#all:Seq[java.io.File]" title="Permalink">
+      <a href="../../../../com/mipadi/io/files/FileTree.html#all:Seq[T]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -348,7 +363,7 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">all</span><span class="result">: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="java.io.File">File</span>]</span>
+        <span class="name">all</span><span class="result">: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="com.mipadi.io.files.FileTree.T">T</span>]</span>
       </span>
       
       <p class="shortcomment cmt">Returns a sequence of all paths rooted under this file, including
@@ -412,9 +427,9 @@
               
         </dd></dl></div>
     </li><li name="com.mipadi.io.files.FileTree#contains" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="contains[A](file:A)(implicitev:com.mipadi.io.files.Locatable[A]):Boolean"></a><a id="contains[A](A)(Locatable[A]):Boolean"></a>
+      <a id="contains(file:T):Boolean"></a><a id="contains(T):Boolean"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/io/files/FileTree.html#contains[A](file:A)(implicitev:com.mipadi.io.files.Locatable[A]):Boolean" title="Permalink">
+      <a href="../../../../com/mipadi/io/files/FileTree.html#contains(file:T):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -423,14 +438,12 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">contains</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="file">file: <span class="extype" name="com.mipadi.io.files.FileTree.contains.A">A</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="ev">ev: <a href="Locatable.html" class="extype" name="com.mipadi.io.files.Locatable">Locatable</a>[<span class="extype" name="com.mipadi.io.files.FileTree.contains.A">A</span>]</span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+        <span class="name">contains</span><span class="params">(<span name="file">file: <span class="extype" name="com.mipadi.io.files.FileTree.T">T</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
       
       <p class="shortcomment cmt">Tests whether the directory tree contains the given file.</p><div class="fullcomment"><div class="comment cmt"><p>Tests whether the directory tree contains the given file.
-</p></div><dl class="paramcmts block"><dt class="tparam">A</dt><dd class="cmt"><p>
-   The type of path-like object whose presence is being tested</p></dd><dt class="param">file</dt><dd class="cmt"><p>
-   The file to test</p></dd><dt class="param">ev</dt><dd class="cmt"><p>
-   Implicit delegate that converts the argument to a file</p></dd><dt>returns</dt><dd class="cmt"><p>
+</p></div><dl class="paramcmts block"><dt class="param">file</dt><dd class="cmt"><p>
+   The file to test</p></dd><dt>returns</dt><dd class="cmt"><p>
    <code>true</code> if the file is contained within this directory tree</p></dd></dl></div>
     </li><li name="scala.AnyRef#eq" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="eq(x$1:AnyRef):Boolean"></a><a id="eq(AnyRef):Boolean"></a>
@@ -465,9 +478,9 @@
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="com.mipadi.io.files.FileTree#filesOnly" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="filesOnly:Seq[java.io.File]"></a><a id="filesOnly:Seq[File]"></a>
+      <a id="filesOnly:Seq[T]"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/io/files/FileTree.html#filesOnly:Seq[java.io.File]" title="Permalink">
+      <a href="../../../../com/mipadi/io/files/FileTree.html#filesOnly:Seq[T]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -476,7 +489,7 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">filesOnly</span><span class="result">: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="java.io.File">File</span>]</span>
+        <span class="name">filesOnly</span><span class="result">: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="com.mipadi.io.files.FileTree.T">T</span>]</span>
       </span>
       
       <p class="shortcomment cmt">Returns a sequence of all <i>file</i> paths rooted under this file.</p><div class="fullcomment"><div class="comment cmt"><p>Returns a sequence of all <i>file</i> paths rooted under this file.
@@ -617,9 +630,9 @@
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
     </li><li name="com.mipadi.io.files.FileTree#root" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="root:java.io.File"></a><a id="root:File"></a>
+      <a id="root:T"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/io/files/FileTree.html#root:java.io.File" title="Permalink">
+      <a href="../../../../com/mipadi/io/files/FileTree.html#root:T" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -628,7 +641,7 @@
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">root</span><span class="result">: <span class="extype" name="java.io.File">File</span></span>
+        <span class="name">root</span><span class="result">: <span class="extype" name="com.mipadi.io.files.FileTree.T">T</span></span>
       </span>
       
       

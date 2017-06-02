@@ -170,9 +170,9 @@
                         </a>
                       </li><li class="current-entities indented4">
                         <span class="separator"></span>
-                        <a class="class" href="package$$RichFile.html" title="Implicitly converts java.io.File objects and adds some extension
+                        <a class="class" href="package$$RichFile.html" title="Implicitly converts file-like objects and adds some extension
  methods."></a>
-                        <a href="package$$RichFile.html" title="Implicitly converts java.io.File objects and adds some extension
+                        <a href="package$$RichFile.html" title="Implicitly converts file-like objects and adds some extension
  methods.">
                           RichFile
                         </a>
@@ -273,7 +273,71 @@
 
         <div class="values members">
               <h3>Abstract Value Members</h3>
-              <ol><li name="com.mipadi.io.files.Locatable#join" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+              <ol><li name="com.mipadi.io.files.Locatable#getAbsolutePath" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="getAbsolutePath(a:T):String"></a><a id="getAbsolutePath(T):String"></a>
+      <span class="permalink">
+      <a href="../../../../com/mipadi/io/files/Locatable.html#getAbsolutePath(a:T):String" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getAbsolutePath</span><span class="params">(<span name="a">a: <span class="extype" name="com.mipadi.io.files.Locatable.T">T</span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Returns the locatable objects absolute path, as a string.</p>
+    </li><li name="com.mipadi.io.files.Locatable#getFiles" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="getFiles(a:T):Seq[T]"></a><a id="getFiles(T):Seq[T]"></a>
+      <span class="permalink">
+      <a href="../../../../com/mipadi/io/files/Locatable.html#getFiles(a:T):Seq[T]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getFiles</span><span class="params">(<span name="a">a: <span class="extype" name="com.mipadi.io.files.Locatable.T">T</span></span>)</span><span class="result">: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="com.mipadi.io.files.Locatable.T">T</span>]</span>
+      </span>
+      
+      <p class="shortcomment cmt">Returns the list of files rooted at the given path.</p>
+    </li><li name="com.mipadi.io.files.Locatable#getPath" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="getPath(a:T):String"></a><a id="getPath(T):String"></a>
+      <span class="permalink">
+      <a href="../../../../com/mipadi/io/files/Locatable.html#getPath(a:T):String" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getPath</span><span class="params">(<span name="a">a: <span class="extype" name="com.mipadi.io.files.Locatable.T">T</span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Returns the locatable object's path as a string.</p>
+    </li><li name="com.mipadi.io.files.Locatable#isDirectory" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="isDirectory(a:T):Boolean"></a><a id="isDirectory(T):Boolean"></a>
+      <span class="permalink">
+      <a href="../../../../com/mipadi/io/files/Locatable.html#isDirectory(a:T):Boolean" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isDirectory</span><span class="params">(<span name="a">a: <span class="extype" name="com.mipadi.io.files.Locatable.T">T</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Returns <code>true</code> if the locatable object is a directory.</p>
+    </li><li name="com.mipadi.io.files.Locatable#join" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
       <a id="join(a:T,b:String):java.nio.file.Path"></a><a id="join(T,String):Path"></a>
       <span class="permalink">
       <a href="../../../../com/mipadi/io/files/Locatable.html#join(a:T,b:String):java.nio.file.Path" title="Permalink">

@@ -170,9 +170,9 @@
                         </a>
                       </li><li class="current-entities indented4">
                         <span class="separator"></span>
-                        <a class="class" href="" title="Implicitly converts java.io.File objects and adds some extension
+                        <a class="class" href="" title="Implicitly converts file-like objects and adds some extension
  methods."></a>
-                        <a href="" title="Implicitly converts java.io.File objects and adds some extension
+                        <a href="" title="Implicitly converts file-like objects and adds some extension
  methods.">
                           RichFile
                         </a>
@@ -205,19 +205,20 @@
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <span class="name">RichFile</span><span class="result"> extends <span class="extype" name="scala.Ordered">Ordered</span>[<span class="extype" name="java.io.File">File</span>]</span>
+        <span class="name">RichFile</span><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <span class="extype" name="scala.Ordered">Ordered</span>[<span class="extype" name="com.mipadi.io.files.RichFile.T">T</span>]</span>
       </span>
       </h4>
 
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Implicitly converts <code>java.io.File</code> objects and adds some extension
- methods. Also allows <code>File</code> objects to be ordered based on their
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Implicitly converts file-like objects and adds some extension
+ methods. Also allows file-like objects to be ordered based on their
  paths.
-</p></div><div class="toggleContainer block">
+</p></div><dl class="paramcmts block"><dt class="tparam">T</dt><dd class="cmt"><p>
+   The <code><a href="Locatable.html" class="extype" name="com.mipadi.io.files.Locatable">Locatable</a></code> type</p></dd></dl><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
           </span>
-          <div class="superTypes hiddenContent"><span class="extype" name="scala.math.Ordered">Ordered</span>[<span class="extype" name="java.io.File">File</span>], <span class="extype" name="java.lang.Comparable">Comparable</span>[<span class="extype" name="java.io.File">File</span>], <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.math.Ordered">Ordered</span>[<span class="extype" name="com.mipadi.io.files.RichFile.T">T</span>], <span class="extype" name="java.lang.Comparable">Comparable</span>[<span class="extype" name="com.mipadi.io.files.RichFile.T">T</span>], <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
         
 
@@ -264,9 +265,9 @@
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
               <ol><li name="com.mipadi.io.files.RichFile#&lt;init&gt;" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="&lt;init&gt;(f:java.io.File):com.mipadi.io.files.package.RichFile"></a><a id="&lt;init&gt;:RichFile"></a>
+      <a id="&lt;init&gt;(f:T)(implicitev:com.mipadi.io.files.Locatable[T]):com.mipadi.io.files.package.RichFile[T]"></a><a id="&lt;init&gt;:RichFile[T]"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/io/files/package$$RichFile.html#&lt;init&gt;(f:java.io.File):com.mipadi.io.files.package.RichFile" title="Permalink">
+      <a href="../../../../com/mipadi/io/files/package$$RichFile.html#&lt;init&gt;(f:T)(implicitev:com.mipadi.io.files.Locatable[T]):com.mipadi.io.files.package.RichFile[T]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -275,11 +276,12 @@
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">RichFile</span><span class="params">(<span name="f">f: <span class="extype" name="java.io.File">File</span></span>)</span>
+        <span class="name">RichFile</span><span class="params">(<span name="f">f: <span class="extype" name="com.mipadi.io.files.RichFile.T">T</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="ev">ev: <a href="Locatable.html" class="extype" name="com.mipadi.io.files.Locatable">Locatable</a>[<span class="extype" name="com.mipadi.io.files.RichFile.T">T</span>]</span>)</span>
       </span>
       
       <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">f</dt><dd class="cmt"><p>
-   The wrapped file.</p></dd></dl></div>
+   The wrapped file</p></dd><dt class="param">ev</dt><dd class="cmt"><p>
+   An implicit delegate for handling file-like operations</p></dd></dl></div>
     </li></ol>
             </div>
 
@@ -323,7 +325,7 @@
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="scala.math.Ordered#&lt;" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="&lt;(that:A):Boolean"></a><a id="&lt;(File):Boolean"></a>
+      <a id="&lt;(that:A):Boolean"></a><a id="&lt;(T):Boolean"></a>
       <span class="permalink">
       <a href="../../../../com/mipadi/io/files/package$$RichFile.html#&lt;(that:A):Boolean" title="Permalink">
         <i class="material-icons"></i>
@@ -334,12 +336,12 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span title="gt4s: $less" class="name">&lt;</span><span class="params">(<span name="that">that: <span class="extype" name="java.io.File">File</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+        <span title="gt4s: $less" class="name">&lt;</span><span class="params">(<span name="that">that: <span class="extype" name="com.mipadi.io.files.RichFile.T">T</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Ordered</dd></dl></div>
     </li><li name="scala.math.Ordered#&lt;=" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="&lt;=(that:A):Boolean"></a><a id="&lt;=(File):Boolean"></a>
+      <a id="&lt;=(that:A):Boolean"></a><a id="&lt;=(T):Boolean"></a>
       <span class="permalink">
       <a href="../../../../com/mipadi/io/files/package$$RichFile.html#&lt;=(that:A):Boolean" title="Permalink">
         <i class="material-icons"></i>
@@ -350,7 +352,7 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span title="gt4s: $less$eq" class="name">&lt;=</span><span class="params">(<span name="that">that: <span class="extype" name="java.io.File">File</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+        <span title="gt4s: $less$eq" class="name">&lt;=</span><span class="params">(<span name="that">that: <span class="extype" name="com.mipadi.io.files.RichFile.T">T</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Ordered</dd></dl></div>
@@ -371,7 +373,7 @@
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="scala.math.Ordered#&gt;" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="&gt;(that:A):Boolean"></a><a id="&gt;(File):Boolean"></a>
+      <a id="&gt;(that:A):Boolean"></a><a id="&gt;(T):Boolean"></a>
       <span class="permalink">
       <a href="../../../../com/mipadi/io/files/package$$RichFile.html#&gt;(that:A):Boolean" title="Permalink">
         <i class="material-icons"></i>
@@ -382,12 +384,12 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span title="gt4s: $greater" class="name">&gt;</span><span class="params">(<span name="that">that: <span class="extype" name="java.io.File">File</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+        <span title="gt4s: $greater" class="name">&gt;</span><span class="params">(<span name="that">that: <span class="extype" name="com.mipadi.io.files.RichFile.T">T</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Ordered</dd></dl></div>
     </li><li name="scala.math.Ordered#&gt;=" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="&gt;=(that:A):Boolean"></a><a id="&gt;=(File):Boolean"></a>
+      <a id="&gt;=(that:A):Boolean"></a><a id="&gt;=(T):Boolean"></a>
       <span class="permalink">
       <a href="../../../../com/mipadi/io/files/package$$RichFile.html#&gt;=(that:A):Boolean" title="Permalink">
         <i class="material-icons"></i>
@@ -398,7 +400,7 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span title="gt4s: $greater$eq" class="name">&gt;=</span><span class="params">(<span name="that">that: <span class="extype" name="java.io.File">File</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+        <span title="gt4s: $greater$eq" class="name">&gt;=</span><span class="params">(<span name="that">that: <span class="extype" name="com.mipadi.io.files.RichFile.T">T</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Ordered</dd></dl></div>
@@ -414,7 +416,7 @@
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">absolutePath</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+        <span class="name">absolutePath</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
       </span>
       
       <p class="shortcomment cmt">The wrapped file's absolute path</p>
@@ -457,9 +459,9 @@
               
         </dd></dl></div>
     </li><li name="com.mipadi.io.files.RichFile#compare" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="compare(that:java.io.File):Int"></a><a id="compare(File):Int"></a>
+      <a id="compare(that:T):Int"></a><a id="compare(T):Int"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/io/files/package$$RichFile.html#compare(that:java.io.File):Int" title="Permalink">
+      <a href="../../../../com/mipadi/io/files/package$$RichFile.html#compare(that:T):Int" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -468,14 +470,14 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">compare</span><span class="params">(<span name="that">that: <span class="extype" name="java.io.File">File</span></span>)</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+        <span class="name">compare</span><span class="params">(<span name="that">that: <span class="extype" name="com.mipadi.io.files.RichFile.T">T</span></span>)</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
       </span>
       
       <p class="shortcomment cmt">Compares the receiver's path to <code>that</code>'s path.</p><div class="fullcomment"><div class="comment cmt"><p>Compares the receiver's path to <code>that</code>'s path.</p><p> Determines a logical sorting for <code>File</code> objects.
 </p></div><dl class="paramcmts block"><dt class="param">that</dt><dd class="cmt"><p>
    The file whose path the receiver's should be compared to.</p></dd><dt>returns</dt><dd class="cmt"><p></p><ul><li><b>&lt; 0</b> if <code>this</code> comes before <code>that</code></li><li><b>&gt; 0</b> if <code>this</code> comes after <code>that</code></li><li><b>0</b> if <code>this</code> is equal to <code>that</code></li></ul></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="com.mipadi.io.files.RichFile">RichFile</a> → Ordered</dd></dl></div>
     </li><li name="scala.math.Ordered#compareTo" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="compareTo(that:A):Int"></a><a id="compareTo(File):Int"></a>
+      <a id="compareTo(that:A):Int"></a><a id="compareTo(T):Int"></a>
       <span class="permalink">
       <a href="../../../../com/mipadi/io/files/package$$RichFile.html#compareTo(that:A):Int" title="Permalink">
         <i class="material-icons"></i>
@@ -486,7 +488,7 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">compareTo</span><span class="params">(<span name="that">that: <span class="extype" name="java.io.File">File</span></span>)</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+        <span class="name">compareTo</span><span class="params">(<span name="that">that: <span class="extype" name="com.mipadi.io.files.RichFile.T">T</span></span>)</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Ordered → Comparable</dd></dl></div>
@@ -576,6 +578,22 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="com.mipadi.io.files.RichFile#isDirectory" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="isDirectory:Boolean"></a>
+      <span class="permalink">
+      <a href="../../../../com/mipadi/io/files/package$$RichFile.html#isDirectory:Boolean" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isDirectory</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      
+      <p class="shortcomment cmt"><code>true</code> if the file is a directory</p>
     </li><li name="scala.Any#isInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="isInstanceOf[T0]:Boolean"></a>
       <span class="permalink">
@@ -652,14 +670,14 @@
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">path</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+        <span class="name">path</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
       </span>
       
       <p class="shortcomment cmt">The wrapped file's path</p>
     </li><li name="com.mipadi.io.files.RichFile#subtree" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="subtree:com.mipadi.io.files.FileTree"></a><a id="subtree:FileTree"></a>
+      <a id="subtree:com.mipadi.io.files.FileTree[T]"></a><a id="subtree:FileTree[T]"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/io/files/package$$RichFile.html#subtree:com.mipadi.io.files.FileTree" title="Permalink">
+      <a href="../../../../com/mipadi/io/files/package$$RichFile.html#subtree:com.mipadi.io.files.FileTree[T]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -668,7 +686,7 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">subtree</span><span class="result">: <a href="FileTree.html" class="extype" name="com.mipadi.io.files.FileTree">FileTree</a></span>
+        <span class="name">subtree</span><span class="result">: <a href="FileTree.html" class="extype" name="com.mipadi.io.files.FileTree">FileTree</a>[<span class="extype" name="com.mipadi.io.files.RichFile.T">T</span>]</span>
       </span>
       
       <p class="shortcomment cmt">A listing of all files rooted under this path.</p><div class="fullcomment"><div class="comment cmt"><p>A listing of all files rooted under this path.
@@ -784,9 +802,9 @@
 
         <div id="inheritedMembers">
         <div class="parent" name="scala.math.Ordered">
-              <h3>Inherited from <span class="extype" name="scala.math.Ordered">Ordered</span>[<span class="extype" name="java.io.File">File</span>]</h3>
+              <h3>Inherited from <span class="extype" name="scala.math.Ordered">Ordered</span>[<span class="extype" name="com.mipadi.io.files.RichFile.T">T</span>]</h3>
             </div><div class="parent" name="java.lang.Comparable">
-              <h3>Inherited from <span class="extype" name="java.lang.Comparable">Comparable</span>[<span class="extype" name="java.io.File">File</span>]</h3>
+              <h3>Inherited from <span class="extype" name="java.lang.Comparable">Comparable</span>[<span class="extype" name="com.mipadi.io.files.RichFile.T">T</span>]</h3>
             </div><div class="parent" name="scala.AnyRef">
               <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
             </div><div class="parent" name="scala.Any">
