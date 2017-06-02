@@ -41,6 +41,9 @@ trait Locatable[T] {
   /** Returns the locatable objects absolute path, as a string. */
   def getAbsolutePath(a: T): String
 
+  /** Returns `true` if the locatable object is a directory. */
+  def isDirectory(a: T): Boolean
+
   /** Joins a path-like object and a string together to form a new path. */
   def join(a: T, b: String): Path
 
@@ -58,6 +61,8 @@ object Locatable {
     override def getPath(a: Path): String = a.toString
 
     override def getAbsolutePath(a: Path): String = a.toAbsolutePath.toString
+
+    override def isDirectory(a: Path): Boolean = Files.isDirectory(a)
 
     override def join(a: Path, b: String): Path =
       FileSystems.getDefault.getPath(a.toString, b)
@@ -77,6 +82,8 @@ object Locatable {
     override def getPath(a: File): String = a.getPath
 
     override def getAbsolutePath(a: File): String = a.getAbsolutePath
+
+    override def isDirectory(a: File): Boolean = a.isDirectory
 
     override def join(a: File, b: String): Path =
       FileSystems.getDefault.getPath(a.toPath.toString, b)

@@ -64,6 +64,15 @@ class LocatableSpec extends FlatSpec with Matchers {
     fEv.getAbsolutePath(file).head should be ('/')
   }
 
+  it should "return true if it is a directory" in {
+    fEv.isDirectory(file) should be (true)
+  }
+
+  it should "return false if it is not a directory" in {
+    val f = new File("build.sbt")
+    fEv.isDirectory(f) should be (false)
+  }
+
   "A path" should "be convertible to a file" in {
     pEv.toFile(path) should be (file)
   }
@@ -93,5 +102,14 @@ class LocatableSpec extends FlatSpec with Matchers {
 
   it should "return its absolute path" in {
     pEv.getAbsolutePath(path).head should be ('/')
+  }
+
+  it should "return true if it is a directory" in {
+    pEv.isDirectory(path) should be (true)
+  }
+
+  it should "return false if it is not a directory" in {
+    val p = FileSystems.getDefault.getPath("build.sbt")
+    pEv.isDirectory(p) should be (false)
   }
 }
