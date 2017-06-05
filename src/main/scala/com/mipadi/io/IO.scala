@@ -39,7 +39,8 @@ class IO[A](run: => A) {
 
   /** Maps the given function onto the value produced by this I/O operation.
    *
-   *  This is equivalent to the monadic ''bind'' operation ('>>=' in Haskell).
+   *  This is equivalent to the monadic ''bind'' operation (''>>='' in
+   *  Haskell).
    *
    *  @tparam B
    *    Return type of the operation chained to this I/O operation
