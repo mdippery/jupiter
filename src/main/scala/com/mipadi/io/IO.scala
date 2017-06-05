@@ -24,15 +24,16 @@ package com.mipadi.io
  *  @param run
  *    A function that should be run when this `[[com.mipadi.io.IO IO]]`
  *    operation is applied.
+ *
  *  @see
- *    [[https://medium.com/@sinisalouc/demystifying-the-monad-in-scala-cc716bb6f534
- *      Demystifying the Monad in Scala]]
+ *    [[https://gist.github.com/jdegoes/7cc7e7aacd032773f3c24123d0d486d4
+ *      A pedagogical implementation of the IO monad in Scala in 14 LOC]]
  *  @see
  *    [[https://engineering.sharethrough.com/blog/2016/04/18/explaining-monads-part-1/
  *      Mondas are confusing. Let us help.]]
  *  @see
- *    [[https://gist.github.com/jdegoes/7cc7e7aacd032773f3c24123d0d486d4
- *      A pedagogical implementation of the IO monad in Scala in 14 LOC]]
+ *    [[https://medium.com/@sinisalouc/demystifying-the-monad-in-scala-cc716bb6f534
+ *      Demystifying the Monad in Scala]]
  */
 class IO[A](run: => A) {
 
