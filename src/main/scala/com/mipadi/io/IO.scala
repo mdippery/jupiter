@@ -62,7 +62,7 @@ class IO[A](run: => A) {
    *    A new I/O operation that produces the result of applying the given
    *    function to `run` when evalulated
    */
-  def map[B](f: A => B): IO[B] = IO { f(unsafePerformIO()) }
+  def map[B](f: A => B): IO[B] = flatMap(x => IO { f(x) })
 
   /** Evaluations the I/O operation and produces its result.
    *
