@@ -32,4 +32,39 @@ class IOSpec extends FlatSpec with Matchers {
     io() should be (1)
     i should be (1)
   }
+
+  it should "bind another IO operation" in {
+    var i = 0
+    var io = IO { i += 10; i }
+    i should be (0)
+    io = io flatMap { _ => i -= 5; IO { i } }
+    i should be (0)
+    io() should be (5)
+    i should be (5)
+  }
+
+  it should "obey the left-identity law of monads" in {
+    val x = 5
+    val f = (x: Int) => IO { x * 4 }
+    val io = IO { x }
+    val left = io flatMap f
+    val right = f(x)
+    left() should be (right())
+  }
+
+  it should "obey the right-identity law of monads" in {
+    val m = IO { 5 }
+    val unit = (x: Int) => IO { x }
+    val left = m flatMap unit
+    left() should be (m())
+  }
+
+  it should "obey the associativity law of monads" in {
+    val f = (x: Int) => IO { x * 2 }
+    val g = (x: Int) => IO { x * 10 }
+    val io = IO { 5 }
+    val left = io flatMap f flatMap g
+    val right = io flatMap { x => f(x) flatMap g }
+    left() should be (right())
+  }
 }

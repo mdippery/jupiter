@@ -19,18 +19,63 @@ package com.mipadi.io
 
 /** Represents an I/O operation.
  *
+ *  @tparam A
+ *    Return type of the I/O operation
  *  @param run
  *    A function that should be run when this `[[com.mipadi.io.IO IO]]`
  *    operation is applied.
+ *  @see
+ *    [[https://medium.com/@sinisalouc/demystifying-the-monad-in-scala-cc716bb6f534
+ *      Demystifying the Monad in Scala]]
+ *  @see
+ *    [[https://engineering.sharethrough.com/blog/2016/04/18/explaining-monads-part-1/
+ *      Mondas are confusing. Let us help.]]
+ *  @see
+ *    [[https://gist.github.com/jdegoes/7cc7e7aacd032773f3c24123d0d486d4
+ *      A pedagogical implementation of the IO monad in Scala in 14 LOC]]
  */
 class IO[A](run: => A) {
 
-  /** Run the function wrapped by this object.
+  /** Maps the given function onto the value produced by this I/O operation.
+   *
+   *  This is equivalent to the monadic ''bind'' operation ('>>=' in Haskell).
+   *
+   *  @tparam B
+   *    Return type of the operation chained to this I/O operation
+   *  @param f
+   *    The function to apply to the result of this I/O operation
+   *  @return
+   *    A new I/O operation that is the result of applying the given
+   *    function to `run`
+   */
+  def flatMap[B](f: A => IO[B]): IO[B] =
+    IO { f(unsafePerformIO()).unsafePerformIO() }
+
+  /** Maps the given function onto this monad, calculating a new value
+   *  and lifting it into another monad.
+   *
+   *  @tparam B
+   *    The return type of the given function
+   *  @param f
+   *    The function to map onto the value calculated by this I/O operation
+   *  @return
+   *    A new I/O operation that produces the result of applying the given
+   *    function to `run` when evalulated
+   */
+  def map[B](f: A => B): IO[B] = IO { f(run) }
+
+  /** Evaluations the I/O operation and produces its result.
    *
    *  @return
-   *    The result of applying the operation wrapped by this object.
+   *    The result of evaluating the I/O operation
    */
-  def apply(): A = run
+  def unsafePerformIO(): A = run
+
+  /** An alias for `flatMap`. */
+  def >>= [B](f: A => IO[B]): IO[B] = flatMap(f)
+
+  /** An alias for `unsafePerformIO`. */
+  def apply(): A = unsafePerformIO()
 }
 
 /** Wraps a function or sequence of operations in an `[[com.mipadi.io.IO IO]]`
@@ -42,12 +87,6 @@ class IO[A](run: => A) {
  *
  *  {{{
  *  val printIO = IO { println("This is an IO operation") }
- *  }}}
- *
- *  The operation can be run by simply applying the object:
- *
- *  {{{
- *  printIO()
  *  }}}
  */
 object IO {
@@ -63,6 +102,8 @@ object IO {
    *    10 *= 2
    *  }
    *  }}}
+   *
+   *  This is equivalent to the monadic ''unit'' function.
    *
    *  @param run
    *    The operation to run when this object is applied.
