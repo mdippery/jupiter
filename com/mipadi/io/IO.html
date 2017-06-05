@@ -206,7 +206,11 @@
 
       
           <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Represents an I/O operation.
-</p></div><div class="toggleContainer block">
+</p></div><dl class="paramcmts block"><dt class="tparam">A</dt><dd class="cmt"><p>
+   Return type of the I/O operation</p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p>
+   <a href="https://gist.github.com/jdegoes/7cc7e7aacd032773f3c24123d0d486d4" target="_blank">A pedagogical implementation of the IO monad in Scala in 14 LOC</a></p></span><span class="cmt"><p>
+   <a href="https://engineering.sharethrough.com/blog/2016/04/18/explaining-monads-part-1/" target="_blank">Mondas are confusing. Let us help.</a></p></span><span class="cmt"><p>
+   <a href="https://medium.com/@sinisalouc/demystifying-the-monad-in-scala-cc716bb6f534" target="_blank">Demystifying the Monad in Scala</a></p></span></dd></dl><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
           </span>
@@ -332,7 +336,23 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="com.mipadi.io.IO#apply" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="com.mipadi.io.IO#&gt;&gt;=" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="&gt;&gt;=[B](f:A=&gt;com.mipadi.io.IO[B]):com.mipadi.io.IO[B]"></a><a id="&gt;&gt;=[B]((A)⇒IO[B]):IO[B]"></a>
+      <span class="permalink">
+      <a href="../../../com/mipadi/io/IO.html#&gt;&gt;=[B](f:A=&gt;com.mipadi.io.IO[B]):com.mipadi.io.IO[B]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $greater$greater$eq" class="name">&gt;&gt;=</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="f">f: (<span class="extype" name="com.mipadi.io.IO.A">A</span>) ⇒ <a href="" class="extype" name="com.mipadi.io.IO">IO</a>[<span class="extype" name="com.mipadi.io.IO.&gt;&gt;=.B">B</span>]</span>)</span><span class="result">: <a href="" class="extype" name="com.mipadi.io.IO">IO</a>[<span class="extype" name="com.mipadi.io.IO.&gt;&gt;=.B">B</span>]</span>
+      </span>
+      
+      <p class="shortcomment cmt">An alias for <code>flatMap</code>.</p>
+    </li><li name="com.mipadi.io.IO#apply" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="apply():A"></a>
       <span class="permalink">
       <a href="../../../com/mipadi/io/IO.html#apply():A" title="Permalink">
@@ -347,9 +367,7 @@
         <span class="name">apply</span><span class="params">()</span><span class="result">: <span class="extype" name="com.mipadi.io.IO.A">A</span></span>
       </span>
       
-      <p class="shortcomment cmt">Run the function wrapped by this object.</p><div class="fullcomment"><div class="comment cmt"><p>Run the function wrapped by this object.
-</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>
-   The result of applying the operation wrapped by this object.</p></dd></dl></div>
+      <p class="shortcomment cmt">An alias for <code>unsafePerformIO</code>.</p>
     </li><li name="scala.Any#asInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <span class="permalink">
@@ -442,6 +460,27 @@
     </span>)</span>
               
         </dd></dl></div>
+    </li><li name="com.mipadi.io.IO#flatMap" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="flatMap[B](f:A=&gt;com.mipadi.io.IO[B]):com.mipadi.io.IO[B]"></a><a id="flatMap[B]((A)⇒IO[B]):IO[B]"></a>
+      <span class="permalink">
+      <a href="../../../com/mipadi/io/IO.html#flatMap[B](f:A=&gt;com.mipadi.io.IO[B]):com.mipadi.io.IO[B]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">flatMap</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="f">f: (<span class="extype" name="com.mipadi.io.IO.A">A</span>) ⇒ <a href="" class="extype" name="com.mipadi.io.IO">IO</a>[<span class="extype" name="com.mipadi.io.IO.flatMap.B">B</span>]</span>)</span><span class="result">: <a href="" class="extype" name="com.mipadi.io.IO">IO</a>[<span class="extype" name="com.mipadi.io.IO.flatMap.B">B</span>]</span>
+      </span>
+      
+      <p class="shortcomment cmt">Maps the given function onto the value produced by this I/O operation.</p><div class="fullcomment"><div class="comment cmt"><p>Maps the given function onto the value produced by this I/O operation.</p><p> This is equivalent to the monadic <i>bind</i> operation ('&gt;&gt;=' in Haskell).
+</p></div><dl class="paramcmts block"><dt class="tparam">B</dt><dd class="cmt"><p>
+   Return type of the operation chained to this I/O operation</p></dd><dt class="param">f</dt><dd class="cmt"><p>
+   The function to apply to the result of this I/O operation</p></dd><dt>returns</dt><dd class="cmt"><p>
+   A new I/O operation that is the result of applying the given
+   function to <code>run</code></p></dd></dl></div>
     </li><li name="scala.AnyRef#getClass" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getClass():Class[_]"></a>
       <span class="permalink">
@@ -490,6 +529,29 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="com.mipadi.io.IO#map" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="map[B](f:A=&gt;B):com.mipadi.io.IO[B]"></a><a id="map[B]((A)⇒B):IO[B]"></a>
+      <span class="permalink">
+      <a href="../../../com/mipadi/io/IO.html#map[B](f:A=&gt;B):com.mipadi.io.IO[B]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">map</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="f">f: (<span class="extype" name="com.mipadi.io.IO.A">A</span>) ⇒ <span class="extype" name="com.mipadi.io.IO.map.B">B</span></span>)</span><span class="result">: <a href="" class="extype" name="com.mipadi.io.IO">IO</a>[<span class="extype" name="com.mipadi.io.IO.map.B">B</span>]</span>
+      </span>
+      
+      <p class="shortcomment cmt">Maps the given function onto this monad, calculating a new value
+ and lifting it into another monad.</p><div class="fullcomment"><div class="comment cmt"><p>Maps the given function onto this monad, calculating a new value
+ and lifting it into another monad.
+</p></div><dl class="paramcmts block"><dt class="tparam">B</dt><dd class="cmt"><p>
+   The return type of the given function</p></dd><dt class="param">f</dt><dd class="cmt"><p>
+   The function to map onto the value calculated by this I/O operation</p></dd><dt>returns</dt><dd class="cmt"><p>
+   A new I/O operation that produces the result of applying the given
+   function to <code>run</code> when evalulated</p></dd></dl></div>
     </li><li name="scala.AnyRef#ne" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ne(x$1:AnyRef):Boolean"></a><a id="ne(AnyRef):Boolean"></a>
       <span class="permalink">
@@ -570,6 +632,24 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="com.mipadi.io.IO#unsafePerformIO" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="unsafePerformIO():A"></a>
+      <span class="permalink">
+      <a href="../../../com/mipadi/io/IO.html#unsafePerformIO():A" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">unsafePerformIO</span><span class="params">()</span><span class="result">: <span class="extype" name="com.mipadi.io.IO.A">A</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Evaluations the I/O operation and produces its result.</p><div class="fullcomment"><div class="comment cmt"><p>Evaluations the I/O operation and produces its result.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>
+   The result of evaluating the I/O operation</p></dd></dl></div>
     </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>
       <span class="permalink">
