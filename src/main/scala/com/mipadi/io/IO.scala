@@ -35,7 +35,7 @@ package com.mipadi.io
  *    [[https://medium.com/@sinisalouc/demystifying-the-monad-in-scala-cc716bb6f534
  *      Demystifying the Monad in Scala]]
  */
-class IO[A](run: => A) {
+trait IO[A] {
 
   /** Applies the given function to the value produced by this I/O operation.
    *
@@ -50,8 +50,7 @@ class IO[A](run: => A) {
    *    A new I/O operation that is the result of applying the given
    *    function to `run`
    */
-  def flatMap[B](f: A => IO[B]): IO[B] =
-    IO { f(unsafePerformIO()).unsafePerformIO() }
+  def flatMap[B](f: A => IO[B]): IO[B]
 
   /** Applies the given function to the value produced by this I/O operation
    *  and lifts it into another I/O operation.
@@ -71,13 +70,13 @@ class IO[A](run: => A) {
    *  @return
    *    The result of evaluating the I/O operation
    */
-  def unsafePerformIO(): A = run
+  def apply(): A
+
+  /** An alias for `apply()`. */
+  def unsafePerformIO(): A = apply()
 
   /** An alias for `flatMap`. */
   def >>= [B](f: A => IO[B]): IO[B] = flatMap(f)
-
-  /** An alias for `unsafePerformIO`. */
-  def apply(): A = unsafePerformIO()
 }
 
 /** Wraps a function or sequence of operations in an `[[com.mipadi.io.IO IO]]`
@@ -112,5 +111,13 @@ object IO {
    *  @return
    *    A new `[[com.mipadi.io.IO IO]]` object that wraps the `run` function.
    */
-  def apply[A](run: => A): IO[A] = new IO(run)
+  def apply[A](run: => A): IO[A] = new IOImpl(run)
+}
+
+
+private class IOImpl[A](run: => A) extends IO[A] {
+  override def flatMap[B](f: A => IO[B]): IO[B] =
+    IO { f(unsafePerformIO()).unsafePerformIO() }
+
+  override def apply(): A = run
 }
