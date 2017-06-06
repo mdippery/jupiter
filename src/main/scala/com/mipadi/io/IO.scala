@@ -17,7 +17,7 @@
 package com.mipadi.io
 
 
-/** Represents an I/O operation.
+/** Encapsulates an I/O operation.
  *
  *  @tparam A
  *    Return type of the I/O operation
@@ -37,7 +37,7 @@ package com.mipadi.io
  */
 class IO[A](run: => A) {
 
-  /** Maps the given function onto the value produced by this I/O operation.
+  /** Applies the given function to the value produced by this I/O operation.
    *
    *  This is equivalent to the monadic ''bind'' operation (''>>='' in
    *  Haskell).
@@ -53,8 +53,8 @@ class IO[A](run: => A) {
   def flatMap[B](f: A => IO[B]): IO[B] =
     IO { f(unsafePerformIO()).unsafePerformIO() }
 
-  /** Maps the given function onto this monad, calculating a new value
-   *  and lifting it into another monad.
+  /** Applies the given function to the value produced by this I/O operation
+   *  and lifts it into another I/O operation.
    *
    *  @tparam B
    *    The return type of the given function
