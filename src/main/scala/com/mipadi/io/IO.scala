@@ -65,7 +65,7 @@ trait IO[A] {
    */
   def map[B](f: A => B): IO[B] = flatMap(x => IO { f(x) })
 
-  /** Evaluations the I/O operation and produces its result.
+  /** Evaluates the I/O operation and produces its result.
    *
    *  @return
    *    The result of evaluating the I/O operation
