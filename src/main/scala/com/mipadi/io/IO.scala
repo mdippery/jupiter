@@ -50,7 +50,7 @@ trait IO[A] {
    *    A new I/O operation that is the result of applying the given
    *    function to `run`
    */
-  def flatMap[B](f: A => IO[B]): IO[B]
+  def flatMap[B](f: A => IO[B]): IO[B] = IO { f(apply())() }
 
   /** Applies the given function to the value produced by this I/O operation
    *  and lifts it into another I/O operation.
@@ -131,8 +131,5 @@ object IO {
 
 
 private class IOImpl[A](run: => A) extends IO[A] {
-  override def flatMap[B](f: A => IO[B]): IO[B] =
-    IO { f(unsafePerformIO()).unsafePerformIO() }
-
   override def apply(): A = run
 }
