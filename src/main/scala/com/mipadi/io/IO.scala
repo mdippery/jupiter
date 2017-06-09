@@ -77,6 +77,21 @@ trait IO[A] {
 
   /** An alias for `flatMap`. */
   def >>= [B](f: A => IO[B]): IO[B] = flatMap(f)
+
+  /** Compose two I/O operations together.
+   *
+   *  The target of the method is evaluated, but its return value is discarded.
+   *  `io` is also evaluated, and the result of its evaluation is returned.
+   *
+   *  @param io
+   *    The second I/O operation to evaluate
+   *  @return
+   *    The result of evaluation `io`
+   */
+  def >> [B](io: IO[B]): IO[B] = IO {
+    unsafePerformIO()
+    io.unsafePerformIO()
+  }
 }
 
 /** Wraps a function or sequence of operations in an `[[com.mipadi.io.IO IO]]`

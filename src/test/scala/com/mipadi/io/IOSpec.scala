@@ -53,6 +53,18 @@ class IOSpec extends FlatSpec with Matchers {
     i should be (5)
   }
 
+  it should "compose another I/O action onto itself" in {
+    var i = 5
+    val io1 = IO { i *= 10; i }
+    i should be (5)
+    val io2 = IO { 10 }
+    val io3 = io1 >> io2
+    i should be (5)
+    val res = io3()
+    i should be (50)
+    res should be (10)
+  }
+
   it should "obey the left-identity law of monads" in {
     val x = 5
     val f = (x: Int) => IO { x * 4 }
