@@ -86,7 +86,7 @@ trait IO[A] {
    *  @param io
    *    The second I/O operation to evaluate
    *  @return
-   *    The result of evaluation `io`
+   *    The result of evaluating `io`
    */
   def >> [B](io: IO[B]): IO[B] = IO {
     unsafePerformIO()
