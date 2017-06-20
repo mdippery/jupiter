@@ -20,10 +20,9 @@ package com.mipadi.core
 /** Provides a mechanism for piping or threading objects through methods
  *  and functions.
  *
- *  Any object can be implicitly converted to a
- *  `[[com.mipadi.core.pipes.Pipe Pipe]]`. This allows an object to be threaded
- *  through a series of functions, similar to Clojure's thread operator `->`
- *  or F#'s pipe forward operator `|>`. Instead of this:
+ *  Any object can be implicitly converted to a $pipe. This allows an object
+ *  to be threaded through a series of functions, similar to Clojure's thread
+ *  operator `->` or F#'s pipe forward operator `|>`. Instead of this:
  *
  *  {{{
  *  val x = someMethod(anotherMethod(aThirdMethod(obj)))
@@ -36,6 +35,9 @@ package com.mipadi.core
  *  }}}
  *
  *  Which reads a bit better in many cases.
+ *
+ *  @define pipe
+ *    `[[com.mipadi.core.pipes.Pipe Pipe]]`
  */
 package object pipes {
 

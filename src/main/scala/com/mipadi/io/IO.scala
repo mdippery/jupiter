@@ -22,8 +22,10 @@ package com.mipadi.io
  *  @tparam A
  *    Return type of the I/O operation
  *  @param run
- *    A function that should be run when this `[[com.mipadi.io.IO IO]]`
- *    operation is applied.
+ *    A function that should be run when this $IO operation is applied.
+ *
+ *  @define IO
+ *    `[[com.mipadi.io.IO IO]]`
  *
  *  @see
  *    [[https://gist.github.com/jdegoes/7cc7e7aacd032773f3c24123d0d486d4
@@ -94,23 +96,23 @@ trait IO[A] {
   }
 }
 
-/** Wraps a function or sequence of operations in an `[[com.mipadi.io.IO IO]]`
- *  object.
+/** Wraps a function or sequence of operations in an $IO object.
  *
- *  An `[[com.mipadi.io.IO IO]]` object represents a function or sequence of
- *  steps that can be performed at a later time. Creating such an object is
- *  fairly simple:
+ *  An $IO object represents a function or sequence of steps that can be
+ *  performed at a later time. Creating such an object is fairly simple:
  *
  *  {{{
  *  val printIO = IO { println("This is an IO operation") }
  *  }}}
+ *
+ *  @define IO
+ *    `[[com.mipadi.io.IO IO]]`
  */
 object IO {
 
-  /** Creates a new `[[com.mipadi.io.IO IO]]` object.
+  /** Creates a new $IO object.
    *
-   *  `[[com.mipadi.io.IO IO]]` objects can be created easily by simply
-   *  writing something like:
+   *  $IO objects can be created easily by simply writing something like:
    *
    *  {{{
    *  val getInt = IO {
@@ -124,7 +126,7 @@ object IO {
    *  @param run
    *    The operation to run when this object is applied.
    *  @return
-   *    A new `[[com.mipadi.io.IO IO]]` object that wraps the `run` function.
+   *    A new $IO object that wraps the `run` function.
    */
   def apply[A](run: => A): IO[A] = new IOImpl(run)
 }

@@ -21,19 +21,20 @@ import java.util.regex.{Matcher, Pattern}
 
 /** Provides operations for working with string objects.
  *
- *  Strings can implicitly be converted to a
- *  `[[com.mipadi.text.strings.MatcherString MatcherString]]`, which allows
+ *  Strings can implicitly be converted to a $matcherstring, which allows
  *  them to use the `~=` operator to check if a string matches a regex:
  *
  *  {{{
  *  import com.mipadi.text.strings._
  *  val matches = "my string" =~ "string$"
  *  }}}
+ *
+ *  @define matcherstring
+ *    `[[com.mipadi.text.strings.MatcherString MatcherString]]`
  */
 package object strings {
 
-  /** Implicitly converts Scala strings to
-   *  `[[com.mipadi.text.strings.MatcherString MatcherString]]` objects.
+  /** Implicitly converts Scala strings to $matcherstring objects.
    *
    *  This implicit conversion allows Scala strings to use the `~=` operator
    *  to check if they match a given regex:
@@ -42,6 +43,9 @@ package object strings {
    *  import com.mipadi.text.strings._
    *  val matches = "my string" =~ "string$"
    *  }}}
+   *
+   *  @define matcherstring
+   *    `[[com.mipadi.text.strings.MatcherString MatcherString]]`
    *
    *  @param s
    *    The wrapped string.

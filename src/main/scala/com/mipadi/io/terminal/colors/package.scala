@@ -19,14 +19,16 @@ package com.mipadi.io.terminal
 
 /** Provides a nice way to work with colors in the terminal.
  *
- *  String objects can be implicitly converted to a
- *  [[com.mipadi.io.terminal.colors.ColorizedString ColorizedString]],
+ *  String objects can be implicitly converted to a $colorizedstring,
  *  which allows programs to print colored strings to a terminal, like so:
  *
  *  {{{
  *  import com.mipadi.io.terminal.colors._
  *  println(s"The word \${"red".red} is red in this line.")
  *  }}}
+ *
+ *  @define colorizedstring
+ *    `[[com.mipadi.io.terminal.colors.ColorizedString ColorizedString]]`
  */
 package object colors {
 

@@ -22,12 +22,11 @@ import java.nio.file.Path
 
 /** Represents a recursive list of files at a given file system root.
  *
- *  `FileTree` is parameterized by any type that conforms to
- *  `[[com.mipadi.io.files.Locatable Locatable]]`, which by default are
- *  `java.io.File` and `java.nio.file.Path`. Thus, `FileTree` can work
- *  with old-style Java files or new-style Java paths. Combined with the
- *  the `p` string interpolation prefix from `[[com.mipadi.io.files]]`,
- *  callers can easily create file trees for `Path`s or `File`s:
+ *  `FileTree` is parameterized by any type that conforms to $locatable,
+ *  which by default are $file and $path. Thus, `FileTree` can work with
+ *  old-style Java files or new-style Java paths. Combined with the the `p`
+ *  string interpolation prefix from `[[com.mipadi.io.files]]`, callers
+ *  can easily create file trees for `Path`s or `File`s:
  *
  *  {{{
  *  import java.io.File
@@ -39,9 +38,17 @@ import java.nio.file.Path
  *  val paths = (p"src" / "main" / "scala").subtree.all
  *  }}}
  *
- *  `[[com.mipadi.io.files.RichFile RichFile]]` also adds the `subtree`
- *  extension method to `Locatable` types (namely, `java.io.File` and
- *  `java.nio.file.Path`), making it trivial to get subtrees.
+ *  $richfile also adds the `subtree` extension method to `Locatable` types
+ *  (namely, $file and $path), making it trivial to get subtrees.
+ *
+ *  @define file
+ *    `java.io.File`
+ *  @define locatable
+ *    `[[com.mipadi.io.files.Locatable Locatable]]`
+ *  @define path
+ *    `java.nio.file.Path`
+ *  @define richfile
+ *    `[[com.mipadi.io.files.RichFile RichFile]]`
  *
  *  @tparam T
  *    The locatable object type serving as the file tree's root

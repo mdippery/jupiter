@@ -22,13 +22,20 @@ import java.nio.file.{FileSystems, Path}
 
 /** Useful classes for easily working with files and paths.
  *
- *  Provides an implicit conversion from `java.util.File` to
- *  `[[com.mipadi.io.files.RichFile RichFile]]`, which adds some useful
- *  methods to `File`. It also provides an implicit conversion from
- *  `java.nio.file.Path` to `[[com.mipadi.io.files.RichPath RichPath]]`,
- *  which provides a more convenient way to work with paths in Scala.
- *  Finally, it provides a `p` prefix for strings, so paths can be created
- *  directly from a string:
+ *  Provides an implicit conversion from $file to $richfile, which adds
+ *  some useful methods to `File`. It also provides an implicit conversion
+ *  from $path to $richpath, which provides a more convenient way to work
+ *  with paths in Scala.  Finally, it provides a `p` prefix for strings, so
+ *  paths can be created directly from a string:
+ *
+ *  @define file
+ *    `java.io.File`
+ *  @define path
+ *    `java.nio.file.Path`
+ *  @define richfile
+ *    `[[com.mipadi.io.files.RichFile RichFile]]`
+ *  @define richpath
+ *    `[[com.mipadi.io.files.RichPath RichPath]]`
  *
  *  {{{
  *  import com.mipadi.io.files._
