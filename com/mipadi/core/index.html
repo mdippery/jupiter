@@ -144,10 +144,9 @@
       <p class="shortcomment cmt">Provides a mechanism for piping or threading objects through methods
  and functions.</p><div class="fullcomment"><div class="comment cmt"><p>Provides a mechanism for piping or threading objects through methods
  and functions.</p><p> Any object can be implicitly converted to a
- <code><a href="pipes/package$$Pipe.html" class="extype" name="com.mipadi.core.pipes.Pipe">Pipe</a></code>. This allows an object to be threaded
- through a series of functions, similar to Clojure's thread operator <code>-&gt;</code>
- or F#'s pipe forward operator <code>|&gt;</code>. Instead of this:</p><pre><span class="kw">val</span> x = someMethod(anotherMethod(aThirdMethod(obj)))</pre><p> You can do this:</p><pre><span class="kw">val</span> x = obj |&gt; aThirdMethod |&gt; anotherMethod |&gt; someMethod</pre><p> Which reads a bit better in many cases.
-</p></div></div>
+   <code><a href="pipes/package$$Pipe.html" class="extype" name="com.mipadi.core.pipes.Pipe">Pipe</a></code>. This allows an object
+ to be threaded through a series of functions, similar to Clojure's thread
+ operator <code>-&gt;</code> or F#'s pipe forward operator <code>|&gt;</code>. Instead of this:</p><pre><span class="kw">val</span> x = someMethod(anotherMethod(aThirdMethod(obj)))</pre><p> You can do this:</p><pre><span class="kw">val</span> x = obj |&gt; aThirdMethod |&gt; anotherMethod |&gt; someMethod</pre><p> Which reads a bit better in many cases.</p></div></div>
     </li><li class="current-entities indented3">
                         <a class="object" href="Bundle$.html" title="Loads bundles for a given class."></a>
                         <a class="class" href="Bundle.html" title="Contains metadata about an application or library."></a>

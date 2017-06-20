@@ -140,14 +140,16 @@
         <span class="name">files</span>
       </span>
       
-      <p class="shortcomment cmt">Useful classes for easily working with files and paths.</p><div class="fullcomment"><div class="comment cmt"><p>Useful classes for easily working with files and paths.</p><p> Provides an implicit conversion from <code>java.util.File</code> to
- <code><a href="package$$RichFile.html" class="extype" name="com.mipadi.io.files.RichFile">RichFile</a></code>, which adds some useful
- methods to <code>File</code>. It also provides an implicit conversion from
- <code>java.nio.file.Path</code> to <code><a href="package$$RichPath.html" class="extype" name="com.mipadi.io.files.RichPath">RichPath</a></code>,
- which provides a more convenient way to work with paths in Scala.
- Finally, it provides a <code>p</code> prefix for strings, so paths can be created
- directly from a string:</p><pre><span class="kw">import</span> com.mipadi.io.files._
-<span class="kw">val</span> path = p<span class="lit">"src/main/scala"</span></pre></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="com.mipadi.io">io</a></dd></dl></div>
+      <p class="shortcomment cmt">Useful classes for easily working with files and paths.</p><div class="fullcomment"><div class="comment cmt"><p>Useful classes for easily working with files and paths.</p><p> Provides an implicit conversion from
+   <code>java.io.File</code> to
+   <code><a href="package$$RichFile.html" class="extype" name="com.mipadi.io.files.RichFile">RichFile</a></code>, which adds
+ some useful methods to <code>File</code>. It also provides an implicit conversion
+ from
+   <code>java.nio.file.Path</code> to
+   <code><a href="package$$RichPath.html" class="extype" name="com.mipadi.io.files.RichPath">RichPath</a></code></p><pre><span class="kw">import</span> com.mipadi.io.files._
+<span class="kw">val</span> path = p<span class="lit">"src/main/scala"</span></pre><p>, which provides a more convenient way to work
+ with paths in Scala.  Finally, it provides a <code>p</code> prefix for strings, so
+ paths can be created directly from a string:</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="com.mipadi.io">io</a></dd></dl></div>
     </li><li class="current-entities indented4">
                         <span class="separator"></span>
                         <a class="class" href="FileTree.html" title="Represents a recursive list of files at a given file system root."></a>
@@ -226,14 +228,16 @@
       </h4>
 
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Useful classes for easily working with files and paths.</p><p> Provides an implicit conversion from <code>java.util.File</code> to
- <code><a href="package$$RichFile.html" class="extype" name="com.mipadi.io.files.RichFile">RichFile</a></code>, which adds some useful
- methods to <code>File</code>. It also provides an implicit conversion from
- <code>java.nio.file.Path</code> to <code><a href="package$$RichPath.html" class="extype" name="com.mipadi.io.files.RichPath">RichPath</a></code>,
- which provides a more convenient way to work with paths in Scala.
- Finally, it provides a <code>p</code> prefix for strings, so paths can be created
- directly from a string:</p><pre><span class="kw">import</span> com.mipadi.io.files._
-<span class="kw">val</span> path = p<span class="lit">"src/main/scala"</span></pre></div><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Useful classes for easily working with files and paths.</p><p> Provides an implicit conversion from
+   <code>java.io.File</code> to
+   <code><a href="package$$RichFile.html" class="extype" name="com.mipadi.io.files.RichFile">RichFile</a></code>, which adds
+ some useful methods to <code>File</code>. It also provides an implicit conversion
+ from
+   <code>java.nio.file.Path</code> to
+   <code><a href="package$$RichPath.html" class="extype" name="com.mipadi.io.files.RichPath">RichPath</a></code></p><pre><span class="kw">import</span> com.mipadi.io.files._
+<span class="kw">val</span> path = p<span class="lit">"src/main/scala"</span></pre><p>, which provides a more convenient way to work
+ with paths in Scala.  Finally, it provides a <code>p</code> prefix for strings, so
+ paths can be created directly from a string:</p></div><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
           </span>
@@ -303,21 +307,23 @@
       </span>
       
       <p class="shortcomment cmt">Represents a recursive list of files at a given file system root.</p><div class="fullcomment"><div class="comment cmt"><p>Represents a recursive list of files at a given file system root.</p><p> <code>FileTree</code> is parameterized by any type that conforms to
- <code><a href="Locatable.html" class="extype" name="com.mipadi.io.files.Locatable">Locatable</a></code>, which by default are
- <code>java.io.File</code> and <code>java.nio.file.Path</code>. Thus, <code>FileTree</code> can work
- with old-style Java files or new-style Java paths. Combined with the
- the <code>p</code> string interpolation prefix from <code><a href="" class="extype" name="com.mipadi.io.files">com.mipadi.io.files</a></code>,
- callers can easily create file trees for <code>Path</code>s or <code>File</code>s:</p><pre><span class="kw">import</span> java.io.File
+   <code><a href="Locatable.html" class="extype" name="com.mipadi.io.files.Locatable">Locatable</a></code>,
+ which by default are
+   <code>java.io.File</code> and
+   <code>java.nio.file.Path</code>. Thus, <code>FileTree</code> can work with
+ old-style Java files or new-style Java paths. Combined with the the <code>p</code>
+ string interpolation prefix from <code><a href="" class="extype" name="com.mipadi.io.files">com.mipadi.io.files</a></code>, callers
+ can easily create file trees for <code>Path</code>s or <code>File</code>s:</p><pre><span class="kw">import</span> java.io.File
 <span class="kw">import</span> com.mipadi.io.files._
 <span class="kw">import</span> com.mipadi.io.files.FileTree
 <span class="kw">import</span> com.mipadi.io.files.Locatable._
 
 <span class="kw">val</span> files = <span class="kw">new</span> File(<span class="lit">"src/main/scala"</span>).subtree.all
-<span class="kw">val</span> paths = (p<span class="lit">"src"</span> / <span class="lit">"main"</span> / <span class="lit">"scala"</span>).subtree.all</pre><p> <code><a href="package$$RichFile.html" class="extype" name="com.mipadi.io.files.RichFile">RichFile</a></code> also adds the <code>subtree</code>
- extension method to <code>Locatable</code> types (namely, <code>java.io.File</code> and
- <code>java.nio.file.Path</code>), making it trivial to get subtrees.
-</p></div><dl class="paramcmts block"><dt class="tparam">T</dt><dd class="cmt"><p>
-   The locatable object type serving as the file tree's root</p></dd></dl></div>
+<span class="kw">val</span> paths = (p<span class="lit">"src"</span> / <span class="lit">"main"</span> / <span class="lit">"scala"</span>).subtree.all</pre><p>   <code><a href="package$$RichFile.html" class="extype" name="com.mipadi.io.files.RichFile">RichFile</a></code>
+also adds the <code>subtree</code> extension method to <code>Locatable</code> types
+ (namely,
+   <code>java.io.File</code> and
+   <code>java.nio.file.Path</code>), making it trivial to get subtrees.</p></div></div>
     </li><li name="com.mipadi.io.files.Locatable" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="Ungrouped">
       <a id="Locatable[T]extendsAnyRef"></a><a id="Locatable[T]:Locatable[T]"></a>
       <span class="permalink">

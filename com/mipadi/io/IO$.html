@@ -142,14 +142,16 @@
             </a>
       </span>
       
-      <p class="shortcomment cmt">Useful classes for easily working with files and paths.</p><div class="fullcomment"><div class="comment cmt"><p>Useful classes for easily working with files and paths.</p><p> Provides an implicit conversion from <code>java.util.File</code> to
- <code><a href="files/package$$RichFile.html" class="extype" name="com.mipadi.io.files.RichFile">RichFile</a></code>, which adds some useful
- methods to <code>File</code>. It also provides an implicit conversion from
- <code>java.nio.file.Path</code> to <code><a href="files/package$$RichPath.html" class="extype" name="com.mipadi.io.files.RichPath">RichPath</a></code>,
- which provides a more convenient way to work with paths in Scala.
- Finally, it provides a <code>p</code> prefix for strings, so paths can be created
- directly from a string:</p><pre><span class="kw">import</span> com.mipadi.io.files._
-<span class="kw">val</span> path = p<span class="lit">"src/main/scala"</span></pre></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="index.html" class="extype" name="com.mipadi.io">io</a></dd></dl></div>
+      <p class="shortcomment cmt">Useful classes for easily working with files and paths.</p><div class="fullcomment"><div class="comment cmt"><p>Useful classes for easily working with files and paths.</p><p> Provides an implicit conversion from
+   <code>java.io.File</code> to
+   <code><a href="files/package$$RichFile.html" class="extype" name="com.mipadi.io.files.RichFile">RichFile</a></code>, which adds
+ some useful methods to <code>File</code>. It also provides an implicit conversion
+ from
+   <code>java.nio.file.Path</code> to
+   <code><a href="files/package$$RichPath.html" class="extype" name="com.mipadi.io.files.RichPath">RichPath</a></code></p><pre><span class="kw">import</span> com.mipadi.io.files._
+<span class="kw">val</span> path = p<span class="lit">"src/main/scala"</span></pre><p>, which provides a more convenient way to work
+ with paths in Scala.  Finally, it provides a <code>p</code> prefix for strings, so
+ paths can be created directly from a string:</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="index.html" class="extype" name="com.mipadi.io">io</a></dd></dl></div>
     </li><li name="com.mipadi.io.terminal" visbl="pub" class="indented4 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="terminal"></a><a id="terminal:terminal"></a>
       <span class="permalink">
@@ -169,8 +171,8 @@
       
       <p class="shortcomment cmt">Provides mechanisms for working with the terminal.</p><div class="fullcomment"><div class="comment cmt"><p>Provides mechanisms for working with the terminal.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="index.html" class="extype" name="com.mipadi.io">io</a></dd></dl></div>
     </li><li class="current-entities indented3">
-                        <a class="object" href="" title="Wraps a function or sequence of operations in an IO
- object."></a>
+                        <a class="object" href="" title="Wraps a function or sequence of operations in an
+   IO object."></a>
                         <a class="trait" href="IO.html" title="Encapsulates an I/O operation."></a>
                         <a href="IO.html" title="Encapsulates an I/O operation.">
                           IO
@@ -205,10 +207,10 @@
       </h4>
 
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Wraps a function or sequence of operations in an <code><a href="IO.html" class="extype" name="com.mipadi.io.IO">IO</a></code>
- object.</p><p> An <code><a href="IO.html" class="extype" name="com.mipadi.io.IO">IO</a></code> object represents a function or sequence of
- steps that can be performed at a later time. Creating such an object is
- fairly simple:</p><pre><span class="kw">val</span> printIO = IO { println(<span class="lit">"This is an IO operation"</span>) }</pre></div><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Wraps a function or sequence of operations in an
+   <code><a href="IO.html" class="extype" name="com.mipadi.io.IO">IO</a></code> object.</p><p> An
+   <code><a href="IO.html" class="extype" name="com.mipadi.io.IO">IO</a></code> object represents a function or sequence of steps that can be
+ performed at a later time. Creating such an object is fairly simple:</p><pre><span class="kw">val</span> printIO = IO { println(<span class="lit">"This is an IO operation"</span>) }</pre></div><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
           </span>
@@ -328,14 +330,16 @@
         <span class="name">apply</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="run">run: ⇒ <span class="extype" name="com.mipadi.io.IO.apply.A">A</span></span>)</span><span class="result">: <a href="IO.html" class="extype" name="com.mipadi.io.IO">IO</a>[<span class="extype" name="com.mipadi.io.IO.apply.A">A</span>]</span>
       </span>
       
-      <p class="shortcomment cmt">Creates a new <code><a href="IO.html" class="extype" name="com.mipadi.io.IO">IO</a></code> object.</p><div class="fullcomment"><div class="comment cmt"><p>Creates a new <code><a href="IO.html" class="extype" name="com.mipadi.io.IO">IO</a></code> object.</p><p> <code><a href="IO.html" class="extype" name="com.mipadi.io.IO">IO</a></code> objects can be created easily by simply
- writing something like:</p><pre><span class="kw">val</span> getInt = IO {
+      <p class="shortcomment cmt">Creates a new
+   <code><a href="IO.html" class="extype" name="com.mipadi.io.IO">IO</a></code> object.</p><div class="fullcomment"><div class="comment cmt"><p>Creates a new
+   <code><a href="IO.html" class="extype" name="com.mipadi.io.IO">IO</a></code> object.</p><p>   <code><a href="IO.html" class="extype" name="com.mipadi.io.IO">IO</a></code> objects can be created easily by simply writing something like:</p><pre><span class="kw">val</span> getInt = IO {
   <span class="kw">var</span> i = <span class="num">10</span>
   <span class="num">10</span> *= <span class="num">2</span>
 }</pre><p> This is equivalent to the monadic <i>unit</i> function.
 </p></div><dl class="paramcmts block"><dt class="param">run</dt><dd class="cmt"><p>
    The operation to run when this object is applied.</p></dd><dt>returns</dt><dd class="cmt"><p>
-   A new <code><a href="IO.html" class="extype" name="com.mipadi.io.IO">IO</a></code> object that wraps the <code>run</code> function.</p></dd></dl></div>
+   A new
+   <code><a href="IO.html" class="extype" name="com.mipadi.io.IO">IO</a></code> object that wraps the <code>run</code> function.</p></dd></dl></div>
     </li><li name="scala.Any#asInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <span class="permalink">

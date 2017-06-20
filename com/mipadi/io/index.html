@@ -158,14 +158,16 @@
             </a>
       </span>
       
-      <p class="shortcomment cmt">Useful classes for easily working with files and paths.</p><div class="fullcomment"><div class="comment cmt"><p>Useful classes for easily working with files and paths.</p><p> Provides an implicit conversion from <code>java.util.File</code> to
- <code><a href="files/package$$RichFile.html" class="extype" name="com.mipadi.io.files.RichFile">RichFile</a></code>, which adds some useful
- methods to <code>File</code>. It also provides an implicit conversion from
- <code>java.nio.file.Path</code> to <code><a href="files/package$$RichPath.html" class="extype" name="com.mipadi.io.files.RichPath">RichPath</a></code>,
- which provides a more convenient way to work with paths in Scala.
- Finally, it provides a <code>p</code> prefix for strings, so paths can be created
- directly from a string:</p><pre><span class="kw">import</span> com.mipadi.io.files._
-<span class="kw">val</span> path = p<span class="lit">"src/main/scala"</span></pre></div></div>
+      <p class="shortcomment cmt">Useful classes for easily working with files and paths.</p><div class="fullcomment"><div class="comment cmt"><p>Useful classes for easily working with files and paths.</p><p> Provides an implicit conversion from
+   <code>java.io.File</code> to
+   <code><a href="files/package$$RichFile.html" class="extype" name="com.mipadi.io.files.RichFile">RichFile</a></code>, which adds
+ some useful methods to <code>File</code>. It also provides an implicit conversion
+ from
+   <code>java.nio.file.Path</code> to
+   <code><a href="files/package$$RichPath.html" class="extype" name="com.mipadi.io.files.RichPath">RichPath</a></code></p><pre><span class="kw">import</span> com.mipadi.io.files._
+<span class="kw">val</span> path = p<span class="lit">"src/main/scala"</span></pre><p>, which provides a more convenient way to work
+ with paths in Scala.  Finally, it provides a <code>p</code> prefix for strings, so
+ paths can be created directly from a string:</p></div></div>
     </li><li name="com.mipadi.io.terminal" visbl="pub" class="indented4 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="terminal"></a><a id="terminal:terminal"></a>
       <span class="permalink">
@@ -185,8 +187,8 @@
       
       <p class="shortcomment cmt">Provides mechanisms for working with the terminal.</p>
     </li><li class="current-entities indented3">
-                        <a class="object" href="IO$.html" title="Wraps a function or sequence of operations in an IO
- object."></a>
+                        <a class="object" href="IO$.html" title="Wraps a function or sequence of operations in an
+   IO object."></a>
                         <a class="trait" href="IO.html" title="Encapsulates an I/O operation."></a>
                         <a href="IO.html" title="Encapsulates an I/O operation.">
                           IO
@@ -362,10 +364,7 @@
       
       <p class="shortcomment cmt">Encapsulates an I/O operation.</p><div class="fullcomment"><div class="comment cmt"><p>Encapsulates an I/O operation.
 </p></div><dl class="paramcmts block"><dt class="tparam">A</dt><dd class="cmt"><p>
-   Return type of the I/O operation</p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p>
-   <a href="https://medium.com/@sinisalouc/demystifying-the-monad-in-scala-cc716bb6f534" target="_blank">Demystifying the Monad in Scala</a></p></span><span class="cmt"><p>
-   <a href="https://engineering.sharethrough.com/blog/2016/04/18/explaining-monads-part-1/" target="_blank">Mondas are confusing. Let us help.</a></p></span><span class="cmt"><p>
-   <a href="https://gist.github.com/jdegoes/7cc7e7aacd032773f3c24123d0d486d4" target="_blank">A pedagogical implementation of the IO monad in Scala in 14 LOC</a></p></span></dd></dl></div>
+   Return type of the I/O operation</p></dd></dl></div>
     </li></ol>
             </div>
 
@@ -386,17 +385,17 @@
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a title="Wraps a function or sequence of operations in an IO
- object." href="IO$.html">
+        <a title="Wraps a function or sequence of operations in an
+   IO object." href="IO$.html">
               <span class="name">IO</span>
             </a>
       </span>
       
-      <p class="shortcomment cmt">Wraps a function or sequence of operations in an <code><a href="IO.html" class="extype" name="com.mipadi.io.IO">IO</a></code>
- object.</p><div class="fullcomment"><div class="comment cmt"><p>Wraps a function or sequence of operations in an <code><a href="IO.html" class="extype" name="com.mipadi.io.IO">IO</a></code>
- object.</p><p> An <code><a href="IO.html" class="extype" name="com.mipadi.io.IO">IO</a></code> object represents a function or sequence of
- steps that can be performed at a later time. Creating such an object is
- fairly simple:</p><pre><span class="kw">val</span> printIO = IO { println(<span class="lit">"This is an IO operation"</span>) }</pre></div></div>
+      <p class="shortcomment cmt">Wraps a function or sequence of operations in an
+   <code><a href="IO.html" class="extype" name="com.mipadi.io.IO">IO</a></code> object.</p><div class="fullcomment"><div class="comment cmt"><p>Wraps a function or sequence of operations in an
+   <code><a href="IO.html" class="extype" name="com.mipadi.io.IO">IO</a></code> object.</p><p> An
+   <code><a href="IO.html" class="extype" name="com.mipadi.io.IO">IO</a></code> object represents a function or sequence of steps that can be
+ performed at a later time. Creating such an object is fairly simple:</p><pre><span class="kw">val</span> printIO = IO { println(<span class="lit">"This is an IO operation"</span>) }</pre></div></div>
     </li>
               </ol>
             </div>

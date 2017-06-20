@@ -142,14 +142,16 @@
             </a>
       </span>
       
-      <p class="shortcomment cmt">Useful classes for easily working with files and paths.</p><div class="fullcomment"><div class="comment cmt"><p>Useful classes for easily working with files and paths.</p><p> Provides an implicit conversion from <code>java.util.File</code> to
- <code><a href="package$$RichFile.html" class="extype" name="com.mipadi.io.files.RichFile">RichFile</a></code>, which adds some useful
- methods to <code>File</code>. It also provides an implicit conversion from
- <code>java.nio.file.Path</code> to <code><a href="package$$RichPath.html" class="extype" name="com.mipadi.io.files.RichPath">RichPath</a></code>,
- which provides a more convenient way to work with paths in Scala.
- Finally, it provides a <code>p</code> prefix for strings, so paths can be created
- directly from a string:</p><pre><span class="kw">import</span> com.mipadi.io.files._
-<span class="kw">val</span> path = p<span class="lit">"src/main/scala"</span></pre></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="com.mipadi.io">io</a></dd></dl></div>
+      <p class="shortcomment cmt">Useful classes for easily working with files and paths.</p><div class="fullcomment"><div class="comment cmt"><p>Useful classes for easily working with files and paths.</p><p> Provides an implicit conversion from
+   <code>java.io.File</code> to
+   <code><a href="package$$RichFile.html" class="extype" name="com.mipadi.io.files.RichFile">RichFile</a></code>, which adds
+ some useful methods to <code>File</code>. It also provides an implicit conversion
+ from
+   <code>java.nio.file.Path</code> to
+   <code><a href="package$$RichPath.html" class="extype" name="com.mipadi.io.files.RichPath">RichPath</a></code></p><pre><span class="kw">import</span> com.mipadi.io.files._
+<span class="kw">val</span> path = p<span class="lit">"src/main/scala"</span></pre><p>, which provides a more convenient way to work
+ with paths in Scala.  Finally, it provides a <code>p</code> prefix for strings, so
+ paths can be created directly from a string:</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="com.mipadi.io">io</a></dd></dl></div>
     </li><li class="current-entities indented4">
                         <span class="separator"></span>
                         <a class="class" href="" title="Represents a recursive list of files at a given file system root."></a>
@@ -211,21 +213,23 @@
 
       
           <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Represents a recursive list of files at a given file system root.</p><p> <code>FileTree</code> is parameterized by any type that conforms to
- <code><a href="Locatable.html" class="extype" name="com.mipadi.io.files.Locatable">Locatable</a></code>, which by default are
- <code>java.io.File</code> and <code>java.nio.file.Path</code>. Thus, <code>FileTree</code> can work
- with old-style Java files or new-style Java paths. Combined with the
- the <code>p</code> string interpolation prefix from <code><a href="index.html" class="extype" name="com.mipadi.io.files">com.mipadi.io.files</a></code>,
- callers can easily create file trees for <code>Path</code>s or <code>File</code>s:</p><pre><span class="kw">import</span> java.io.File
+   <code><a href="Locatable.html" class="extype" name="com.mipadi.io.files.Locatable">Locatable</a></code>,
+ which by default are
+   <code>java.io.File</code> and
+   <code>java.nio.file.Path</code>. Thus, <code>FileTree</code> can work with
+ old-style Java files or new-style Java paths. Combined with the the <code>p</code>
+ string interpolation prefix from <code><a href="index.html" class="extype" name="com.mipadi.io.files">com.mipadi.io.files</a></code>, callers
+ can easily create file trees for <code>Path</code>s or <code>File</code>s:</p><pre><span class="kw">import</span> java.io.File
 <span class="kw">import</span> com.mipadi.io.files._
 <span class="kw">import</span> com.mipadi.io.files.FileTree
 <span class="kw">import</span> com.mipadi.io.files.Locatable._
 
 <span class="kw">val</span> files = <span class="kw">new</span> File(<span class="lit">"src/main/scala"</span>).subtree.all
-<span class="kw">val</span> paths = (p<span class="lit">"src"</span> / <span class="lit">"main"</span> / <span class="lit">"scala"</span>).subtree.all</pre><p> <code><a href="package$$RichFile.html" class="extype" name="com.mipadi.io.files.RichFile">RichFile</a></code> also adds the <code>subtree</code>
- extension method to <code>Locatable</code> types (namely, <code>java.io.File</code> and
- <code>java.nio.file.Path</code>), making it trivial to get subtrees.
-</p></div><dl class="paramcmts block"><dt class="tparam">T</dt><dd class="cmt"><p>
-   The locatable object type serving as the file tree's root</p></dd></dl><div class="toggleContainer block">
+<span class="kw">val</span> paths = (p<span class="lit">"src"</span> / <span class="lit">"main"</span> / <span class="lit">"scala"</span>).subtree.all</pre><p>   <code><a href="package$$RichFile.html" class="extype" name="com.mipadi.io.files.RichFile">RichFile</a></code>
+also adds the <code>subtree</code> extension method to <code>Locatable</code> types
+ (namely,
+   <code>java.io.File</code> and
+   <code>java.nio.file.Path</code>), making it trivial to get subtrees.</p></div><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
           </span>
@@ -275,7 +279,7 @@
         <div id="allMembers">
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
-              <ol><li name="com.mipadi.io.files.FileTree#&lt;init&gt;" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+              <ol><li name="com.mipadi.io.files.FileTree#&lt;init&gt;" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="&lt;init&gt;(root:T)(implicitev:com.mipadi.io.files.Locatable[T]):com.mipadi.io.files.FileTree[T]"></a><a id="&lt;init&gt;:FileTree[T]"></a>
       <span class="permalink">
       <a href="../../../../com/mipadi/io/files/FileTree.html#&lt;init&gt;(root:T)(implicitev:com.mipadi.io.files.Locatable[T]):com.mipadi.io.files.FileTree[T]" title="Permalink">
@@ -290,9 +294,7 @@
         <span class="name">FileTree</span><span class="params">(<span name="root">root: <span class="extype" name="com.mipadi.io.files.FileTree.T">T</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="ev">ev: <a href="Locatable.html" class="extype" name="com.mipadi.io.files.Locatable">Locatable</a>[<span class="extype" name="com.mipadi.io.files.FileTree.T">T</span>]</span>)</span>
       </span>
       
-      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">root</dt><dd class="cmt"><p>
-   The root of the directory tree</p></dd><dt class="param">ev</dt><dd class="cmt"><p>
-   An implicit delegate for handling file system actions</p></dd></dl></div>
+      
     </li></ol>
             </div>
 
