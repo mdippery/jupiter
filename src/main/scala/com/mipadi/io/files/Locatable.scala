@@ -68,7 +68,7 @@ object Locatable {
       FileSystems.getDefault.getPath(a.toString, b)
 
     override def getFiles(a: Path): Seq[Path] = try {
-      Files.newDirectoryStream(a).iterator.asScala.toSeq
+      Files.newDirectoryStream(a).iterator.asScala.toSeq.sortBy(_.toString)
     } catch {
       case _: NotDirectoryException => List()
       case _: NoSuchFileException   => List()
@@ -90,7 +90,7 @@ object Locatable {
       FileSystems.getDefault.getPath(a.toPath.toString, b)
 
     override def getFiles(a: File): Seq[File] = Option(a.listFiles) map { files =>
-      files.toSeq
+      files.toSeq.sortBy(_.getPath)
     } getOrElse {
       List()
     }
