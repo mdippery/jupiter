@@ -184,6 +184,19 @@
                           Addressable
                         </a>
                       </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="object" href="NetworkConversions$.html" title="Converts Scala's scalar types to arrays of bytes in network byte order."></a>
+                        <a href="NetworkConversions$.html" title="Converts Scala's scalar types to arrays of bytes in network byte order.">
+                          NetworkConversions
+                        </a>
+                      </li><li class="current-entities indented3">
+                        <a class="object" href="NetworkConvertible$.html" title="Contains default implicit conversions for variable types to network byte
+ order."></a>
+                        <a class="trait" href="NetworkConvertible.html" title="A type class for converting values to network byte order."></a>
+                        <a href="NetworkConvertible.html" title="A type class for converting values to network byte order.">
+                          NetworkConvertible
+                        </a>
+                      </li><li class="current-entities indented3">
                         <a class="object" href="RichURI$.html" title="Additional operations for java.net.URI and java.net.URL classes."></a>
                         <a class="class" href="RichURI.html" title="Extends java.net.URI with useful methods and a more Scala-like API."></a>
                         <a href="RichURI.html" title="Extends java.net.URI with useful methods and a more Scala-like API.">
@@ -324,6 +337,26 @@
       
       <p class="shortcomment cmt">A type class for URI-like objects</p><div class="fullcomment"><div class="comment cmt"><p>A type class for URI-like objects</p></div><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p>
    <a href="http://danielwestheide.com/blog/2013/02/06/the-neophytes-guide-to-scala-part-12-type-classes.html" target="_blank">Type classes in Scala</a></p></span></dd></dl></div>
+    </li><li name="com.mipadi.net.NetworkConvertible" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="NetworkConvertible[T]extendsAnyRef"></a><a id="NetworkConvertible[T]:NetworkConvertible[T]"></a>
+      <span class="permalink">
+      <a href="../../../com/mipadi/net/index.html#NetworkConvertible[T]extendsAnyRef" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="A type class for converting values to network byte order." href="NetworkConvertible.html">
+              <span class="name">NetworkConvertible</span>
+            </a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">A type class for converting values to network byte order.</p><div class="fullcomment"><div class="comment cmt"><p>A type class for converting values to network byte order.
+</p></div><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p>
+   <a href="http://danielwestheide.com/blog/2013/02/06/the-neophytes-guide-to-scala-part-12-type-classes.html" target="_blank">Type classes in Scala</a></p></span></dd></dl></div>
     </li><li name="com.mipadi.net.RichURI" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="RichURI[T]extendsAnyRef"></a><a id="RichURI[T]:RichURI[T]"></a>
       <span class="permalink">
@@ -375,6 +408,47 @@
       </span>
       
       <p class="shortcomment cmt">Implicit URI-like converts for <code>java.net.URI</code> and <code>java.net.URL</code>.</p>
+    </li><li name="com.mipadi.net.NetworkConversions" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="NetworkConversions"></a><a id="NetworkConversions:NetworkConversions"></a>
+      <span class="permalink">
+      <a href="../../../com/mipadi/net/index.html#NetworkConversions" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a title="Converts Scala's scalar types to arrays of bytes in network byte order." href="NetworkConversions$.html">
+              <span class="name">NetworkConversions</span>
+            </a>
+      </span>
+      
+      <p class="shortcomment cmt">Converts Scala's scalar types to arrays of bytes in network byte order.</p><div class="fullcomment"><div class="comment cmt"><p>Converts Scala's scalar types to arrays of bytes in network byte order.</p><p> <code>toNetworkBytes</code> can be called on bytes, shorts, ints, longs, and floats
+ to convert them into an array of bytes in network byte order:</p><pre><span class="kw">import</span> com.mipadi.net.NetworkConversions._
+<span class="kw">val</span> i = <span class="num">100</span>
+<span class="kw">val</span> bytes = i.toNetworkBytes</pre></div></div>
+    </li><li name="com.mipadi.net.NetworkConvertible" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="NetworkConvertible"></a><a id="NetworkConvertible:NetworkConvertible"></a>
+      <span class="permalink">
+      <a href="../../../com/mipadi/net/index.html#NetworkConvertible" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a title="Contains default implicit conversions for variable types to network byte
+ order." href="NetworkConvertible$.html">
+              <span class="name">NetworkConvertible</span>
+            </a>
+      </span>
+      
+      <p class="shortcomment cmt">Contains default implicit conversions for variable types to network byte
+ order.</p>
     </li><li name="com.mipadi.net.RichURI" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="RichURI"></a><a id="RichURI:RichURI"></a>
       <span class="permalink">

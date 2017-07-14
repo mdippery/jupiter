@@ -125,67 +125,66 @@
       </span>
       
       <p class="shortcomment cmt">Utilities for working with networked communications.</p><div class="fullcomment"><div class="comment cmt"><p>Utilities for working with networked communications.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="com.mipadi">mipadi</a></dd></dl></div>
-    </li><li class="current-entities indented3">
-                        <a class="object" href="Addressable$.html" title="Implicit URI-like converts for java.net.URI and java.net.URL."></a>
-                        <a class="trait" href="Addressable.html" title="A type class for URI-like objects"></a>
-                        <a href="Addressable.html" title="A type class for URI-like objects">
-                          Addressable
-                        </a>
-                      </li><li class="current-entities indented3">
+    </li><li name="com.mipadi.net.NetworkConversions" visbl="pub" class="indented4 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="NetworkConversions"></a><a id="NetworkConversions:NetworkConversions"></a>
+      <span class="permalink">
+      <a href="../../../com/mipadi/net/index.html#NetworkConversions" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a title="Converts Scala's scalar types to arrays of bytes in network byte order." href="NetworkConversions$.html">
+              <span class="name">NetworkConversions</span>
+            </a>
+      </span>
+      
+      <p class="shortcomment cmt">Converts Scala's scalar types to arrays of bytes in network byte order.</p><div class="fullcomment"><div class="comment cmt"><p>Converts Scala's scalar types to arrays of bytes in network byte order.</p><p> <code>toNetworkBytes</code> can be called on bytes, shorts, ints, longs, and floats
+ to convert them into an array of bytes in network byte order:</p><pre><span class="kw">import</span> com.mipadi.net.NetworkConversions._
+<span class="kw">val</span> i = <span class="num">100</span>
+<span class="kw">val</span> bytes = i.toNetworkBytes</pre></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="index.html" class="extype" name="com.mipadi.net">net</a></dd></dl></div>
+    </li><li class="current-entities indented4">
                         <span class="separator"></span>
-                        <a class="object" href="NetworkConversions$.html" title="Converts Scala's scalar types to arrays of bytes in network byte order."></a>
-                        <a href="NetworkConversions$.html" title="Converts Scala's scalar types to arrays of bytes in network byte order.">
-                          NetworkConversions
-                        </a>
-                      </li><li class="current-entities indented3">
-                        <a class="object" href="NetworkConvertible$.html" title="Contains default implicit conversions for variable types to network byte
- order."></a>
-                        <a class="trait" href="NetworkConvertible.html" title="A type class for converting values to network byte order."></a>
-                        <a href="NetworkConvertible.html" title="A type class for converting values to network byte order.">
-                          NetworkConvertible
-                        </a>
-                      </li><li class="current-entities indented3">
-                        <a class="object" href="" title="Additional operations for java.net.URI and java.net.URL classes."></a>
-                        <a class="class" href="RichURI.html" title="Extends java.net.URI with useful methods and a more Scala-like API."></a>
-                        <a href="RichURI.html" title="Extends java.net.URI with useful methods and a more Scala-like API.">
-                          RichURI
+                        <a class="class" href="" title="Implicitly converts scalar types into arrays of bytes in network
+ byte order."></a>
+                        <a href="" title="Implicitly converts scalar types into arrays of bytes in network
+ byte order.">
+                          NetworkConversion
                         </a>
                       </li>
               </ul>
             </div>
           </div>
           <div id="content">
-            <body class="object value">
+            <body class="class type">
       <div id="definition">
-        <a href="RichURI.html" title="See companion class"><div class="big-circle object-companion-class">o</div></a>
-        <p id="owner"><a href="../../index.html" class="extype" name="com">com</a>.<a href="../index.html" class="extype" name="com.mipadi">mipadi</a>.<a href="index.html" class="extype" name="com.mipadi.net">net</a></p>
-        <h1><a href="RichURI.html" title="See companion class">RichURI</a><span class="permalink">
-      <a href="../../../com/mipadi/net/RichURI$.html" title="Permalink">
+        <div class="big-circle class">c</div>
+        <p id="owner"><a href="../../index.html" class="extype" name="com">com</a>.<a href="../index.html" class="extype" name="com.mipadi">mipadi</a>.<a href="index.html" class="extype" name="com.mipadi.net">net</a>.<a href="NetworkConversions$.html" class="extype" name="com.mipadi.net.NetworkConversions">NetworkConversions</a></p>
+        <h1>NetworkConversion<span class="permalink">
+      <a href="../../../com/mipadi/net/NetworkConversions$$NetworkConversion.html" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span></h1>
-        <h3><span class="morelinks"><div>
-            Companion <a href="RichURI.html" title="See companion class">class RichURI</a>
-          </div></span></h3>
+        <h3><span class="morelinks"></span></h3>
       </div>
 
       <h4 id="signature" class="signature">
       <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">object</span>
+        <span class="modifier">implicit </span>
+        <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <span class="name">RichURI</span>
+        <span class="name">NetworkConversion</span><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
 
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Additional operations for <code>java.net.URI</code> and <code>java.net.URL</code> classes.</p><p> In particular, <code>RichURI</code> provides an implicit conversion to
- <code><a href="RichURI$$ExtendedURI.html" class="extype" name="com.mipadi.net.RichURI.ExtendedURI">ExtendedURI</a></code>, which allows
- additional methods to be called on <code>java.net.URI</code> objects:</p><pre><span class="kw">import</span> java.net.URI
-<span class="kw">import</span> com.mipadi.net.RichURI._
-<span class="kw">val</span> uri = <span class="kw">new</span> URI(<span class="lit">"http://monkey-robot.com/archives"</span>)
-<span class="kw">val</span> parts = uri.pathComponents</pre></div><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Implicitly converts scalar types into arrays of bytes in network
+ byte order.
+</p></div><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
           </span>
@@ -215,7 +214,7 @@
                   <span class="filtertype">Inherited<br />
                   </span>
                   <ol id="linearization">
-                    <li class="in" name="com.mipadi.net.RichURI"><span>RichURI</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                    <li class="in" name="com.mipadi.net.NetworkConversions.NetworkConversion"><span>NetworkConversion</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                   </ol>
                 </div><div class="ancestors">
               <span class="filtertype"></span>
@@ -233,36 +232,29 @@
 
       <div id="template">
         <div id="allMembers">
-        
-
-        <div id="types" class="types members">
-              <h3>Type Members</h3>
-              <ol><li name="com.mipadi.net.RichURI.ExtendedURI" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="ExtendedURI[T]extendsRichURI[T]"></a><a id="ExtendedURI[T]:ExtendedURI[T]"></a>
+        <div id="constructors" class="members">
+              <h3>Instance Constructors</h3>
+              <ol><li name="com.mipadi.net.NetworkConversions.NetworkConversion#&lt;init&gt;" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="&lt;init&gt;(wrapped:T)(implicitev:com.mipadi.net.NetworkConvertible[T]):com.mipadi.net.NetworkConversions.NetworkConversion[T]"></a><a id="&lt;init&gt;:NetworkConversion[T]"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/net/RichURI$.html#ExtendedURI[T]extendsRichURI[T]" title="Permalink">
+      <a href="../../../com/mipadi/net/NetworkConversions$$NetworkConversion.html#&lt;init&gt;(wrapped:T)(implicitev:com.mipadi.net.NetworkConvertible[T]):com.mipadi.net.NetworkConversions.NetworkConversion[T]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
       <span class="modifier_kind">
-        <span class="modifier">implicit </span>
-        <span class="kind">class</span>
+        <span class="modifier"></span>
+        <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <a title="Implicit converts a instances of java.net.URI and java.net.URL,
- adding additional methods." href="RichURI$$ExtendedURI.html">
-              <span class="name">ExtendedURI</span>
-            </a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="RichURI.html" class="extype" name="com.mipadi.net.RichURI">RichURI</a>[<span class="extype" name="com.mipadi.net.RichURI.ExtendedURI.T">T</span>]</span>
+        <span class="name">NetworkConversion</span><span class="params">(<span name="wrapped">wrapped: <span class="extype" name="com.mipadi.net.NetworkConversions.NetworkConversion.T">T</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="ev">ev: <a href="NetworkConvertible.html" class="extype" name="com.mipadi.net.NetworkConvertible">NetworkConvertible</a>[<span class="extype" name="com.mipadi.net.NetworkConversions.NetworkConversion.T">T</span>]</span>)</span>
       </span>
       
-      <p class="shortcomment cmt">Implicit converts a instances of <code>java.net.URI</code> and <code>java.net.URL</code>,
- adding additional methods.</p><div class="fullcomment"><div class="comment cmt"><p>Implicit converts a instances of <code>java.net.URI</code> and <code>java.net.URL</code>,
- adding additional methods.</p><p> For example:</p><pre><span class="kw">import</span> java.net.URI
-<span class="kw">import</span> com.mipadi.net.RichURI._
-<span class="kw">val</span> uri = <span class="kw">new</span> URI(<span class="lit">"http://monkey-robot.com/archives"</span>)
-<span class="kw">val</span> parts = uri.pathComponents</pre></div></div>
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">wrapped</dt><dd class="cmt"><p>
+   The wrapped value</p></dd></dl></div>
     </li></ol>
             </div>
+
+        
 
         
 
@@ -272,7 +264,7 @@
                 <li name="scala.AnyRef#!=" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="!=(x$1:Any):Boolean"></a><a id="!=(Any):Boolean"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/net/RichURI$.html#!=(x$1:Any):Boolean" title="Permalink">
+      <a href="../../../com/mipadi/net/NetworkConversions$$NetworkConversion.html#!=(x$1:Any):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -288,7 +280,7 @@
     </li><li name="scala.AnyRef###" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="##():Int"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/net/RichURI$.html###():Int" title="Permalink">
+      <a href="../../../com/mipadi/net/NetworkConversions$$NetworkConversion.html###():Int" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -304,7 +296,7 @@
     </li><li name="scala.AnyRef#==" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="==(x$1:Any):Boolean"></a><a id="==(Any):Boolean"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/net/RichURI$.html#==(x$1:Any):Boolean" title="Permalink">
+      <a href="../../../com/mipadi/net/NetworkConversions$$NetworkConversion.html#==(x$1:Any):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -320,7 +312,7 @@
     </li><li name="scala.Any#asInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/net/RichURI$.html#asInstanceOf[T0]:T0" title="Permalink">
+      <a href="../../../com/mipadi/net/NetworkConversions$$NetworkConversion.html#asInstanceOf[T0]:T0" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -336,7 +328,7 @@
     </li><li name="scala.AnyRef#clone" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="clone():Object"></a><a id="clone():AnyRef"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/net/RichURI$.html#clone():Object" title="Permalink">
+      <a href="../../../com/mipadi/net/NetworkConversions$$NetworkConversion.html#clone():Object" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -358,7 +350,7 @@
     </li><li name="scala.AnyRef#eq" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="eq(x$1:AnyRef):Boolean"></a><a id="eq(AnyRef):Boolean"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/net/RichURI$.html#eq(x$1:AnyRef):Boolean" title="Permalink">
+      <a href="../../../com/mipadi/net/NetworkConversions$$NetworkConversion.html#eq(x$1:AnyRef):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -374,7 +366,7 @@
     </li><li name="scala.AnyRef#equals" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="equals(x$1:Any):Boolean"></a><a id="equals(Any):Boolean"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/net/RichURI$.html#equals(x$1:Any):Boolean" title="Permalink">
+      <a href="../../../com/mipadi/net/NetworkConversions$$NetworkConversion.html#equals(x$1:Any):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -390,7 +382,7 @@
     </li><li name="scala.AnyRef#finalize" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="finalize():Unit"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/net/RichURI$.html#finalize():Unit" title="Permalink">
+      <a href="../../../com/mipadi/net/NetworkConversions$$NetworkConversion.html#finalize():Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -412,7 +404,7 @@
     </li><li name="scala.AnyRef#getClass" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getClass():Class[_]"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/net/RichURI$.html#getClass():Class[_]" title="Permalink">
+      <a href="../../../com/mipadi/net/NetworkConversions$$NetworkConversion.html#getClass():Class[_]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -428,7 +420,7 @@
     </li><li name="scala.AnyRef#hashCode" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="hashCode():Int"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/net/RichURI$.html#hashCode():Int" title="Permalink">
+      <a href="../../../com/mipadi/net/NetworkConversions$$NetworkConversion.html#hashCode():Int" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -444,7 +436,7 @@
     </li><li name="scala.Any#isInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="isInstanceOf[T0]:Boolean"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/net/RichURI$.html#isInstanceOf[T0]:Boolean" title="Permalink">
+      <a href="../../../com/mipadi/net/NetworkConversions$$NetworkConversion.html#isInstanceOf[T0]:Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -460,7 +452,7 @@
     </li><li name="scala.AnyRef#ne" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ne(x$1:AnyRef):Boolean"></a><a id="ne(AnyRef):Boolean"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/net/RichURI$.html#ne(x$1:AnyRef):Boolean" title="Permalink">
+      <a href="../../../com/mipadi/net/NetworkConversions$$NetworkConversion.html#ne(x$1:AnyRef):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -476,7 +468,7 @@
     </li><li name="scala.AnyRef#notify" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="notify():Unit"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/net/RichURI$.html#notify():Unit" title="Permalink">
+      <a href="../../../com/mipadi/net/NetworkConversions$$NetworkConversion.html#notify():Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -492,7 +484,7 @@
     </li><li name="scala.AnyRef#notifyAll" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="notifyAll():Unit"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/net/RichURI$.html#notifyAll():Unit" title="Permalink">
+      <a href="../../../com/mipadi/net/NetworkConversions$$NetworkConversion.html#notifyAll():Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -508,7 +500,7 @@
     </li><li name="scala.AnyRef#synchronized" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a><a id="synchronized[T0](⇒T0):T0"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/net/RichURI$.html#synchronized[T0](x$1:=&gt;T0):T0" title="Permalink">
+      <a href="../../../com/mipadi/net/NetworkConversions$$NetworkConversion.html#synchronized[T0](x$1:=&gt;T0):T0" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -521,10 +513,29 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="com.mipadi.net.NetworkConversions.NetworkConversion#toNetworkBytes" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toNetworkBytes:Array[Byte]"></a>
+      <span class="permalink">
+      <a href="../../../com/mipadi/net/NetworkConversions$$NetworkConversion.html#toNetworkBytes:Array[Byte]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toNetworkBytes</span><span class="result">: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Byte">Byte</span>]</span>
+      </span>
+      
+      <p class="shortcomment cmt">Converts the wrapped value to network byte order.</p><div class="fullcomment"><div class="comment cmt"><p>Converts the wrapped value to network byte order.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>
+   An array of bytes representing the wrapped value in network
+   byte order.</p></dd></dl></div>
     </li><li name="scala.AnyRef#toString" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="toString():String"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/net/RichURI$.html#toString():String" title="Permalink">
+      <a href="../../../com/mipadi/net/NetworkConversions$$NetworkConversion.html#toString():String" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -540,7 +551,7 @@
     </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/net/RichURI$.html#wait():Unit" title="Permalink">
+      <a href="../../../com/mipadi/net/NetworkConversions$$NetworkConversion.html#wait():Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -562,7 +573,7 @@
     </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait(x$1:Long,x$2:Int):Unit"></a><a id="wait(Long,Int):Unit"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/net/RichURI$.html#wait(x$1:Long,x$2:Int):Unit" title="Permalink">
+      <a href="../../../com/mipadi/net/NetworkConversions$$NetworkConversion.html#wait(x$1:Long,x$2:Int):Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -584,7 +595,7 @@
     </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait(x$1:Long):Unit"></a><a id="wait(Long):Unit"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/net/RichURI$.html#wait(x$1:Long):Unit" title="Permalink">
+      <a href="../../../com/mipadi/net/NetworkConversions$$NetworkConversion.html#wait(x$1:Long):Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
