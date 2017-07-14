@@ -29,7 +29,7 @@ trait Dividable[T] {
   def divide(x: T, y: Double): Double
 }
 
-/** Containts default implicit objects for various dividable types. */
+/** Contains default implicit objects for various dividable types. */
 object Dividable {
 
   /** A default implicit for longs */

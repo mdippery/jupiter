@@ -30,8 +30,8 @@ class LocatableSpec extends FlatSpec with Matchers {
 
   val fLs = new File("src/main/scala/com/mipadi/net")
   val pLs = FileSystems.getDefault.getPath("src", "main", "scala", "com", "mipadi", "net")
-  val fs  = List("Addressable", "RichURI", "package").map(s => new File(s"src/main/scala/com/mipadi/net/$s.scala"))
-  val ps  = List("Addressable", "RichURI", "package").map(s => FileSystems.getDefault.getPath("src", "main", "scala", "com", "mipadi", "net", s"$s.scala"))
+  val fs  = List("Addressable", "NetworkConvertible", "RichURI", "package").map(s => new File(s"src/main/scala/com/mipadi/net/$s.scala"))
+  val ps  = List("Addressable", "NetworkConvertible", "RichURI", "package").map(s => FileSystems.getDefault.getPath("src", "main", "scala", "com", "mipadi", "net", s"$s.scala"))
 
   "A file" should "be convertible to a file" in {
     fEv.toFile(file) should be (file)
