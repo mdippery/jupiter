@@ -125,7 +125,7 @@
       </span>
       
       <p class="shortcomment cmt">Core functionality for the Jupiter library and applications that use it.</p><div class="fullcomment"><div class="comment cmt"><p>Core functionality for the Jupiter library and applications that use it.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../index.html" class="extype" name="com.mipadi">mipadi</a></dd></dl></div>
-    </li><li name="com.mipadi.core.logging" visbl="pub" class="indented4 " data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="com.mipadi.core.logging" visbl="pub" class="indented4 current" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="logging"></a><a id="logging:logging"></a>
       <span class="permalink">
       <a href="../../../com/mipadi/core/index.html#logging" title="Permalink">
@@ -137,13 +137,17 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="Useful logging functionality." href="../logging/index.html">
-              <span class="name">logging</span>
-            </a>
+        <span class="name">logging</span>
       </span>
       
       <p class="shortcomment cmt">Useful logging functionality.</p><div class="fullcomment"><div class="comment cmt"><p>Useful logging functionality.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="com.mipadi.core">core</a></dd></dl></div>
-    </li><li name="com.mipadi.core.pipes" visbl="pub" class="indented4 current" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li class="current-entities indented4">
+                        <span class="separator"></span>
+                        <a class="trait" href="Logging.html" title="Adds a log to extending classes."></a>
+                        <a href="Logging.html" title="Adds a log to extending classes.">
+                          Logging
+                        </a>
+                      </li><li name="com.mipadi.core.pipes" visbl="pub" class="indented4 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="pipes"></a><a id="pipes:pipes"></a>
       <span class="permalink">
       <a href="../../../com/mipadi/core/index.html#pipes" title="Permalink">
@@ -155,22 +159,19 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <span class="name">pipes</span>
+        <a title="Provides a mechanism for piping or threading objects through methods
+ and functions." href="../pipes/index.html">
+              <span class="name">pipes</span>
+            </a>
       </span>
       
       <p class="shortcomment cmt">Provides a mechanism for piping or threading objects through methods
  and functions.</p><div class="fullcomment"><div class="comment cmt"><p>Provides a mechanism for piping or threading objects through methods
  and functions.</p><p> Any object can be implicitly converted to a
-   <code><a href="package$$Pipe.html" class="extype" name="com.mipadi.core.pipes.Pipe">Pipe</a></code>. This allows an object
+   <code><a href="../pipes/package$$Pipe.html" class="extype" name="com.mipadi.core.pipes.Pipe">Pipe</a></code>. This allows an object
  to be threaded through a series of functions, similar to Clojure's thread
  operator <code>-&gt;</code> or F#'s pipe forward operator <code>|&gt;</code>. Instead of this:</p><pre><span class="kw">val</span> x = someMethod(anotherMethod(aThirdMethod(obj)))</pre><p> You can do this:</p><pre><span class="kw">val</span> x = obj |&gt; aThirdMethod |&gt; anotherMethod |&gt; someMethod</pre><p> Which reads a bit better in many cases.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="com.mipadi.core">core</a></dd></dl></div>
-    </li><li class="current-entities indented4">
-                        <span class="separator"></span>
-                        <a class="class" href="package$$Pipe.html" title="An implicit conversion that adds a |&gt; operator to all classes."></a>
-                        <a href="package$$Pipe.html" title="An implicit conversion that adds a |&gt; operator to all classes.">
-                          Pipe
-                        </a>
-                      </li>
+    </li>
               </ul>
             </div>
           </div>
@@ -179,8 +180,8 @@
       <div id="definition">
         <div class="big-circle package">p</div>
         <p id="owner"><a href="../../../index.html" class="extype" name="com">com</a>.<a href="../../index.html" class="extype" name="com.mipadi">mipadi</a>.<a href="../index.html" class="extype" name="com.mipadi.core">core</a></p>
-        <h1>pipes<span class="permalink">
-      <a href="../../../../com/mipadi/core/pipes/index.html" title="Permalink">
+        <h1>logging<span class="permalink">
+      <a href="../../../../com/mipadi/core/logging/index.html" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span></h1>
@@ -193,16 +194,12 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <span class="name">pipes</span>
+        <span class="name">logging</span>
       </span>
       </h4>
 
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Provides a mechanism for piping or threading objects through methods
- and functions.</p><p> Any object can be implicitly converted to a
-   <code><a href="package$$Pipe.html" class="extype" name="com.mipadi.core.pipes.Pipe">Pipe</a></code>. This allows an object
- to be threaded through a series of functions, similar to Clojure's thread
- operator <code>-&gt;</code> or F#'s pipe forward operator <code>|&gt;</code>. Instead of this:</p><pre><span class="kw">val</span> x = someMethod(anotherMethod(aThirdMethod(obj)))</pre><p> You can do this:</p><pre><span class="kw">val</span> x = obj |&gt; aThirdMethod |&gt; anotherMethod |&gt; someMethod</pre><p> Which reads a bit better in many cases.</p></div><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Useful logging functionality.</p></div><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
           </span>
@@ -218,24 +215,26 @@
 
         <div id="types" class="types members">
               <h3>Type Members</h3>
-              <ol><li name="com.mipadi.core.pipes.Pipe" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="Pipe[A]extendsAnyRef"></a><a id="Pipe[A]:Pipe[A]"></a>
+              <ol><li name="com.mipadi.core.logging.Logging" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="LoggingextendsAnyRef"></a><a id="Logging:Logging"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/core/pipes/index.html#Pipe[A]extendsAnyRef" title="Permalink">
+      <a href="../../../../com/mipadi/core/logging/index.html#LoggingextendsAnyRef" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
       <span class="modifier_kind">
-        <span class="modifier">implicit </span>
-        <span class="kind">class</span>
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="An implicit conversion that adds a |&gt; operator to all classes." href="package$$Pipe.html">
-              <span class="name">Pipe</span>
-            </a><span class="tparams">[<span name="A">A</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+        <a title="Adds a log to extending classes." href="Logging.html">
+              <span class="name">Logging</span>
+            </a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       
-      <p class="shortcomment cmt">An implicit conversion that adds a <code>|&gt;</code> operator to all classes.</p>
+      <p class="shortcomment cmt">Adds a log to extending classes.</p><div class="fullcomment"><div class="comment cmt"><p>Adds a log to extending classes.</p><p> The log automatically has the same name as the package that
+ contains the extending class.
+</p></div></div>
     </li></ol>
             </div>
 
