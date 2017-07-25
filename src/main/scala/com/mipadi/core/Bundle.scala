@@ -24,7 +24,7 @@ import com.mipadi.text.strings._
 
 
 /** Represents a source of bundle information. */
-trait BundleSource {
+private trait BundleSource {
   /** The name of the bundle. */
   def name: String
 
@@ -56,6 +56,15 @@ private class BuildSBTSource(val cls: Class[_], val file: File) extends BundleSo
 }
 
 
+/** Contains metadata about an application or library. */
+trait Bundle {
+  /** The name of the bundle. */
+  def name: String
+
+  /** The version of the bundle. */
+  def version: String
+}
+
 /** Loads bundles for a given class. */
 object Bundle {
   private def versionFromManifest(cls: Class[_]): Option[String] =
@@ -75,18 +84,12 @@ object Bundle {
    *    The bundle associated with the given class.
    */
   def forClass(cls: Class[_]): Bundle =
-    cls |> bundleSource |> (s => new Bundle(s))
+    cls |> bundleSource |> (s => new BundleImpl(s))
 }
 
-/** Contains metadata about an application or library.
- *
- *  @param source
- *    The source of the bundle's information.
- */
-class Bundle(source: BundleSource) {
-  /** The name of the bundle. */
+
+private class BundleImpl(source: BundleSource) extends Bundle {
   def name: String = source.name
 
-  /** The version of the bundle. */
   def version: String = source.version
 }
