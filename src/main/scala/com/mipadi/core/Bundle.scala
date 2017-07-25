@@ -78,6 +78,12 @@ object Bundle {
 
   /** Loads the bundle associated with the given class.
    *
+   *  Often times, this is as simple as calling:
+   *
+   *  {{{
+   *  val bundle = Bundle.forClass(getClass)
+   *  }}}
+   *
    *  @param cls
    *    The class for which a bundle should be loaded.
    *  @return
