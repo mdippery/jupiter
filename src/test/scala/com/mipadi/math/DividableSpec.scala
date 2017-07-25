@@ -16,7 +16,6 @@
 
 package com.mipadi.math
 
-
 import org.scalatest._
 
 
