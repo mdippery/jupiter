@@ -25,7 +25,7 @@ package com.mipadi.net
  *
  *  {{{
  *  import com.mipadi.net.RichURI
- *  implicit class RichMongoURI(uri: URI)(implicit ev: Addressable[URI]
+ *  implicit class RichMongoURI(uri: URI)(implicit ev: Addressable[URI])
  *    extends ConvertibleURI {
  *    lazy val database: Option[String] = uri.pathComponents.lift(1)
  *    lazy val collection: Option[String] = uri.pathComponents.lift(2)
