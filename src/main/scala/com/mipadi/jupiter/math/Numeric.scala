@@ -30,6 +30,18 @@ trait Numeric[T] {
   def divide(x: T, y: Long): T
   def divide(x: T, y: Int): T
   def divide(x: T, y: Double): Double
+
+  /** Returns `true` if `a` divides evenly into `b`, that is, `b / a` has
+   *  no remainder. Equivalent to `a|b`.
+   *
+   *  @param a
+   *    Divisor
+   *  @param b
+   *    Original number
+   *  @return
+   *    `true` if `a` divides evenly into `b` with no remainder
+   */
+  def divides(a: T, b: T): Boolean
 }
 
 /** Contains default implicit objects for various numeric types.
@@ -43,6 +55,8 @@ object Numeric {
     override def divide(x: Long, y: Long): Long = x / y
     override def divide(x: Long, y: Int): Long = x / y
     override def divide(x: Long, y: Double): Double = x / y
+
+    override def divides(a: Long, b: Long): Boolean = b % a == 0
   }
 
   /** A default implicit for ints */
@@ -50,6 +64,8 @@ object Numeric {
     override def divide(x: Int, y: Long): Int = x / y.toInt
     override def divide(x: Int, y: Int): Int = x / y
     override def divide(x: Int, y: Double): Double = x / y
+
+    override def divides(a: Int, b: Int): Boolean = b % a == 0
   }
 
   /** A default implicit for doubles */
@@ -57,5 +73,7 @@ object Numeric {
     override def divide(x: Double, y: Long): Double = x / y
     override def divide(x: Double, y: Int): Double = x / y
     override def divide(x: Double, y: Double): Double = x / y
+
+    override def divides(a: Double, b: Double): Boolean = true
   }
 }
