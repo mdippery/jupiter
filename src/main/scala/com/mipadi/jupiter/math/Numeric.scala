@@ -29,6 +29,11 @@ package com.mipadi.jupiter.math
 trait Numeric[T] {
   def divide(lhs: T, rhs: Long): T
   def divide(lhs: T, rhs: Double): Double
+}
+
+
+/** Type class for whole numbers */
+trait Integral[T] extends Numeric[T] {
 
   /** Returns `true` if `a` divides evenly into `b`, that is, `b / a` has
    *  no remainder. Equivalent to `a|b`.
@@ -42,10 +47,6 @@ trait Numeric[T] {
    */
   def divides(a: T, b: T): Boolean
 }
-
-
-/** Type class for whole numbers */
-trait Integral[T] extends Numeric[T]
 
 
 /** Type class for numbers with a fractional (or decimal) component */
@@ -78,7 +79,5 @@ object Numeric {
   implicit object NumericDouble extends Fractional[Double] {
     override def divide(lhs: Double, rhs: Long): Double = lhs / rhs
     override def divide(lhs: Double, rhs: Double): Double = lhs / rhs
-
-    override def divides(a: Double, b: Double): Boolean = true
   }
 }

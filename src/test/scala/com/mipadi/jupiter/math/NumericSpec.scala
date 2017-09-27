@@ -22,9 +22,14 @@ import com.mipadi.jupiter.math.NumericSpec._
 
 
 object NumericSpec {
-  implicit class RichNumeric[T](self: T)(implicit ev: Numeric[T]) {
+  implicit class RichLong[T](self: T)(implicit ev: Integral[T]) {
     def divides(b: T): Boolean = ev.divides(self, b)
 
+    def / (lhs: T, rhs: Long): T = ev.divide(lhs, rhs)
+    def / (lhs: T, rhs: Double): Double = ev.divide(lhs, rhs)
+  }
+
+  implicit class RichDouble[T](self: T)(implicit ev: Fractional[T]) {
     def / (lhs: T, rhs: Long): T = ev.divide(lhs, rhs)
     def / (lhs: T, rhs: Double): Double = ev.divide(lhs, rhs)
   }
@@ -97,9 +102,5 @@ class NumericSpec extends FlatSpec with Matchers {
     val actual = 982423.4 / 112.25
     val delta = (actual - expected).abs
     delta should be <= 0.01
-  }
-
-  it should "return true if another double can divide evenly into it" in {
-    (2.3 divides 6.8) should be (true)
   }
 }
