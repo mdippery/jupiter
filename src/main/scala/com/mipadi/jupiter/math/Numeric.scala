@@ -43,6 +43,15 @@ trait Numeric[T] {
   def divides(a: T, b: T): Boolean
 }
 
+
+/** Type class for whole numbers */
+trait Integral[T] extends Numeric[T]
+
+
+/** Type class for numbers with a fractional (or decimal) component */
+trait Fractional[T] extends Numeric[T]
+
+
 /** Contains default implicit objects for various numeric types.
  *
  *  @since 1.1
@@ -50,7 +59,7 @@ trait Numeric[T] {
 object Numeric {
 
   /** A default implicit for longs */
-  implicit object NumericLong extends Numeric[Long] {
+  implicit object NumericLong extends Integral[Long] {
     override def divide(lhs: Long, rhs: Long): Long = lhs / rhs
     override def divide(lhs: Long, rhs: Double): Double = lhs / rhs
 
@@ -58,7 +67,7 @@ object Numeric {
   }
 
   /** A default implicit for ints */
-  implicit object NumericInt extends Numeric[Int] {
+  implicit object NumericInt extends Integral[Int] {
     override def divide(lhs: Int, rhs: Long): Int = lhs / rhs.toInt
     override def divide(lhs: Int, rhs: Double): Double = lhs / rhs
 
@@ -66,7 +75,7 @@ object Numeric {
   }
 
   /** A default implicit for doubles */
-  implicit object NumericDouble extends Numeric[Double] {
+  implicit object NumericDouble extends Fractional[Double] {
     override def divide(lhs: Double, rhs: Long): Double = lhs / rhs
     override def divide(lhs: Double, rhs: Double): Double = lhs / rhs
 
