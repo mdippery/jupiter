@@ -28,7 +28,6 @@ package com.mipadi.jupiter.math
  */
 trait Numeric[T] {
   def divide(lhs: T, rhs: Long): T
-  def divide(lhs: T, rhs: Int): T
   def divide(lhs: T, rhs: Double): Double
 
   /** Returns `true` if `a` divides evenly into `b`, that is, `b / a` has
@@ -53,7 +52,6 @@ object Numeric {
   /** A default implicit for longs */
   implicit object NumericLong extends Numeric[Long] {
     override def divide(lhs: Long, rhs: Long): Long = lhs / rhs
-    override def divide(lhs: Long, rhs: Int): Long = lhs / rhs
     override def divide(lhs: Long, rhs: Double): Double = lhs / rhs
 
     override def divides(a: Long, b: Long): Boolean = b % a == 0
@@ -62,7 +60,6 @@ object Numeric {
   /** A default implicit for ints */
   implicit object NumericInt extends Numeric[Int] {
     override def divide(lhs: Int, rhs: Long): Int = lhs / rhs.toInt
-    override def divide(lhs: Int, rhs: Int): Int = lhs / rhs
     override def divide(lhs: Int, rhs: Double): Double = lhs / rhs
 
     override def divides(a: Int, b: Int): Boolean = b % a == 0
@@ -71,7 +68,6 @@ object Numeric {
   /** A default implicit for doubles */
   implicit object NumericDouble extends Numeric[Double] {
     override def divide(lhs: Double, rhs: Long): Double = lhs / rhs
-    override def divide(lhs: Double, rhs: Int): Double = lhs / rhs
     override def divide(lhs: Double, rhs: Double): Double = lhs / rhs
 
     override def divides(a: Double, b: Double): Boolean = true

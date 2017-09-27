@@ -25,7 +25,6 @@ object NumericSpec {
   implicit class RichNumeric[T](self: T)(implicit ev: Numeric[T]) {
     def divides(b: T): Boolean = ev.divides(self, b)
 
-    def / (lhs: T, rhs: Int): T = ev.divide(lhs, rhs)
     def / (lhs: T, rhs: Long): T = ev.divide(lhs, rhs)
     def / (lhs: T, rhs: Double): Double = ev.divide(lhs, rhs)
   }
