@@ -18,7 +18,7 @@ lazy val root = (project in file("."))
   .settings(
     name         := "jupiter",
     organization := "com.mipadi",
-    version      := "1.0.0",
+    version      := "1.1.0-SNAPSHOT",
     scalaVersion := "2.12.3",
 
     scalacOptions ++= Seq(
