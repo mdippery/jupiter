@@ -27,9 +27,9 @@ package com.mipadi.jupiter.math
  *      Type classes in Scala]]
  */
 trait Numeric[T] {
-  def divide(x: T, y: Long): T
-  def divide(x: T, y: Int): T
-  def divide(x: T, y: Double): Double
+  def divide(lhs: T, rhs: Long): T
+  def divide(lhs: T, rhs: Int): T
+  def divide(lhs: T, rhs: Double): Double
 
   /** Returns `true` if `a` divides evenly into `b`, that is, `b / a` has
    *  no remainder. Equivalent to `a|b`.
@@ -52,27 +52,27 @@ object Numeric {
 
   /** A default implicit for longs */
   implicit object NumericLong extends Numeric[Long] {
-    override def divide(x: Long, y: Long): Long = x / y
-    override def divide(x: Long, y: Int): Long = x / y
-    override def divide(x: Long, y: Double): Double = x / y
+    override def divide(lhs: Long, rhs: Long): Long = lhs / rhs
+    override def divide(lhs: Long, rhs: Int): Long = lhs / rhs
+    override def divide(lhs: Long, rhs: Double): Double = lhs / rhs
 
     override def divides(a: Long, b: Long): Boolean = b % a == 0
   }
 
   /** A default implicit for ints */
   implicit object NumericInt extends Numeric[Int] {
-    override def divide(x: Int, y: Long): Int = x / y.toInt
-    override def divide(x: Int, y: Int): Int = x / y
-    override def divide(x: Int, y: Double): Double = x / y
+    override def divide(lhs: Int, rhs: Long): Int = lhs / rhs.toInt
+    override def divide(lhs: Int, rhs: Int): Int = lhs / rhs
+    override def divide(lhs: Int, rhs: Double): Double = lhs / rhs
 
     override def divides(a: Int, b: Int): Boolean = b % a == 0
   }
 
   /** A default implicit for doubles */
   implicit object NumericDouble extends Numeric[Double] {
-    override def divide(x: Double, y: Long): Double = x / y
-    override def divide(x: Double, y: Int): Double = x / y
-    override def divide(x: Double, y: Double): Double = x / y
+    override def divide(lhs: Double, rhs: Long): Double = lhs / rhs
+    override def divide(lhs: Double, rhs: Int): Double = lhs / rhs
+    override def divide(lhs: Double, rhs: Double): Double = lhs / rhs
 
     override def divides(a: Double, b: Double): Boolean = true
   }

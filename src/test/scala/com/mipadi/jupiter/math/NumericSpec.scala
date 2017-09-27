@@ -24,22 +24,26 @@ import com.mipadi.jupiter.math.NumericSpec._
 object NumericSpec {
   implicit class RichNumeric[T](self: T)(implicit ev: Numeric[T]) {
     def divides(b: T): Boolean = ev.divides(self, b)
+
+    def / (lhs: T, rhs: Int): T = ev.divide(lhs, rhs)
+    def / (lhs: T, rhs: Long): T = ev.divide(lhs, rhs)
+    def / (lhs: T, rhs: Double): Double = ev.divide(lhs, rhs)
   }
 }
 
 
 class NumericSpec extends FlatSpec with Matchers {
   "A long" should "be divided by another long" in {
-    Numeric.NumericLong.divide(40000000000L, 1000L) should === (40000000L)
+    (40000000000L / 1000L) should === (40000000L)
   }
 
   it should "be divided by an int" in {
-    Numeric.NumericLong.divide(40000000000L, 1000) should === (40000000L)
+    (40000000000L / 1000) should === (40000000L)
   }
 
   it should "be divided by a double" in {
     val expected = 40000000.0
-    val actual = Numeric.NumericLong.divide(40000000000L, 1000.0)
+    val actual = 40000000000L / 1000.0
     val delta = (actual - expected).abs
     delta should be <= 0.01
   }
@@ -53,16 +57,16 @@ class NumericSpec extends FlatSpec with Matchers {
   }
 
   "An int" should "be divided by a long" in {
-    Numeric.NumericInt.divide(10000, 98L) should === (102)
+    (10000 / 98L) should === (102)
   }
 
   it should "be divided by another int" in {
-    Numeric.NumericInt.divide(10000, 98) should === (102)
+    (10000 / 98) should === (102)
   }
 
   it should "be divided by a double" in {
     val expected = 102.04
-    val actual = Numeric.NumericInt.divide(10000, 98.0)
+    val actual = 10000 / 98.0
     val delta = (actual - expected).abs
     delta should be <= 0.01
   }
@@ -77,21 +81,21 @@ class NumericSpec extends FlatSpec with Matchers {
 
   "A double" should "be divided by a long" in {
     val expected = 8771.6375
-    val actual = Numeric.NumericDouble.divide(982423.4, 112L)
+    val actual = 982423.4 / 112L
     val delta = (actual - expected).abs
     delta should be <= 0.01
   }
 
   it should "be divided by an int" in {
     val expected = 8771.6375
-    val actual = Numeric.NumericDouble.divide(982423.4, 112)
+    val actual = 982423.4 / 112
     val delta = (actual - expected).abs
     delta should be <= 0.01
   }
 
   it should "be divided by a double" in {
     val expected = 8752.1
-    val actual = Numeric.NumericDouble.divide(982423.4, 112.25)
+    val actual = 982423.4 / 112.25
     val delta = (actual - expected).abs
     delta should be <= 0.01
   }
