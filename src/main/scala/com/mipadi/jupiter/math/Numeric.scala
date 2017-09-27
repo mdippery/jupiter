@@ -35,6 +35,15 @@ trait Numeric[T] {
 /** Type class for whole numbers */
 trait Integral[T] extends Numeric[T] {
 
+  /** Returns the individual digits of the given number.
+   *
+   *  @param n
+   *    The number
+   *  @return
+   *    The individual digits of `n`
+   */
+  def digits(n: T): Seq[Int] = n.toString.map(_.toString).map(_.toInt)
+
   /** Returns `true` if `a` divides evenly into `b`, that is, `b / a` has
    *  no remainder. Equivalent to `a|b`.
    *
