@@ -16,7 +16,7 @@
 
 package com.mipadi.jupiter.time
 
-import com.mipadi.jupiter.math.Dividable
+import com.mipadi.jupiter.math.Numeric
 
 
 /** Convert longs, ints, and doubles to temporal units like seconds, minutes,
@@ -40,11 +40,11 @@ object TemporalUnits {
    *    The wrapped value
    *  @param ev
    *    A divider for the given types of values. If one is not specified,
-   *    the proper divider from `[[com.mipadi.jupiter.math.Dividable
-   *    Dividable]]` is used, which should be appropriate for any int, long,
+   *    the proper divider from `[[com.mipadi.jupiter.math.Numeric
+   *    Numeric]]` is used, which should be appropriate for any int, long,
    *    or double.
    */
-  implicit class Temporal[T](wrapped: T)(implicit ev: Dividable[T]) {
+  implicit class Temporal[T](wrapped: T)(implicit ev: Numeric[T]) {
     private val SecondsPerDay = 86400
     private val SecondsPerSiderealDay = 86164.0916
     private val DaysPerYear = 365

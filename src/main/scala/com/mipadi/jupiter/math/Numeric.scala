@@ -17,37 +17,43 @@
 package com.mipadi.jupiter.math
 
 
-/** A type class that represents types on which division can be performed.
+/** A type class that represents types on which numeric operations
+ *  can be performed.
+ *
+ *  @since 1.1
  *
  *  @see
  *    [[http://danielwestheide.com/blog/2013/02/06/the-neophytes-guide-to-scala-part-12-type-classes.html
  *      Type classes in Scala]]
  */
-trait Dividable[T] {
+trait Numeric[T] {
   def divide(x: T, y: Long): T
   def divide(x: T, y: Int): T
   def divide(x: T, y: Double): Double
 }
 
-/** Contains default implicit objects for various dividable types. */
-object Dividable {
+/** Contains default implicit objects for various numeric types.
+ *
+ *  @since 1.1
+ */
+object Numeric {
 
   /** A default implicit for longs */
-  implicit object DividableLong extends Dividable[Long] {
+  implicit object NumericLong extends Numeric[Long] {
     override def divide(x: Long, y: Long): Long = x / y
     override def divide(x: Long, y: Int): Long = x / y
     override def divide(x: Long, y: Double): Double = x / y
   }
 
   /** A default implicit for ints */
-  implicit object DividableInt extends Dividable[Int] {
+  implicit object NumericInt extends Numeric[Int] {
     override def divide(x: Int, y: Long): Int = x / y.toInt
     override def divide(x: Int, y: Int): Int = x / y
     override def divide(x: Int, y: Double): Double = x / y
   }
 
   /** A default implicit for doubles */
-  implicit object DividableDouble extends Dividable[Double] {
+  implicit object NumericDouble extends Numeric[Double] {
     override def divide(x: Double, y: Long): Double = x / y
     override def divide(x: Double, y: Int): Double = x / y
     override def divide(x: Double, y: Double): Double = x / y
