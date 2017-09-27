@@ -18,6 +18,15 @@ package com.mipadi.jupiter.math
 
 import org.scalatest._
 
+import com.mipadi.jupiter.math.NumericSpec._
+
+
+object NumericSpec {
+  implicit class RichNumeric[T](self: T)(implicit ev: Numeric[T]) {
+    def divides(b: T): Boolean = ev.divides(self, b)
+  }
+}
+
 
 class NumericSpec extends FlatSpec with Matchers {
   "A long" should "be divided by another long" in {
@@ -36,11 +45,11 @@ class NumericSpec extends FlatSpec with Matchers {
   }
 
   it should "return true if another long can divide evenly into it" in {
-    Numeric.NumericLong.divides(2L, 6L) should be (true)
+    (2L divides 6L) should be (true)
   }
 
   it should "return false if another long cannot divide evenly into it" in {
-    Numeric.NumericLong.divides(10L, 18L) should be (false)
+    (10L divides 18L) should be (false)
   }
 
   "An int" should "be divided by a long" in {
@@ -59,11 +68,11 @@ class NumericSpec extends FlatSpec with Matchers {
   }
 
   it should "return true if another int can divide evenly into it" in {
-    Numeric.NumericInt.divides(2, 6) should be (true)
+    (2 divides 6) should be (true)
   }
 
   it should "return false if another int cannot divide evenly into it" in {
-    Numeric.NumericInt.divides(10, 18) should be (false)
+    (10 divides 18) should be (false)
   }
 
   "A double" should "be divided by a long" in {
@@ -88,6 +97,6 @@ class NumericSpec extends FlatSpec with Matchers {
   }
 
   it should "return true if another double can divide evenly into it" in {
-    Numeric.NumericDouble.divides(2.3, 6.8) should be (true)
+    (2.3 divides 6.8) should be (true)
   }
 }
