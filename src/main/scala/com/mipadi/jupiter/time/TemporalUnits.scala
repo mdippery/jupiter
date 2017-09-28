@@ -85,7 +85,7 @@ object TemporalUnits {
      *
      *  A ''sidereal day'' is the amount of time taken by Earth to rotate
      *  on its axis relative to the stars. It is defined as 86164.0916
-     *  seconds, or about 4 minutes shorter than a solary day.
+     *  seconds, or about 4 minutes shorter than a solar day.
      *
      *  @return
      *    The number of sidereal days represented by the wrapped value
@@ -183,7 +183,7 @@ object TemporalUnits {
      *
      *  A ''sidereal day'' is the amount of time taken by Earth to rotate
      *  on its axis relative to the stars. It is defined as 86164.0916
-     *  seconds, or about 4 minutes shorter than a solary day.
+     *  seconds, or about 4 minutes shorter than a solar day.
      *
      *  @return
      *    The number of sidereal days represented by the wrapped value
