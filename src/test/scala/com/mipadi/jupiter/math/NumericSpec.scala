@@ -18,6 +18,7 @@ package com.mipadi.jupiter.math
 
 import org.scalatest._
 
+import com.mipadi.jupiter.math.Numeric._
 import com.mipadi.jupiter.math.NumericSpec._
 
 
@@ -123,6 +124,10 @@ class NumericSpec extends FlatSpec with Matchers {
   it should "return true if it is prime" in {
     2.isPrime should be (true)
     23.isPrime should be (true)
+  }
+
+  it should "return a reversed range" in {
+    (10 downto 1).map(_.toInt) should be (List(10, 9, 8, 7, 6, 5, 4, 3, 2, 1))
   }
 
   "A double" should "be divided by a long" in {

@@ -16,6 +16,7 @@
 
 package com.mipadi.jupiter.math
 
+import scala.collection.immutable.Range
 import scala.math.sqrt
 
 
@@ -124,5 +125,19 @@ object Numeric {
   implicit object NumericDouble extends Fractional[Double] {
     override def divide(lhs: Double, rhs: Long): Double = lhs / rhs
     override def divide(lhs: Double, rhs: Double): Double = lhs / rhs
+  }
+
+  /** Extends Scala's `Int` with additional useful methods. */
+  implicit class RichInt(self: Int) {
+
+    /** Returns a range counting down from the wrapped number to the
+    *  starting point
+    *
+    *  @param start
+    *    Lower bound
+    *  @return
+    *    The range from the upper count to the lower bound
+    */
+    def downto(start: Int): Range = (start to self).reverse
   }
 }
