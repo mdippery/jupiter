@@ -125,10 +125,10 @@
       </span>
       
       <p class="shortcomment cmt">Packages that comprise the Jupiter library</p><div class="fullcomment"><div class="comment cmt"><p>Packages that comprise the Jupiter library</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../index.html" class="extype" name="com.mipadi">mipadi</a></dd></dl></div>
-    </li><li name="com.mipadi.jupiter.time" visbl="pub" class="indented4 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="time"></a><a id="time:time"></a>
+    </li><li name="com.mipadi.jupiter.math" visbl="pub" class="indented4 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="math"></a><a id="math:math"></a>
       <span class="permalink">
-      <a href="../../../com/mipadi/jupiter/index.html#time" title="Permalink">
+      <a href="../../../com/mipadi/jupiter/index.html#math" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -137,53 +137,31 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="A gentler way of working with dates and times in Scala." href="index.html">
-              <span class="name">time</span>
+        <a title="Useful math operations" href="index.html">
+              <span class="name">math</span>
             </a>
       </span>
       
-      <p class="shortcomment cmt">A gentler way of working with dates and times in Scala.</p><div class="fullcomment"><div class="comment cmt"><p>A gentler way of working with dates and times in Scala.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="com.mipadi.jupiter">jupiter</a></dd></dl></div>
-    </li><li name="com.mipadi.jupiter.time.TemporalUnits" visbl="pub" class="indented5 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="TemporalUnits"></a><a id="TemporalUnits:TemporalUnits"></a>
-      <span class="permalink">
-      <a href="../../../../com/mipadi/jupiter/time/index.html#TemporalUnits" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">object</span>
-      </span>
-      <span class="symbol">
-        <a title="Convert longs, ints, and doubles to temporal units like seconds, minutes,
- hours, etc." href="TemporalUnits$.html">
-              <span class="name">TemporalUnits</span>
-            </a>
-      </span>
-      
-      <p class="shortcomment cmt">Convert longs, ints, and doubles to temporal units like seconds, minutes,
- hours, etc.</p><div class="fullcomment"><div class="comment cmt"><p>Convert longs, ints, and doubles to temporal units like seconds, minutes,
- hours, etc.
-</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="index.html" class="extype" name="com.mipadi.jupiter.time">time</a></dd></dl></div>
-    </li><li class="current-entities indented5">
+      <p class="shortcomment cmt">Useful math operations</p><div class="fullcomment"><div class="comment cmt"><p>Useful math operations</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="com.mipadi.jupiter">jupiter</a></dd></dl></div>
+    </li><li class="current-entities indented4">
                         <span class="separator"></span>
-                        <a class="class" href="" title="Implicitly converts a long, int, or double to temporal units like
- seconds, minutes, hours, etc."></a>
-                        <a href="" title="Implicitly converts a long, int, or double to temporal units like
- seconds, minutes, hours, etc.">
-                          Temporal
+                        <a class="object" href="" title="Contains an implicit conversion for longs and adds some useful
+ methods to long."></a>
+                        <a href="" title="Contains an implicit conversion for longs and adds some useful
+ methods to long.">
+                          Numeric
                         </a>
                       </li>
               </ul>
             </div>
           </div>
           <div id="content">
-            <body class="class type">
+            <body class="object value">
       <div id="definition">
-        <div class="big-circle class">c</div>
-        <p id="owner"><a href="../../../index.html" class="extype" name="com">com</a>.<a href="../../index.html" class="extype" name="com.mipadi">mipadi</a>.<a href="../index.html" class="extype" name="com.mipadi.jupiter">jupiter</a>.<a href="index.html" class="extype" name="com.mipadi.jupiter.time">time</a>.<a href="TemporalUnits$.html" class="extype" name="com.mipadi.jupiter.time.TemporalUnits">TemporalUnits</a></p>
-        <h1>Temporal<span class="permalink">
-      <a href="../../../../com/mipadi/jupiter/time/TemporalUnits$$Temporal.html" title="Permalink">
+        <div class="big-circle object">o</div>
+        <p id="owner"><a href="../../../index.html" class="extype" name="com">com</a>.<a href="../../index.html" class="extype" name="com.mipadi">mipadi</a>.<a href="../index.html" class="extype" name="com.mipadi.jupiter">jupiter</a>.<a href="index.html" class="extype" name="com.mipadi.jupiter.math">math</a></p>
+        <h1>Numeric<span class="permalink">
+      <a href="../../../../com/mipadi/jupiter/math/Numeric$.html" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span></h1>
@@ -192,20 +170,21 @@
 
       <h4 id="signature" class="signature">
       <span class="modifier_kind">
-        <span class="modifier">implicit </span>
-        <span class="kind">class</span>
+        <span class="modifier"></span>
+        <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <span class="name">Temporal</span><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+        <span class="name">Numeric</span>
       </span>
       </h4>
 
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Implicitly converts a long, int, or double to temporal units like
- seconds, minutes, hours, etc.</p><p> With this conversion, callers can easily calculate temporal units from
- a raw number:</p><pre><span class="kw">import</span> com.mipadi.jupiter.time.TemporalUnits._
-<span class="kw">val</span> seconds = <span class="num">864000</span>
-<span class="kw">val</span> minutes = seconds.minutes</pre></div><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Contains an implicit conversion for longs and adds some useful
+ methods to <code>long</code>. Since Scala's ints can be promoted to longs,
+ these extension methods are available to ints as well. The implicit
+ class <code><a href="Numeric$$RichLong.html" class="extype" name="com.mipadi.jupiter.math.Numeric.RichLong">RichLong</a></code> can
+ be imported with:</p><pre><span class="kw">import</span> com.mipadi.jupiter.math.Numeric._
+<span class="kw">val</span> isPrime = <span class="num">100.</span>isPrime</pre></div><dl class="attributes block"> <dt>Since</dt><dd><p>1.1</p></dd></dl><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
           </span>
@@ -235,7 +214,7 @@
                   <span class="filtertype">Inherited<br />
                   </span>
                   <ol id="linearization">
-                    <li class="in" name="com.mipadi.jupiter.time.TemporalUnits.Temporal"><span>Temporal</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                    <li class="in" name="com.mipadi.jupiter.math.Numeric"><span>Numeric</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                   </ol>
                 </div><div class="ancestors">
               <span class="filtertype"></span>
@@ -253,32 +232,35 @@
 
       <div id="template">
         <div id="allMembers">
-        <div id="constructors" class="members">
-              <h3>Instance Constructors</h3>
-              <ol><li name="com.mipadi.jupiter.time.TemporalUnits.Temporal#&lt;init&gt;" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="&lt;init&gt;(wrapped:T)(implicitev:com.mipadi.jupiter.math.Dividable[T]):com.mipadi.jupiter.time.TemporalUnits.Temporal[T]"></a><a id="&lt;init&gt;:Temporal[T]"></a>
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="com.mipadi.jupiter.math.Numeric.RichLong" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="RichLongextendsAnyRef"></a><a id="RichLong:RichLong"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/jupiter/time/TemporalUnits$$Temporal.html#&lt;init&gt;(wrapped:T)(implicitev:com.mipadi.jupiter.math.Dividable[T]):com.mipadi.jupiter.time.TemporalUnits.Temporal[T]" title="Permalink">
+      <a href="../../../../com/mipadi/jupiter/math/Numeric$.html#RichLongextendsAnyRef" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
       <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">new</span>
+        <span class="modifier">implicit </span>
+        <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <span class="name">Temporal</span><span class="params">(<span name="wrapped">wrapped: <span class="extype" name="com.mipadi.jupiter.time.TemporalUnits.Temporal.T">T</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="ev">ev: <a href="../math/Dividable.html" class="extype" name="com.mipadi.jupiter.math.Dividable">Dividable</a>[<span class="extype" name="com.mipadi.jupiter.time.TemporalUnits.Temporal.T">T</span>]</span>)</span>
+        <a title="An implicit conversion from longs that adds some useful methods to
+ long." href="Numeric$$RichLong.html">
+              <span class="name">RichLong</span>
+            </a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       
-      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">wrapped</dt><dd class="cmt"><p>
-   The wrapped value</p></dd><dt class="param">ev</dt><dd class="cmt"><p>
-   A divider for the given types of values. If one is not specified,
-   the proper divider from <code><a href="../math/Dividable.html" class="extype" name="com.mipadi.jupiter.math.Dividable">Dividable</a></code> is used, which should be appropriate for any int, long,
-   or double.</p></dd></dl></div>
+      <p class="shortcomment cmt">An implicit conversion from longs that adds some useful methods to
+ <code>long</code>.</p><div class="fullcomment"><div class="comment cmt"><p>An implicit conversion from longs that adds some useful methods to
+ <code>long</code>. Since ints can be promoted to longs, these methods are
+ available to ints as well. The implicit class can be imported with:</p><pre><span class="kw">import</span> com.mipadi.jupiter.math.Numeric._
+<span class="kw">val</span> isPrime = <span class="num">100.</span>isPrime</pre></div><dl class="attributes block"> <dt>Since</dt><dd><p>1.1</p></dd></dl></div>
     </li></ol>
             </div>
-
-        
 
         
 
@@ -288,7 +270,7 @@
                 <li name="scala.AnyRef#!=" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="!=(x$1:Any):Boolean"></a><a id="!=(Any):Boolean"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/jupiter/time/TemporalUnits$$Temporal.html#!=(x$1:Any):Boolean" title="Permalink">
+      <a href="../../../../com/mipadi/jupiter/math/Numeric$.html#!=(x$1:Any):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -304,7 +286,7 @@
     </li><li name="scala.AnyRef###" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="##():Int"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/jupiter/time/TemporalUnits$$Temporal.html###():Int" title="Permalink">
+      <a href="../../../../com/mipadi/jupiter/math/Numeric$.html###():Int" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -320,7 +302,7 @@
     </li><li name="scala.AnyRef#==" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="==(x$1:Any):Boolean"></a><a id="==(Any):Boolean"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/jupiter/time/TemporalUnits$$Temporal.html#==(x$1:Any):Boolean" title="Permalink">
+      <a href="../../../../com/mipadi/jupiter/math/Numeric$.html#==(x$1:Any):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -336,7 +318,7 @@
     </li><li name="scala.Any#asInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/jupiter/time/TemporalUnits$$Temporal.html#asInstanceOf[T0]:T0" title="Permalink">
+      <a href="../../../../com/mipadi/jupiter/math/Numeric$.html#asInstanceOf[T0]:T0" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -349,30 +331,10 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li name="com.mipadi.jupiter.time.TemporalUnits.Temporal#astronomicalYears" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="astronomicalYears:Double"></a>
-      <span class="permalink">
-      <a href="../../../../com/mipadi/jupiter/time/TemporalUnits$$Temporal.html#astronomicalYears:Double" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">astronomicalYears</span><span class="result">: <span class="extype" name="scala.Double">Double</span></span>
-      </span>
-      
-      <p class="shortcomment cmt">The number of <i>astronomical years</i>.</p><div class="fullcomment"><div class="comment cmt"><p>The number of <i>astronomical years</i>.</p><p> An <i>astronomical year</i> is the amount of time it takes Earth to
- revolve around the sun. It is equal to 31,557,600 seconds, or about
- 365.25 days.
-</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>
-   The number of astronomical years represented by the wrapped value</p></dd></dl></div>
     </li><li name="scala.AnyRef#clone" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="clone():Object"></a><a id="clone():AnyRef"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/jupiter/time/TemporalUnits$$Temporal.html#clone():Object" title="Permalink">
+      <a href="../../../../com/mipadi/jupiter/math/Numeric$.html#clone():Object" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -391,28 +353,10 @@
     </span>)</span>
               
         </dd></dl></div>
-    </li><li name="com.mipadi.jupiter.time.TemporalUnits.Temporal#days" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="days:T"></a>
-      <span class="permalink">
-      <a href="../../../../com/mipadi/jupiter/time/TemporalUnits$$Temporal.html#days:T" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">days</span><span class="result">: <span class="extype" name="com.mipadi.jupiter.time.TemporalUnits.Temporal.T">T</span></span>
-      </span>
-      
-      <p class="shortcomment cmt">The number of calendar days.</p><div class="fullcomment"><div class="comment cmt"><p>The number of calendar days.</p><p> There are 24 hours or 86,400 seconds in an hour.
-</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>
-   The number of days represented by the wrapped value</p></dd></dl></div>
     </li><li name="scala.AnyRef#eq" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="eq(x$1:AnyRef):Boolean"></a><a id="eq(AnyRef):Boolean"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/jupiter/time/TemporalUnits$$Temporal.html#eq(x$1:AnyRef):Boolean" title="Permalink">
+      <a href="../../../../com/mipadi/jupiter/math/Numeric$.html#eq(x$1:AnyRef):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -428,7 +372,7 @@
     </li><li name="scala.AnyRef#equals" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="equals(x$1:Any):Boolean"></a><a id="equals(Any):Boolean"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/jupiter/time/TemporalUnits$$Temporal.html#equals(x$1:Any):Boolean" title="Permalink">
+      <a href="../../../../com/mipadi/jupiter/math/Numeric$.html#equals(x$1:Any):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -444,7 +388,7 @@
     </li><li name="scala.AnyRef#finalize" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="finalize():Unit"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/jupiter/time/TemporalUnits$$Temporal.html#finalize():Unit" title="Permalink">
+      <a href="../../../../com/mipadi/jupiter/math/Numeric$.html#finalize():Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -466,7 +410,7 @@
     </li><li name="scala.AnyRef#getClass" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getClass():Class[_]"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/jupiter/time/TemporalUnits$$Temporal.html#getClass():Class[_]" title="Permalink">
+      <a href="../../../../com/mipadi/jupiter/math/Numeric$.html#getClass():Class[_]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -482,7 +426,7 @@
     </li><li name="scala.AnyRef#hashCode" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="hashCode():Int"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/jupiter/time/TemporalUnits$$Temporal.html#hashCode():Int" title="Permalink">
+      <a href="../../../../com/mipadi/jupiter/math/Numeric$.html#hashCode():Int" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -495,28 +439,10 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="com.mipadi.jupiter.time.TemporalUnits.Temporal#hours" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="hours:T"></a>
-      <span class="permalink">
-      <a href="../../../../com/mipadi/jupiter/time/TemporalUnits$$Temporal.html#hours:T" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">hours</span><span class="result">: <span class="extype" name="com.mipadi.jupiter.time.TemporalUnits.Temporal.T">T</span></span>
-      </span>
-      
-      <p class="shortcomment cmt">The number of hours.</p><div class="fullcomment"><div class="comment cmt"><p>The number of hours.</p><p> There are 60 minutes or 3600 seconds in an hour.
-</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>
-   The number of hours represented by the wrapped value</p></dd></dl></div>
     </li><li name="scala.Any#isInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="isInstanceOf[T0]:Boolean"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/jupiter/time/TemporalUnits$$Temporal.html#isInstanceOf[T0]:Boolean" title="Permalink">
+      <a href="../../../../com/mipadi/jupiter/math/Numeric$.html#isInstanceOf[T0]:Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -529,28 +455,10 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li name="com.mipadi.jupiter.time.TemporalUnits.Temporal#minutes" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="minutes:T"></a>
-      <span class="permalink">
-      <a href="../../../../com/mipadi/jupiter/time/TemporalUnits$$Temporal.html#minutes:T" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">minutes</span><span class="result">: <span class="extype" name="com.mipadi.jupiter.time.TemporalUnits.Temporal.T">T</span></span>
-      </span>
-      
-      <p class="shortcomment cmt">The number of minutes.</p><div class="fullcomment"><div class="comment cmt"><p>The number of minutes.</p><p> There are 60 seconds in a minute.
-</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>
-   The number of minutes represented by the wrapped value</p></dd></dl></div>
     </li><li name="scala.AnyRef#ne" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ne(x$1:AnyRef):Boolean"></a><a id="ne(AnyRef):Boolean"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/jupiter/time/TemporalUnits$$Temporal.html#ne(x$1:AnyRef):Boolean" title="Permalink">
+      <a href="../../../../com/mipadi/jupiter/math/Numeric$.html#ne(x$1:AnyRef):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -566,7 +474,7 @@
     </li><li name="scala.AnyRef#notify" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="notify():Unit"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/jupiter/time/TemporalUnits$$Temporal.html#notify():Unit" title="Permalink">
+      <a href="../../../../com/mipadi/jupiter/math/Numeric$.html#notify():Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -582,7 +490,7 @@
     </li><li name="scala.AnyRef#notifyAll" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="notifyAll():Unit"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/jupiter/time/TemporalUnits$$Temporal.html#notifyAll():Unit" title="Permalink">
+      <a href="../../../../com/mipadi/jupiter/math/Numeric$.html#notifyAll():Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -595,48 +503,10 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="com.mipadi.jupiter.time.TemporalUnits.Temporal#seconds" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="seconds:T"></a>
-      <span class="permalink">
-      <a href="../../../../com/mipadi/jupiter/time/TemporalUnits$$Temporal.html#seconds:T" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">seconds</span><span class="result">: <span class="extype" name="com.mipadi.jupiter.time.TemporalUnits.Temporal.T">T</span></span>
-      </span>
-      
-      <p class="shortcomment cmt">The number of seconds.</p><div class="fullcomment"><div class="comment cmt"><p>The number of seconds.
-</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>
-   The number of seconds represented by the wrapped value</p></dd></dl></div>
-    </li><li name="com.mipadi.jupiter.time.TemporalUnits.Temporal#siderealDays" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="siderealDays:Double"></a>
-      <span class="permalink">
-      <a href="../../../../com/mipadi/jupiter/time/TemporalUnits$$Temporal.html#siderealDays:Double" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">siderealDays</span><span class="result">: <span class="extype" name="scala.Double">Double</span></span>
-      </span>
-      
-      <p class="shortcomment cmt">The number of <i>sidereal days</i>.</p><div class="fullcomment"><div class="comment cmt"><p>The number of <i>sidereal days</i>.</p><p> A <i>sidereal day</i> is the amount of time taken by Earth to rotate
- on its axis relative to the stars. It is defined as 86164.0916
- seconds, or about 4 minutes shorter than a solary day.
-</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>
-   The number of sidereal days represented by the wrapped value</p></dd></dl></div>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a><a id="synchronized[T0](⇒T0):T0"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/jupiter/time/TemporalUnits$$Temporal.html#synchronized[T0](x$1:=&gt;T0):T0" title="Permalink">
+      <a href="../../../../com/mipadi/jupiter/math/Numeric$.html#synchronized[T0](x$1:=&gt;T0):T0" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -652,7 +522,7 @@
     </li><li name="scala.AnyRef#toString" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="toString():String"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/jupiter/time/TemporalUnits$$Temporal.html#toString():String" title="Permalink">
+      <a href="../../../../com/mipadi/jupiter/math/Numeric$.html#toString():String" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -668,7 +538,7 @@
     </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/jupiter/time/TemporalUnits$$Temporal.html#wait():Unit" title="Permalink">
+      <a href="../../../../com/mipadi/jupiter/math/Numeric$.html#wait():Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -690,7 +560,7 @@
     </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait(x$1:Long,x$2:Int):Unit"></a><a id="wait(Long,Int):Unit"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/jupiter/time/TemporalUnits$$Temporal.html#wait(x$1:Long,x$2:Int):Unit" title="Permalink">
+      <a href="../../../../com/mipadi/jupiter/math/Numeric$.html#wait(x$1:Long,x$2:Int):Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -712,7 +582,7 @@
     </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait(x$1:Long):Unit"></a><a id="wait(Long):Unit"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/jupiter/time/TemporalUnits$$Temporal.html#wait(x$1:Long):Unit" title="Permalink">
+      <a href="../../../../com/mipadi/jupiter/math/Numeric$.html#wait(x$1:Long):Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -731,42 +601,6 @@
     </span>)</span>
               
         </dd></dl></div>
-    </li><li name="com.mipadi.jupiter.time.TemporalUnits.Temporal#weeks" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="weeks:T"></a>
-      <span class="permalink">
-      <a href="../../../../com/mipadi/jupiter/time/TemporalUnits$$Temporal.html#weeks:T" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">weeks</span><span class="result">: <span class="extype" name="com.mipadi.jupiter.time.TemporalUnits.Temporal.T">T</span></span>
-      </span>
-      
-      <p class="shortcomment cmt">The number of weeks</p><div class="fullcomment"><div class="comment cmt"><p>The number of weeks</p><p> There are 7 days in a week.
-</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>
-   The number of weeks represented by the wrapped value</p></dd></dl></div>
-    </li><li name="com.mipadi.jupiter.time.TemporalUnits.Temporal#years" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="years:T"></a>
-      <span class="permalink">
-      <a href="../../../../com/mipadi/jupiter/time/TemporalUnits$$Temporal.html#years:T" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">years</span><span class="result">: <span class="extype" name="com.mipadi.jupiter.time.TemporalUnits.Temporal.T">T</span></span>
-      </span>
-      
-      <p class="shortcomment cmt">The number of years.</p><div class="fullcomment"><div class="comment cmt"><p>The number of years.</p><p> Assumes a year of 365 days.
-</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>
-   The number of years represented by the wrapped value</p></dd></dl></div>
     </li>
               </ol>
             </div>

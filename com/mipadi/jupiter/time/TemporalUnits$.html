@@ -251,10 +251,10 @@
 
         <div id="types" class="types members">
               <h3>Type Members</h3>
-              <ol><li name="com.mipadi.jupiter.time.TemporalUnits.Temporal" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="Temporal[T]extendsAnyRef"></a><a id="Temporal[T]:Temporal[T]"></a>
+              <ol><li name="com.mipadi.jupiter.time.TemporalUnits.TemporalFractional" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="TemporalFractional[T]extendsAnyRef"></a><a id="TemporalFractional[T]:TemporalFractional[T]"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/jupiter/time/TemporalUnits$.html#Temporal[T]extendsAnyRef" title="Permalink">
+      <a href="../../../../com/mipadi/jupiter/time/TemporalUnits$.html#TemporalFractional[T]extendsAnyRef" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -263,14 +263,38 @@
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a title="Implicitly converts a long, int, or double to temporal units like
- seconds, minutes, hours, etc." href="TemporalUnits$$Temporal.html">
-              <span class="name">Temporal</span>
+        <a title="Implicitly converts a fractional value to temporal units like
+ seconds, minutes, hours, etc." href="TemporalUnits$$TemporalFractional.html">
+              <span class="name">TemporalFractional</span>
             </a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       
-      <p class="shortcomment cmt">Implicitly converts a long, int, or double to temporal units like
- seconds, minutes, hours, etc.</p><div class="fullcomment"><div class="comment cmt"><p>Implicitly converts a long, int, or double to temporal units like
+      <p class="shortcomment cmt">Implicitly converts a fractional value to temporal units like
+ seconds, minutes, hours, etc.</p><div class="fullcomment"><div class="comment cmt"><p>Implicitly converts a fractional value to temporal units like
+ seconds, minutes, hours, etc.</p><p> With this conversion, callers can easily calculate temporal units from
+ a raw number:</p><pre><span class="kw">import</span> com.mipadi.jupiter.time.TemporalUnits._
+<span class="kw">val</span> seconds = <span class="num">864000</span>
+<span class="kw">val</span> minutes = seconds.minutes</pre></div></div>
+    </li><li name="com.mipadi.jupiter.time.TemporalUnits.TemporalIntegral" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="TemporalIntegral[T]extendsAnyRef"></a><a id="TemporalIntegral[T]:TemporalIntegral[T]"></a>
+      <span class="permalink">
+      <a href="../../../../com/mipadi/jupiter/time/TemporalUnits$.html#TemporalIntegral[T]extendsAnyRef" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a title="Implicitly converts an integral value to temporal units like
+ seconds, minutes, hours, etc." href="TemporalUnits$$TemporalIntegral.html">
+              <span class="name">TemporalIntegral</span>
+            </a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Implicitly converts an integral value to temporal units like
+ seconds, minutes, hours, etc.</p><div class="fullcomment"><div class="comment cmt"><p>Implicitly converts an integral value to temporal units like
  seconds, minutes, hours, etc.</p><p> With this conversion, callers can easily calculate temporal units from
  a raw number:</p><pre><span class="kw">import</span> com.mipadi.jupiter.time.TemporalUnits._
 <span class="kw">val</span> seconds = <span class="num">864000</span>

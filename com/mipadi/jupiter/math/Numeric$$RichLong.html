@@ -137,49 +137,77 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="" href="index.html">
+        <a title="Useful math operations" href="index.html">
               <span class="name">math</span>
             </a>
       </span>
       
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="com.mipadi.jupiter">jupiter</a></dd></dl></div>
-    </li><li class="current-entities indented4">
-                        <a class="object" href="" title="Contains default implicit objects for various dividable types."></a>
-                        <a class="trait" href="Dividable.html" title="A type class that represents types on which division can be performed."></a>
-                        <a href="Dividable.html" title="A type class that represents types on which division can be performed.">
-                          Dividable
+      <p class="shortcomment cmt">Useful math operations</p><div class="fullcomment"><div class="comment cmt"><p>Useful math operations</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="com.mipadi.jupiter">jupiter</a></dd></dl></div>
+    </li><li name="com.mipadi.jupiter.math.Numeric" visbl="pub" class="indented5 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Numeric"></a><a id="Numeric:Numeric"></a>
+      <span class="permalink">
+      <a href="../../../../com/mipadi/jupiter/math/index.html#Numeric" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a title="Contains an implicit conversion for longs and adds some useful
+ methods to long." href="Numeric$.html">
+              <span class="name">Numeric</span>
+            </a>
+      </span>
+      
+      <p class="shortcomment cmt">Contains an implicit conversion for longs and adds some useful
+ methods to <code>long</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Contains an implicit conversion for longs and adds some useful
+ methods to <code>long</code>. Since Scala's ints can be promoted to longs,
+ these extension methods are available to ints as well. The implicit
+ class <code><a href="" class="extype" name="com.mipadi.jupiter.math.Numeric.RichLong">RichLong</a></code> can
+ be imported with:</p><pre><span class="kw">import</span> com.mipadi.jupiter.math.Numeric._
+<span class="kw">val</span> isPrime = <span class="num">100.</span>isPrime</pre></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="index.html" class="extype" name="com.mipadi.jupiter.math">math</a></dd><dt>Since</dt><dd><p>1.1</p></dd></dl></div>
+    </li><li class="current-entities indented5">
+                        <span class="separator"></span>
+                        <a class="class" href="" title="An implicit conversion from longs that adds some useful methods to
+ long."></a>
+                        <a href="" title="An implicit conversion from longs that adds some useful methods to
+ long.">
+                          RichLong
                         </a>
                       </li>
               </ul>
             </div>
           </div>
           <div id="content">
-            <body class="object value">
+            <body class="class type">
       <div id="definition">
-        <a href="Dividable.html" title="See companion trait"><div class="big-circle object-companion-trait">o</div></a>
-        <p id="owner"><a href="../../../index.html" class="extype" name="com">com</a>.<a href="../../index.html" class="extype" name="com.mipadi">mipadi</a>.<a href="../index.html" class="extype" name="com.mipadi.jupiter">jupiter</a>.<a href="index.html" class="extype" name="com.mipadi.jupiter.math">math</a></p>
-        <h1><a href="Dividable.html" title="See companion trait">Dividable</a><span class="permalink">
-      <a href="../../../../com/mipadi/jupiter/math/Dividable$.html" title="Permalink">
+        <div class="big-circle class">c</div>
+        <p id="owner"><a href="../../../index.html" class="extype" name="com">com</a>.<a href="../../index.html" class="extype" name="com.mipadi">mipadi</a>.<a href="../index.html" class="extype" name="com.mipadi.jupiter">jupiter</a>.<a href="index.html" class="extype" name="com.mipadi.jupiter.math">math</a>.<a href="Numeric$.html" class="extype" name="com.mipadi.jupiter.math.Numeric">Numeric</a></p>
+        <h1>RichLong<span class="permalink">
+      <a href="../../../../com/mipadi/jupiter/math/Numeric$$RichLong.html" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span></h1>
-        <h3><span class="morelinks"><div>
-            Companion <a href="Dividable.html" title="See companion trait">trait Dividable</a>
-          </div></span></h3>
+        <h3><span class="morelinks"></span></h3>
       </div>
 
       <h4 id="signature" class="signature">
       <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">object</span>
+        <span class="modifier">implicit </span>
+        <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <span class="name">Dividable</span>
+        <span class="name">RichLong</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
 
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Contains default implicit objects for various dividable types.</p></div><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>An implicit conversion from longs that adds some useful methods to
+ <code>long</code>. Since ints can be promoted to longs, these methods are
+ available to ints as well. The implicit class can be imported with:</p><pre><span class="kw">import</span> com.mipadi.jupiter.math.Numeric._
+<span class="kw">val</span> isPrime = <span class="num">100.</span>isPrime</pre></div><dl class="attributes block"> <dt>Since</dt><dd><p>1.1</p></dd></dl><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
           </span>
@@ -209,7 +237,7 @@
                   <span class="filtertype">Inherited<br />
                   </span>
                   <ol id="linearization">
-                    <li class="in" name="com.mipadi.jupiter.math.Dividable"><span>Dividable</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                    <li class="in" name="com.mipadi.jupiter.math.Numeric.RichLong"><span>RichLong</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                   </ol>
                 </div><div class="ancestors">
               <span class="filtertype"></span>
@@ -227,7 +255,26 @@
 
       <div id="template">
         <div id="allMembers">
-        
+        <div id="constructors" class="members">
+              <h3>Instance Constructors</h3>
+              <ol><li name="com.mipadi.jupiter.math.Numeric.RichLong#&lt;init&gt;" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="&lt;init&gt;(self:Long):com.mipadi.jupiter.math.Numeric.RichLong"></a><a id="&lt;init&gt;:RichLong"></a>
+      <span class="permalink">
+      <a href="../../../../com/mipadi/jupiter/math/Numeric$$RichLong.html#&lt;init&gt;(self:Long):com.mipadi.jupiter.math.Numeric.RichLong" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">new</span>
+      </span>
+      <span class="symbol">
+        <span class="name">RichLong</span><span class="params">(<span name="self">self: <span class="extype" name="scala.Long">Long</span></span>)</span>
+      </span>
+      
+      
+    </li></ol>
+            </div>
 
         
 
@@ -239,7 +286,7 @@
                 <li name="scala.AnyRef#!=" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="!=(x$1:Any):Boolean"></a><a id="!=(Any):Boolean"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/jupiter/math/Dividable$.html#!=(x$1:Any):Boolean" title="Permalink">
+      <a href="../../../../com/mipadi/jupiter/math/Numeric$$RichLong.html#!=(x$1:Any):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -255,7 +302,7 @@
     </li><li name="scala.AnyRef###" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="##():Int"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/jupiter/math/Dividable$.html###():Int" title="Permalink">
+      <a href="../../../../com/mipadi/jupiter/math/Numeric$$RichLong.html###():Int" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -271,7 +318,7 @@
     </li><li name="scala.AnyRef#==" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="==(x$1:Any):Boolean"></a><a id="==(Any):Boolean"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/jupiter/math/Dividable$.html#==(x$1:Any):Boolean" title="Permalink">
+      <a href="../../../../com/mipadi/jupiter/math/Numeric$$RichLong.html#==(x$1:Any):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -287,7 +334,7 @@
     </li><li name="scala.Any#asInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/jupiter/math/Dividable$.html#asInstanceOf[T0]:T0" title="Permalink">
+      <a href="../../../../com/mipadi/jupiter/math/Numeric$$RichLong.html#asInstanceOf[T0]:T0" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -303,7 +350,7 @@
     </li><li name="scala.AnyRef#clone" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="clone():Object"></a><a id="clone():AnyRef"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/jupiter/math/Dividable$.html#clone():Object" title="Permalink">
+      <a href="../../../../com/mipadi/jupiter/math/Numeric$$RichLong.html#clone():Object" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -322,10 +369,84 @@
     </span>)</span>
               
         </dd></dl></div>
+    </li><li name="com.mipadi.jupiter.math.Numeric.RichLong#digits" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="digits:Seq[Int]"></a>
+      <span class="permalink">
+      <a href="../../../../com/mipadi/jupiter/math/Numeric$$RichLong.html#digits:Seq[Int]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">digits</span><span class="result">: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Int">Int</span>]</span>
+      </span>
+      
+      <p class="shortcomment cmt">The wrapped long's individual digits</p>
+    </li><li name="com.mipadi.jupiter.math.Numeric.RichLong#divides" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="divides(b:Long):Boolean"></a><a id="divides(Long):Boolean"></a>
+      <span class="permalink">
+      <a href="../../../../com/mipadi/jupiter/math/Numeric$$RichLong.html#divides(b:Long):Boolean" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">divides</span><span class="params">(<span name="b">b: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Returns <code>true</code> if the wrapped long divides evenly into <code>b</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Returns <code>true</code> if the wrapped long divides evenly into <code>b</code>. This
+ is equivalent to the mathematical notation <code>a|b</code> (where <code>a</code> is the
+ wrapped long).
+</p></div><dl class="paramcmts block"><dt class="param">b</dt><dd class="cmt"><p>
+   The dividend</p></dd><dt>returns</dt><dd class="cmt"><p>
+   <code>true</code> if the wrapped long divides evenly into <code>b</code></p></dd></dl></div>
+    </li><li name="com.mipadi.jupiter.math.Numeric.RichLong#divisors" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="divisors:Seq[Long]"></a>
+      <span class="permalink">
+      <a href="../../../../com/mipadi/jupiter/math/Numeric$$RichLong.html#divisors:Seq[Long]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">divisors</span><span class="result">: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Long">Long</span>]</span>
+      </span>
+      
+      <p class="shortcomment cmt">The wrapped long's divisors</p>
+    </li><li name="com.mipadi.jupiter.math.Numeric.RichLong#downto" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="downto(lower:Long):scala.collection.immutable.NumericRange[Long]"></a><a id="downto(Long):NumericRange[Long]"></a>
+      <span class="permalink">
+      <a href="../../../../com/mipadi/jupiter/math/Numeric$$RichLong.html#downto(lower:Long):scala.collection.immutable.NumericRange[Long]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">downto</span><span class="params">(<span name="lower">lower: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result">: <span class="extype" name="scala.collection.immutable.NumericRange">NumericRange</span>[<span class="extype" name="scala.Long">Long</span>]</span>
+      </span>
+      
+      <p class="shortcomment cmt">Returns a range using the wrapped long as an upper bound to the
+ specified lower bound.</p><div class="fullcomment"><div class="comment cmt"><p>Returns a range using the wrapped long as an upper bound to the
+ specified lower bound.
+</p></div><dl class="paramcmts block"><dt class="param">lower</dt><dd class="cmt"><p>
+   Lower bound of the range</p></dd><dt>returns</dt><dd class="cmt"><p>
+   Range from the wrapped long down to the specified lower bound</p></dd></dl></div>
     </li><li name="scala.AnyRef#eq" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="eq(x$1:AnyRef):Boolean"></a><a id="eq(AnyRef):Boolean"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/jupiter/math/Dividable$.html#eq(x$1:AnyRef):Boolean" title="Permalink">
+      <a href="../../../../com/mipadi/jupiter/math/Numeric$$RichLong.html#eq(x$1:AnyRef):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -341,7 +462,7 @@
     </li><li name="scala.AnyRef#equals" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="equals(x$1:Any):Boolean"></a><a id="equals(Any):Boolean"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/jupiter/math/Dividable$.html#equals(x$1:Any):Boolean" title="Permalink">
+      <a href="../../../../com/mipadi/jupiter/math/Numeric$$RichLong.html#equals(x$1:Any):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -357,7 +478,7 @@
     </li><li name="scala.AnyRef#finalize" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="finalize():Unit"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/jupiter/math/Dividable$.html#finalize():Unit" title="Permalink">
+      <a href="../../../../com/mipadi/jupiter/math/Numeric$$RichLong.html#finalize():Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -379,7 +500,7 @@
     </li><li name="scala.AnyRef#getClass" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getClass():Class[_]"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/jupiter/math/Dividable$.html#getClass():Class[_]" title="Permalink">
+      <a href="../../../../com/mipadi/jupiter/math/Numeric$$RichLong.html#getClass():Class[_]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -395,7 +516,7 @@
     </li><li name="scala.AnyRef#hashCode" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="hashCode():Int"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/jupiter/math/Dividable$.html#hashCode():Int" title="Permalink">
+      <a href="../../../../com/mipadi/jupiter/math/Numeric$$RichLong.html#hashCode():Int" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -411,7 +532,7 @@
     </li><li name="scala.Any#isInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="isInstanceOf[T0]:Boolean"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/jupiter/math/Dividable$.html#isInstanceOf[T0]:Boolean" title="Permalink">
+      <a href="../../../../com/mipadi/jupiter/math/Numeric$$RichLong.html#isInstanceOf[T0]:Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -424,10 +545,26 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="com.mipadi.jupiter.math.Numeric.RichLong#isPrime" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="isPrime:Boolean"></a>
+      <span class="permalink">
+      <a href="../../../../com/mipadi/jupiter/math/Numeric$$RichLong.html#isPrime:Boolean" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isPrime</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      
+      <p class="shortcomment cmt"><code>true</code> if the wrapped long is prime</p>
     </li><li name="scala.AnyRef#ne" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ne(x$1:AnyRef):Boolean"></a><a id="ne(AnyRef):Boolean"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/jupiter/math/Dividable$.html#ne(x$1:AnyRef):Boolean" title="Permalink">
+      <a href="../../../../com/mipadi/jupiter/math/Numeric$$RichLong.html#ne(x$1:AnyRef):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -443,7 +580,7 @@
     </li><li name="scala.AnyRef#notify" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="notify():Unit"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/jupiter/math/Dividable$.html#notify():Unit" title="Permalink">
+      <a href="../../../../com/mipadi/jupiter/math/Numeric$$RichLong.html#notify():Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -459,7 +596,7 @@
     </li><li name="scala.AnyRef#notifyAll" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="notifyAll():Unit"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/jupiter/math/Dividable$.html#notifyAll():Unit" title="Permalink">
+      <a href="../../../../com/mipadi/jupiter/math/Numeric$$RichLong.html#notifyAll():Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -475,7 +612,7 @@
     </li><li name="scala.AnyRef#synchronized" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a><a id="synchronized[T0](⇒T0):T0"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/jupiter/math/Dividable$.html#synchronized[T0](x$1:=&gt;T0):T0" title="Permalink">
+      <a href="../../../../com/mipadi/jupiter/math/Numeric$$RichLong.html#synchronized[T0](x$1:=&gt;T0):T0" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -491,7 +628,7 @@
     </li><li name="scala.AnyRef#toString" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="toString():String"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/jupiter/math/Dividable$.html#toString():String" title="Permalink">
+      <a href="../../../../com/mipadi/jupiter/math/Numeric$$RichLong.html#toString():String" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -507,7 +644,7 @@
     </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/jupiter/math/Dividable$.html#wait():Unit" title="Permalink">
+      <a href="../../../../com/mipadi/jupiter/math/Numeric$$RichLong.html#wait():Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -529,7 +666,7 @@
     </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait(x$1:Long,x$2:Int):Unit"></a><a id="wait(Long,Int):Unit"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/jupiter/math/Dividable$.html#wait(x$1:Long,x$2:Int):Unit" title="Permalink">
+      <a href="../../../../com/mipadi/jupiter/math/Numeric$$RichLong.html#wait(x$1:Long,x$2:Int):Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -551,7 +688,7 @@
     </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait(x$1:Long):Unit"></a><a id="wait(Long):Unit"></a>
       <span class="permalink">
-      <a href="../../../../com/mipadi/jupiter/math/Dividable$.html#wait(x$1:Long):Unit" title="Permalink">
+      <a href="../../../../com/mipadi/jupiter/math/Numeric$$RichLong.html#wait(x$1:Long):Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -570,60 +707,6 @@
     </span>)</span>
               
         </dd></dl></div>
-    </li><li name="com.mipadi.jupiter.math.Dividable.DividableDouble" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="DividableDouble"></a><a id="DividableDouble:DividableDouble"></a>
-      <span class="permalink">
-      <a href="../../../../com/mipadi/jupiter/math/Dividable$.html#DividableDouble" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier">implicit </span>
-        <span class="kind">object</span>
-      </span>
-      <span class="symbol">
-        <a title="A default implicit for doubles" href="Dividable$$DividableDouble$.html">
-              <span class="name">DividableDouble</span>
-            </a><span class="result"> extends <a href="Dividable.html" class="extype" name="com.mipadi.jupiter.math.Dividable">Dividable</a>[<span class="extype" name="scala.Double">Double</span>]</span>
-      </span>
-      
-      <p class="shortcomment cmt">A default implicit for doubles</p>
-    </li><li name="com.mipadi.jupiter.math.Dividable.DividableInt" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="DividableInt"></a><a id="DividableInt:DividableInt"></a>
-      <span class="permalink">
-      <a href="../../../../com/mipadi/jupiter/math/Dividable$.html#DividableInt" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier">implicit </span>
-        <span class="kind">object</span>
-      </span>
-      <span class="symbol">
-        <a title="A default implicit for ints" href="Dividable$$DividableInt$.html">
-              <span class="name">DividableInt</span>
-            </a><span class="result"> extends <a href="Dividable.html" class="extype" name="com.mipadi.jupiter.math.Dividable">Dividable</a>[<span class="extype" name="scala.Int">Int</span>]</span>
-      </span>
-      
-      <p class="shortcomment cmt">A default implicit for ints</p>
-    </li><li name="com.mipadi.jupiter.math.Dividable.DividableLong" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="DividableLong"></a><a id="DividableLong:DividableLong"></a>
-      <span class="permalink">
-      <a href="../../../../com/mipadi/jupiter/math/Dividable$.html#DividableLong" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier">implicit </span>
-        <span class="kind">object</span>
-      </span>
-      <span class="symbol">
-        <a title="A default implicit for longs" href="Dividable$$DividableLong$.html">
-              <span class="name">DividableLong</span>
-            </a><span class="result"> extends <a href="Dividable.html" class="extype" name="com.mipadi.jupiter.math.Dividable">Dividable</a>[<span class="extype" name="scala.Long">Long</span>]</span>
-      </span>
-      
-      <p class="shortcomment cmt">A default implicit for longs</p>
     </li>
               </ol>
             </div>
