@@ -16,6 +16,8 @@
 
 package com.mipadi.jupiter.math
 
+import scala.math.sqrt
+
 
 /** A type class that represents types on which numeric operations
  *  can be performed.
@@ -64,6 +66,15 @@ trait Integral[T] extends Numeric[T] {
    *    A sequence of the divisors of `n`
    */
   def divisors(n: T): Seq[T]
+
+  /** Returns `true` if the given number is prime.
+   *
+   *  @param n
+   *    The number
+   *  @return
+   *    `true` if `n` is prime
+   */
+  def isPrime(n: T): Boolean
 }
 
 
@@ -85,6 +96,12 @@ object Numeric {
     override def divides(a: Long, b: Long): Boolean = b % a == 0
 
     override def divisors(n: Long): Seq[Long] = (1 to (n / 2).toInt).filter(divides(_, n)).map(_.toLong)
+
+    override def isPrime(n: Long): Boolean = n match {
+      case 1 => false
+      case 2 => true
+      case _ => !(2 to sqrt(n).toInt).exists(divides(_, n))
+    }
   }
 
   /** A default implicit for ints */
@@ -95,6 +112,12 @@ object Numeric {
     override def divides(a: Int, b: Int): Boolean = b % a == 0
 
     override def divisors(n: Int): Seq[Int] = (1 to n / 2).filter(divides(_, n))
+
+    override def isPrime(n: Int): Boolean = n match {
+      case 1 => false
+      case 2 => true
+      case _ => !(2 to sqrt(n).toInt).exists(divides(_, n))
+    }
   }
 
   /** A default implicit for doubles */

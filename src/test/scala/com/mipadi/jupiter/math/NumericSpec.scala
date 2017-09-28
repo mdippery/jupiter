@@ -27,6 +27,8 @@ object NumericSpec {
 
     lazy val divisors: Seq[T] = ev.divisors(self)
 
+    lazy val isPrime: Boolean = ev.isPrime(self)
+
     def divides(b: T): Boolean = ev.divides(self, b)
 
     def / (lhs: T, rhs: Long): T = ev.divide(lhs, rhs)
@@ -72,6 +74,16 @@ class NumericSpec extends FlatSpec with Matchers {
     24L.divisors should be (List(1, 2, 3, 4, 6, 8, 12))
   }
 
+  it should "return true if it is prime" in {
+    2L.isPrime should be (true)
+    23L.isPrime should be (true)
+  }
+
+  it should "return false if it is not prime" in {
+    1L.isPrime should be (false)
+    1000L.isPrime should be (false)
+  }
+
   "An int" should "be divided by a long" in {
     (10000 / 98L) should === (102)
   }
@@ -101,6 +113,16 @@ class NumericSpec extends FlatSpec with Matchers {
 
   it should "return its divisors" in {
     24.divisors should be (List(1, 2, 3, 4, 6, 8, 12))
+  }
+
+  it should "return false if it is not prime" in {
+    1.isPrime should be (false)
+    1000.isPrime should be (false)
+  }
+
+  it should "return true if it is prime" in {
+    2.isPrime should be (true)
+    23.isPrime should be (true)
   }
 
   "A double" should "be divided by a long" in {
