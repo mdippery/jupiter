@@ -23,7 +23,9 @@ import com.mipadi.jupiter.math.NumericSpec._
 
 object NumericSpec {
   implicit class RichLong[T](self: T)(implicit ev: Integral[T]) {
-    lazy val digits: Seq[Int ] = ev.digits(self)
+    lazy val digits: Seq[Int] = ev.digits(self)
+
+    lazy val divisors: Seq[T] = ev.divisors(self)
 
     def divides(b: T): Boolean = ev.divides(self, b)
 
@@ -66,6 +68,10 @@ class NumericSpec extends FlatSpec with Matchers {
     123L.digits should be (List(1, 2, 3))
   }
 
+  it should "return its divisors" in {
+    24L.divisors should be (List(1, 2, 3, 4, 6, 8, 12))
+  }
+
   "An int" should "be divided by a long" in {
     (10000 / 98L) should === (102)
   }
@@ -91,6 +97,10 @@ class NumericSpec extends FlatSpec with Matchers {
 
   it should "return a sequence of its individual digits" in {
     123.digits should be (List(1, 2, 3))
+  }
+
+  it should "return its divisors" in {
+    24.divisors should be (List(1, 2, 3, 4, 6, 8, 12))
   }
 
   "A double" should "be divided by a long" in {

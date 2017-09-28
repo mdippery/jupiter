@@ -55,6 +55,15 @@ trait Integral[T] extends Numeric[T] {
    *    `true` if `a` divides evenly into `b` with no remainder
    */
   def divides(a: T, b: T): Boolean
+
+  /** Returns a list of the divisors of the given number.
+   *
+   *  @param n
+   *    The number
+   *  @return
+   *    A sequence of the divisors of `n`
+   */
+  def divisors(n: T): Seq[T]
 }
 
 
@@ -74,6 +83,8 @@ object Numeric {
     override def divide(lhs: Long, rhs: Double): Double = lhs / rhs
 
     override def divides(a: Long, b: Long): Boolean = b % a == 0
+
+    override def divisors(n: Long): Seq[Long] = (1 to (n / 2).toInt).filter(divides(_, n)).map(_.toLong)
   }
 
   /** A default implicit for ints */
@@ -82,6 +93,8 @@ object Numeric {
     override def divide(lhs: Int, rhs: Double): Double = lhs / rhs
 
     override def divides(a: Int, b: Int): Boolean = b % a == 0
+
+    override def divisors(n: Int): Seq[Int] = (1 to n / 2).filter(divides(_, n))
   }
 
   /** A default implicit for doubles */
