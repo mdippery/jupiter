@@ -27,7 +27,7 @@ import scala.math
  *  be imported with:
  *
  *  {{{
- *  import com.mipadi.jupiter.match.Numeric._
+ *  import com.mipadi.jupiter.math.Numeric._
  *  val isPrime = 100.isPrime
  *  }}}
  *
@@ -37,12 +37,10 @@ object Numeric {
 
   /** An implicit conversion from longs that adds some useful methods to
    *  `long`. Since ints can be promoted to longs, these methods are
-   *  available to ints as well. The implicit class
-   *  `[[com.mipadi.jupiter.math.Numeric.RichLong RichLong]]` can be
-   *  imported with:
+   *  available to ints as well. The implicit class can be imported with:
    *
    *  {{{
-   *  import com.mipadi.jupiter.match.Numeric._
+   *  import com.mipadi.jupiter.math.Numeric._
    *  val isPrime = 100.isPrime
    *  }}}
    *
