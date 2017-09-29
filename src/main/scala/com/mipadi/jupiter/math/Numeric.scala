@@ -61,6 +61,9 @@ object Numeric {
       case _ => !(2L to math.sqrt(self).toLong).exists(_ divides self)
     }
 
+    /** Factorial of the wrapped long */
+    lazy val factorial: Long = (1L to self).product
+
     /** Returns `true` if the wrapped long divides evenly into `b`. This
      *  is equivalent to the mathematical notation `a|b` (where `a` is the
      *  wrapped long).
