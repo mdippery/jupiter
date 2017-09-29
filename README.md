@@ -12,16 +12,13 @@ You can run the test suite using [sbt], as well:
 
 ## Install
 
-If you want to use Jupiter in your own projects, it's probably easiest to
-publish Jupiter to your local Ivy repository:
-
-    $ sbt publishLocal
-
-You can then depend on it in your own projects by adding Jupiter as a library
+You can depend on it in your own projects by adding Jupiter as a library
 dependency in `build.sbt`:
 
+    resolvers += Resolver.bintrayRepo("mipadi", "maven"),
+
     libraryDependencies ++= Seq(
-      "com.mipadi" %% "jupiter" % "1.0.0-SNAPSHOT"
+      "com.mipadi" %% "jupiter" % "1.0.0"
     )
 
 ## Documentation
