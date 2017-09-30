@@ -46,8 +46,7 @@ class FileTreeSpec extends FlatSpec with Matchers {
       "src/main/scala/com/mipadi/jupiter/io/files/package.scala",
       "src/main/scala/com/mipadi/jupiter/io/package.scala",
       "src/main/scala/com/mipadi/jupiter/io/terminal",
-      "src/main/scala/com/mipadi/jupiter/io/terminal/colors",
-      "src/main/scala/com/mipadi/jupiter/io/terminal/colors/package.scala",
+      "src/main/scala/com/mipadi/jupiter/io/terminal/colors.scala",
       "src/main/scala/com/mipadi/jupiter/io/terminal/package.scala"
     )
     val expected = expectedFilenames.map { new File(_) }
@@ -61,7 +60,7 @@ class FileTreeSpec extends FlatSpec with Matchers {
       "src/main/scala/com/mipadi/jupiter/io/files/Locatable.scala",
       "src/main/scala/com/mipadi/jupiter/io/files/package.scala",
       "src/main/scala/com/mipadi/jupiter/io/package.scala",
-      "src/main/scala/com/mipadi/jupiter/io/terminal/colors/package.scala",
+      "src/main/scala/com/mipadi/jupiter/io/terminal/colors.scala",
       "src/main/scala/com/mipadi/jupiter/io/terminal/package.scala"
     )
     val expected = expectedFilenames.map { new File(_) }

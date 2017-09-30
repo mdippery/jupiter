@@ -65,8 +65,8 @@ class RichFileSpec extends FlatSpec with Matchers {
   }
 
   "A directory" should "return a subtree listing its files" in {
-    dir.subtree.all.length should be (10)
-    pDir.subtree.all.length should be (10)
+    dir.subtree.all.length should be (9)
+    pDir.subtree.all.length should be (9)
   }
 
   it should "return a subtree listing its files only" in {

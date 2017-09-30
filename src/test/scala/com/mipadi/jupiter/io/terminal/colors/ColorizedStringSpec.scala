@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.mipadi.jupiter.io.terminal.colors
+package com.mipadi.jupiter.io.terminal
 
 import org.scalatest._
 import com.mipadi.jupiter.io.terminal.colors._

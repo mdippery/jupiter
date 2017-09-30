@@ -30,7 +30,7 @@ package com.mipadi.jupiter.io.terminal
  *  @define colorizedstring
  *    `[[com.mipadi.jupiter.io.terminal.colors.ColorizedString ColorizedString]]`
  */
-package object colors {
+object colors {
 
   /** A wrapper for strings that adds methods to print them in color.
    *
