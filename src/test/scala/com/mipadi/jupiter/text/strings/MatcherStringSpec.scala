@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.mipadi.jupiter.text.strings
+package com.mipadi.jupiter.text
 
 import org.scalatest._
 import com.mipadi.jupiter.text.strings._

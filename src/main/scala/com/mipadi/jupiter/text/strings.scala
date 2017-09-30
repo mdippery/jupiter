@@ -32,7 +32,7 @@ import java.util.regex.{Matcher, Pattern}
  *  @define matcherstring
  *    `[[com.mipadi.jupiter.text.strings.MatcherString MatcherString]]`
  */
-package object strings {
+object strings {
 
   /** Implicitly converts Scala strings to $matcherstring objects.
    *
