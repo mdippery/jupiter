@@ -39,7 +39,7 @@ package com.mipadi.jupiter.core
  *  @define pipe
  *    `[[com.mipadi.jupiter.core.pipes.Pipe Pipe]]`
  */
-package object pipes {
+object pipes {
 
   /** An implicit conversion that adds a `|>` operator to all classes. */
   implicit class Pipe[A](item: A) {

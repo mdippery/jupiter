@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.mipadi.jupiter.core.pipes
+package com.mipadi.jupiter.core
 
 import org.scalatest._
 import com.mipadi.jupiter.core.pipes._
