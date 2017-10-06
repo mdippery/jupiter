@@ -21,18 +21,18 @@ package com.mipadi.jupiter.core
  *  and longs, so that they can be used like this:
  *
  *  {{{
- *  import com.mipadi.jupiter.core.Enumerator._
+ *  import com.mipadi.jupiter.core.Enumerated._
  *  15.times.foreach { println(_) }
  *  }}}
  *
  *  @since 1.1
  */
-object Enumerator {
+object Enumerated {
 
   /** An implicit conversion that adds a `times` method to ints.
    *
    *  {{{
-   *  import com.mipadi.jupiter.core.Enumerator._
+   *  import com.mipadi.jupiter.core.Enumerated._
    *  15.times.foreach { println(_) }
    *  }}}
    *
@@ -51,7 +51,7 @@ object Enumerator {
   /** An implicit conversion that adds a `times` method to longs.
    *
    *  {{{
-   *  import com.mipadi.jupiter.core.Enumerator._
+   *  import com.mipadi.jupiter.core.Enumerated._
    *  15L.times.foreach { println(_) }
    *  }}}
    *
