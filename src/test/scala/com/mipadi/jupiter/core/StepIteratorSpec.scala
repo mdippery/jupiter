@@ -23,14 +23,24 @@ import com.mipadi.jupiter.core.StepIterator._
 
 class StepIteratorSpec extends FlatSpec with Matchers {
   "An int" should "be iterated over a number of times" in {
-    var i = 0
-    5.times.foreach { i += _ }
-    i should be (10)
+    var s = 0
+    var c = 0
+    5.times.foreach { i =>
+      c += 1
+      s += i
+    }
+    c should be (5)
+    s should be (10)
   }
 
   "A long int" should "be iterated over a number of times" in {
-    var i = 0L
-    5L.times.foreach { i += _ }
-    i should be (10L)
+    var s = 0L
+    var c = 0
+    5L.times.foreach { i =>
+      c += 1
+      s += i
+    }
+    c should be (5)
+    s should be (10L)
   }
 }

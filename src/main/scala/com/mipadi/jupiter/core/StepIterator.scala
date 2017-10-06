@@ -40,8 +40,12 @@ object StepIterator {
    */
   implicit class SteppedInt(self: Int) {
 
-    /** Iterates over the int a number of times. */
-    def times: Seq[Int] = 0 until self
+    /** Iterates `n` times.
+     *
+     *  @return
+     *    An iterator counting up from `0` to `n`
+     */
+    def times: Iterator[Int] = (0 until self).iterator
   }
 
   /** An implicit conversion that adds a `times` method to longs.
@@ -55,7 +59,11 @@ object StepIterator {
    */
   implicit class SteppedLong(self: Long) {
 
-    /** Iterates over the int a number of times. */
-    def times: Seq[Long] = 0L until self
+    /** Iterates `n` times.
+     *
+     *  @return
+     *    An iterator counting up from `0` to `n`
+     */
+    def times: Iterator[Long] = (0L until self).iterator
   }
 }
