@@ -33,7 +33,7 @@ class EnumeratorSpec extends FlatSpec with Matchers {
     s should be (10)
   }
 
-  "A long int" should "be iterated over a number of times" in {
+  "A long" should "be iterated over a number of times" in {
     var s = 0L
     var c = 0
     5L.times.foreach { i =>
