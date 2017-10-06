@@ -18,10 +18,10 @@ package com.mipadi.jupiter.core
 
 import org.scalatest._
 
-import com.mipadi.jupiter.core.StepIterator._
+import com.mipadi.jupiter.core.Enumerator._
 
 
-class StepIteratorSpec extends FlatSpec with Matchers {
+class EnumeratorSpec extends FlatSpec with Matchers {
   "An int" should "be iterated over a number of times" in {
     var s = 0
     var c = 0

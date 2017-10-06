@@ -21,24 +21,24 @@ package com.mipadi.jupiter.core
  *  and longs, so that they can be used like this:
  *
  *  {{{
- *  import com.mipadi.jupiter.core.StepIterator._
+ *  import com.mipadi.jupiter.core.Enumerator._
  *  15.times.foreach { println(_) }
  *  }}}
  *
  *  @since 1.1
  */
-object StepIterator {
+object Enumerator {
 
   /** An implicit conversion that adds a `times` method to ints.
    *
    *  {{{
-   *  import com.mipadi.jupiter.core.StepIterator._
+   *  import com.mipadi.jupiter.core.Enumerator._
    *  15.times.foreach { println(_) }
    *  }}}
    *
    *  @since 1.1
    */
-  implicit class SteppedInt(self: Int) {
+  implicit class EnumeratedInt(self: Int) {
 
     /** Iterates `n` times.
      *
@@ -51,13 +51,13 @@ object StepIterator {
   /** An implicit conversion that adds a `times` method to longs.
    *
    *  {{{
-   *  import com.mipadi.jupiter.core.StepIterator._
+   *  import com.mipadi.jupiter.core.Enumerator._
    *  15L.times.foreach { println(_) }
    *  }}}
    *
    *  @since 1.1
    */
-  implicit class SteppedLong(self: Long) {
+  implicit class EnumeratedLong(self: Long) {
 
     /** Iterates `n` times.
      *
