@@ -22,7 +22,7 @@ lazy val root = (project in file("."))
     version      := "1.1.0-SNAPSHOT",
     scalaVersion := "2.12.3",
 
-    crossScalaVersions := Seq("2.12.3", "2.11.11", "2.10.6"),
+    crossScalaVersions := Seq("2.12.3", "2.11.11"),
 
     scalacOptions ++= Seq(
       "-deprecation",
