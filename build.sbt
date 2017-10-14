@@ -19,7 +19,7 @@ lazy val root = (project in file("."))
     name         := "jupiter",
     organization := "com.mipadi",
     licenses     := Seq(("Apache-2.0", url("https://www.apache.org/licenses/LICENSE-2.0"))),
-    version      := "1.1.0-SNAPSHOT",
+    version      := "1.1.0",
     scalaVersion := "2.12.3",
 
     crossScalaVersions := Seq("2.12.3", "2.11.11"),
