@@ -50,9 +50,9 @@ object Seq {
     /** All possible unique rotations of the sequence. */
     lazy val rotations: Seq[Seq[A]] = (0 until seq.length) map (seq.rotate(_))
 
-    /** Rotates the sequence to the right or left. Positive numbers rotate
-     *  a number of slots to the right; negative numbers rotate a number of
-     *  slots to the left.
+    /** Rotates the sequence to the left or right. Positive numbers rotate
+     *  a number of slots to the left; negative numbers rotate a number of
+     *  slots to the right.
      *
      *  For example, calling `rotate(2)` on this sequence:
      *
@@ -74,8 +74,8 @@ object Seq {
      *  }}}
      *
      *  @param n
-     *    Rotates the sequence the number of slots to the right, in the
-     *    case of positive `n`; or left, in the case of negative `n`.
+     *    Rotates the sequence the number of slots to the left, in the
+     *    case of positive `n`; or right, in the case of negative `n`.
      *  @return
      *    A rotated sequence.
      */
