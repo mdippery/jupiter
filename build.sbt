@@ -20,9 +20,9 @@ lazy val root = (project in file("."))
     organization := "com.mipadi",
     licenses     := Seq(("Apache-2.0", url("https://www.apache.org/licenses/LICENSE-2.0"))),
     version      := "1.1.1-SNAPSHOT",
-    scalaVersion := "2.12.6",
+    scalaVersion := "2.13.0",
 
-    crossScalaVersions := Seq("2.12.6", "2.11.11"),
+    crossScalaVersions := Seq("2.13.0", "2.12.6", "2.11.11"),
 
     scalacOptions ++= Seq(
       "-deprecation",
@@ -30,6 +30,6 @@ lazy val root = (project in file("."))
     ),
 
     libraryDependencies ++= Seq(
-      "org.scalatest" %% "scalatest" % "3.0.5" % Test
+      "org.scalatest" %% "scalatest" % "3.0.8" % Test
     )
   )
