@@ -69,8 +69,8 @@ class RichURI[T](uri: T)(implicit ev: Addressable[T]) {
 
   /** Each part of the URI's path. */
   lazy val pathComponents: Seq[String] = path match {
-    case "/" => Array("/")
-    case p   => Array("/") ++ p.split("/").tail
+    case "/" => Array("/").toIndexedSeq
+    case p   => Array("/").toIndexedSeq ++ p.split("/").tail
   }
 }
 

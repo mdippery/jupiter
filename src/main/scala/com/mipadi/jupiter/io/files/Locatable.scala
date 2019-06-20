@@ -18,7 +18,8 @@ package com.mipadi.jupiter.io.files
 
 import java.io.File
 import java.nio.file.{Files, FileSystems, NoSuchFileException, NotDirectoryException, Path}
-import collection.JavaConverters._
+
+import scala.jdk.CollectionConverters._
 
 
 /** A type class for path-like objects.

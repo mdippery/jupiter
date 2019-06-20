@@ -17,6 +17,7 @@
 package com.mipadi.jupiter.time
 
 import org.scalatest._
+import scala.math.Ordering.Double.TotalOrdering
 import com.mipadi.jupiter.time.TemporalUnits._
 
 
